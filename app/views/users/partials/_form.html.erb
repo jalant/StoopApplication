@@ -1,0 +1,20 @@
+
+<h1> User details. </h1>
+
+<%= form_for @user do |f| %> 
+<div>
+	<%= f.label 'Username: ' %> 
+	<%= f.text_field :username %>
+	<br> 
+	<%= f.label 'Email address' %> 
+	<%= f.text_field :email %>
+
+	<br>
+
+		<%= f.submit %>
+
+</div> 
+<% end %>
+
+
+
