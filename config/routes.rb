@@ -1,6 +1,7 @@
 StoopApplication::Application.routes.draw do
 
-   root :to => 'home#index'
+  resources :neighborhoods
 
+  root :to => 'home#index'
 
 end
