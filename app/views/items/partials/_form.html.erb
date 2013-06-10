@@ -1,0 +1,25 @@
+
+
+<h1 class='tanay'> Please fill in the respective details about the item. </h1>
+
+<%= form_for @item do |f| %> 
+<div>
+	<%= f.label 'Name: ' %> 
+	<%= f.text_field :name %>
+	<br> 
+	<%= f.label :price %> 
+	<%= f.number_field :price %>
+
+	<br>
+	<%= f.label :description %> 
+	<%= f.text_field :description %>
+
+	<br>
+
+		<%= f.submit %>
+
+</div> 
+<% end %>
+
+
+

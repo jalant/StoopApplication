@@ -1,0 +1,18 @@
+
+
+<h1> Item that you picked:  </h1>
+
+<div>
+	<p> Name: <%= @item.name %> </p>
+	<p> Price: <%= @item.price %> </p>
+	<br>
+	<p>  Description: <%= @item.description %></p>
+	<br>
+
+	<%= button_to 'EDIT', edit_item_path(item), method: 'get', :class => 'btn btn-success'%> 
+	<%= button_to 'DELETE', item_path(item), method: 'delete', :class => 'btn btn-danger' %> 
+
+</div> 
+
+<% end %>
+
