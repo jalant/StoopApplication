@@ -5,5 +5,4 @@ StoopApplication::Application.routes.draw do
    resources :sales
    resources :neighborhoods
 
-
 end
