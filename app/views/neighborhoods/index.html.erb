@@ -1,0 +1,12 @@
+<%= render partial: "nav" %>
+
+
+<header><% @neighborhoods.each do | hood| %></header>
+
+<ul>
+<li><%= link_to hood.name, hood %> </li>
+</ul>
+
+<% end %>
+
+
