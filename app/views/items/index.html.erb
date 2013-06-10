@@ -1,0 +1,21 @@
+
+<h1> Items </h1>
+
+ <% @items.each do |item| %>
+<div>
+		<p> Name: <%= link_to item.name, item_path(item) %> </p>
+		<br>
+		<p> Price: <%= item.price %> </p>
+		<br>
+		<p> Description: <%= item.description %></p>
+		<br>
+
+		<br>
+		<br>
+
+		<%= button_to 'EDIT', edit_item_path(item), method: 'get', :class => 'btn btn-success'%> 
+		<%= button_to 'DELETE', item_path(item), method: 'delete', :class => 'btn btn-danger' %> 
+
+</div> 
+	<% end %>
+

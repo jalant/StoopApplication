@@ -1,0 +1,15 @@
+<h1> Account Details:  </h1>
+
+<div>
+	<p> Name: <%= @user.username %> </p>
+	<br>
+	<p> email: <%= @user.email %> </p>
+	<br>
+
+
+	<%= button_to 'Edit user details', edit_user_path(user), method: 'get' %> 
+	<%= button_to 'Delete account', user_path(user), method: 'delete' %> 
+
+</div> 
+
+<% end %>
