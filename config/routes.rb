@@ -4,4 +4,6 @@ StoopApplication::Application.routes.draw do
    resources :items
    resources :sales
    resources :users
+   resources :neighborhoods
+
 end

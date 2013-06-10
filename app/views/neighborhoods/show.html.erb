@@ -1,0 +1,8 @@
+<%= render partial: "nav" %>
+
+<header>single</header>
+
+<%= @neighborhood.name %>
+
+<%= link_to 'Edit', edit_neighborhood_path %>
+<%= link_to "Delete", neighborhood_path(@neighborhood), method: 'delete' %>
