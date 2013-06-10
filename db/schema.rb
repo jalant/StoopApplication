@@ -10,6 +10,12 @@ ActiveRecord::Schema.define(:version => 20130610220444) do
     t.datetime "updated_at",  :null => false
   end
 
+  create_table "neighborhoods", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
   create_table "sales", :force => true do |t|
     t.string   "title"
     t.text     "address"
