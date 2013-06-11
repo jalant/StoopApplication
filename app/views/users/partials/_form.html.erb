@@ -1,5 +1,5 @@
 
-<h1> User details. </h1>
+<h1>NEW USER </h1>
 
 <%= form_for @user do |f| %> 
 <div>
@@ -7,9 +7,11 @@
 	<%= f.text_field :username %>
 	<br> 
 	<%= f.label 'Email address' %> 
-	<%= f.text_field :email %>
+	<%= f.email_field :email %>
+	<%= f.label 'Password' %> 
+	<%= f.password_field :password %>
 	<br>
-		<%= f.submit %>
+	<%= f.submit %>
 </div> 
 <% end %>
 

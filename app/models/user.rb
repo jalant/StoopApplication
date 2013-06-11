@@ -3,4 +3,5 @@ class User < ActiveRecord::Base
   belongs_to :neighborhood
   has_many :sales
   has_many :items, through: :sales
+  has_secure_password
 end
