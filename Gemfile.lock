@@ -32,14 +32,11 @@ GEM
       rake
     arel (3.0.2)
     bcrypt-ruby (3.0.1)
-<<<<<<< HEAD
     better_errors (0.9.0)
       coderay (>= 1.0.0)
       erubis (>= 2.6.6)
-    binding_of_caller (0.7.1)
+    binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
-=======
->>>>>>> fd990da1c5671405b86e9f4ea0adfed5b6d0b2de
     builder (3.0.4)
     callsite (0.0.11)
     coderay (1.0.9)
@@ -61,12 +58,9 @@ GEM
     erubis (2.7.0)
     execjs (1.4.0)
       multi_json (~> 1.0)
-<<<<<<< HEAD
     geocoder (1.1.8)
-=======
     haml (4.0.3)
       tilt
->>>>>>> fd990da1c5671405b86e9f4ea0adfed5b6d0b2de
     hike (1.2.3)
     httparty (0.11.0)
       multi_json (~> 1.0)
@@ -87,7 +81,7 @@ GEM
     method_source (0.8.1)
     mime-types (1.23)
     multi_json (1.7.6)
-    multi_xml (0.5.3)
+    multi_xml (0.5.4)
     pg (0.15.1)
     polyglot (0.3.3)
     pry (0.9.12.2)
@@ -97,7 +91,7 @@ GEM
     pry-debugger (0.2.2)
       debugger (~> 1.3)
       pry (~> 0.9.10)
-    pry-rails (0.3.0)
+    pry-rails (0.3.1)
       pry (>= 0.9.10)
     pry-stack_explorer (0.4.9)
       binding_of_caller (>= 0.7)
@@ -156,19 +150,14 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-<<<<<<< HEAD
   annotate
   bcrypt-ruby
   better_errors
   binding_of_caller
   coffee-rails (~> 3.2.1)
   geocoder
-  httparty
-=======
-  bcrypt-ruby (~> 3.0.0)
-  coffee-rails (~> 3.2.1)
   haml
->>>>>>> fd990da1c5671405b86e9f4ea0adfed5b6d0b2de
+  httparty
   jquery-rails
   json
   meta_request
