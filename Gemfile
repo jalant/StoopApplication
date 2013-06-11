@@ -22,7 +22,7 @@ end
 
 
 
-gem :development do
+group :development do
 	
 	gem 'annotate'
 end
