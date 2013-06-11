@@ -16,11 +16,11 @@ u5 = User.create(username: 'Ryan', password: 'Ryan', email: 'ryan@stoopid.com')
 
 
 
-s1 = Sale.create(title: 'Brooklyn Heights Sale', address: '123 address street', city: 'Brooklyn', date:'June 6', time: '4pm')
-s2 = Sale.create(title: 'Red Hook Sale', address: '456 address street', city: 'Brooklyn', date:'June 7', time: '3pm')
-s3 = Sale.create(title: 'Williamsburg Sale', address: '789 address street', city: 'Brooklyn', date:'June 8', time: '2pm')
-s4 = Sale.create(title: 'Carroll Gardens Sale', address: '888 address street', city: 'Brooklyn', date:'June 9', time: '1pm')
-s5 = Sale.create(title: 'Greenpoint Sale', address: '555 address street', city: 'Brooklyn', date:'June 4', time: '12pm')
+s1 = Sale.create(title: 'Brooklyn Heights Sale', address: '28 Old Fulton Street', city: 'Brooklyn', date:'June 6', time: '4pm')
+s2 = Sale.create(title: 'Red Hook Sale', address: '391 Van Brunt Street', city: 'Brooklyn', date:'June 7', time: '3pm')
+s3 = Sale.create(title: 'Williamsburg Sale', address: '170 Bedford Avenue', city: 'Brooklyn', date:'June 8', time: '2pm')
+s4 = Sale.create(title: 'Carroll Gardens Sale', address: '400 Degraw Street', city: 'Brooklyn', date:'June 9', time: '1pm')
+s5 = Sale.create(title: 'Greenpoint Sale', address: '700 Manhattan Avenue', city: 'Brooklyn', date:'June 4', time: '12pm')
 s6 = Sale.create(title: 'Fort Greene Sale', address: '642 address street', city: 'Brooklyn', date:'June 5', time: '1:30pm')
 
 
@@ -37,10 +37,11 @@ n3.users << u3
 n4.users << u4
 n5.users << u5
 
-u1.sales << s1 << s2
-u3.sales << s3 << s4
-u4.sales << s5
-u5.sales << s6
+u1.sales << s1
+u2.sales << s2
+u3.sales << s3
+u4.sales << s4
+u5.sales << s5 << s6
 
 s1.items << i1
 s2.items << i2

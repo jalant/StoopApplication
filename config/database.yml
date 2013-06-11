@@ -1,10 +1,9 @@
-
 development:
   adapter: postgresql
   encoding: unicode
   database: stoop_application_development
   pool: 5
-  username: davidaaron
+  username: 
   password:
   host: localhost
 
