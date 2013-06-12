@@ -3,7 +3,7 @@ development:
   encoding: unicode
   database: stoop_application_development
   pool: 5
-  username: tanayjalan
+  username: 
   password:
   host: localhost
 
