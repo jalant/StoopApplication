@@ -5,10 +5,18 @@
 #wrapper {height: 600px; max-width: 100%; width: auto; min-width: 960px; margin: 0 auto; background: #f1f1f1; padding: 20px;}
 
 
-
-
 nav ul{height: auto; width: 100%; background: #f3f3f3; z-index:999;}
 
 nav ul li {width: ; background: silver; display: inline-block;position: relative;}
 	
 footer {position: absolute; bottom:0; min-height: 10%; width: auto; background: #e1e1e1; margin: 20px;}
+
+
+form {height: 400px; width: 360px; padding: 20px; margin: 0 auto; z-index: 9999; background: rgba(0,0,0,.5);}
+
+form input {}
+
+.logged-out,
+.logged-in {display: inline;}
+
+.logged-in{float: right;}
