@@ -4,19 +4,18 @@
 
 <div>
 	
-		<p> Name: <%= sale.name %> </p>
+		<p> Name: <%= @sale.title %> </p>
 		<br>
-		<p> Address: <%= sale.address %> </p>
+		<p> Address: <%= @sale.address %> </p>
 		<br>
-		<p> City: <%= sale.city %></p>
+		<p> City: <%= @sale.city %></p>
 		<br>
-		<p> Date: <%= sale.date %></p>
+		<p> Date: <%= @sale.date %></p>
 		<br>
-		<p> Time: <%= sale.time %></p>
+		<p> Time: <%= @sale.time %></p>
 		<br>
-		<%= button_to 'EDIT', edit_sale_path(sale), method: 'get', :class => 'btn btn-success'%> 
-		<%= button_to 'DELETE', sale_path(sale), method: 'delete', :class => 'btn btn-danger' %> 
+		<%= button_to 'EDIT', edit_sale_path(@sale), method: 'get', :class => 'btn btn-success'%> 
+		<%= button_to 'DELETE', sale_path(@sale), method: 'delete', :class => 'btn btn-danger' %> 
 
 </div> 
 
-<% end %>
