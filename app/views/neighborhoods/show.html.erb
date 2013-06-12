@@ -36,8 +36,8 @@
 
 
 <% @neighborhood.sales.each do |sale| %>
-<div>
-		<p> Name: <%= link_to sale.title, sale_path(sale) %> </p>
+<div class="single-sale">
+		<h1>Name: <%= link_to sale.title, sale_path(sale) %> </h1>
 		<br>
 		<p> Address: <%= sale.address %> </p>
 		<br>

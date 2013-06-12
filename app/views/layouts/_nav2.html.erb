@@ -1,54 +1,51 @@
-<nav class="upper">
+<nav class="upper public">
 <!-- public -->
 
-			<ul class="left">
-				<li><%= link_to 'Find a Sale!', sales_path %> </li>
+
+			<ul class="site-content">
+				
+				<li><%= link_to 'Homes!', root_path %> </li>
+
+				<li><%= link_to 'Stoop Sales!', sales_path %> </li>
+
+				<li><%= link_to 'Search by Hood!', neighborhoods_path %> </li>
+				
 			</ul>
 
-			<ul class="right">
+
+			<ul class="user-options">
 				<li><%= link_to 'Log In', sessions_new_path %> </li>
-				<li><%= link_to 'Sign Up', new_user_path %> </li>
+				<li><%= link_to 'Sign Up!', new_user_path %> </li>
 			</ul>
 
 </nav>
 
-<nav class="upper">
 
-<!-- logged in, here's YOUR view-->
+<!-- if logged in-->
+<nav class="upper private">
 
-			<ul class="left">
-
-			<!-- if logged out -->
-		
+			<ul class="site-content">
+				<li><%= link_to 'Stoop Sales!', sales_path %> </li>
 			</ul>
 
 
-			<ul class="right">
-
-			<!-- if logged in, see admin options -->		
-
+			<ul class="user-options">
+				<!-- manage sales-->
 				<li><%= link_to 'My Sales', new_sale_path %> </li>
 				<li><%= link_to 'New Stoop Sale', new_sale_path %> </li>
 				<li><%= link_to 'My Items', items_path %> </li>
 				<li><%= link_to 'New Item', new_item_path %> </li>
 
-				<!--my acct -->
+				<!--manage acct -->
 				<li><%= link_to 'Edit'  %> </li>
 				<li><%= link_to 'Logout', logout_path %> </li>
 
 			
 			</ul>
 
-
 </nav>
 
-
-
-
-
-
-<!--unique to home -->
-
-<nav class="public">
-<%= link_to 'Find a Sale', sales_path %>
-</nav >
+<!--this will be unique to home -->
+<!-- <nav class="all">
+<%= link_to 'Stoopendicular', root_path %>
+</nav > -->
