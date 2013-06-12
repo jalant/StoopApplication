@@ -4,20 +4,23 @@
   <title>StoopApplication</title>
   <%= stylesheet_link_tag "application", :media => "all" %>
  
- <%= stylesheet_link_tag "main", :media => "all" %>
+  <%= stylesheet_link_tag "main", :media => "all" %>
+
+	<link href='http://fonts.googleapis.com/css?family=Lato|Arimo|Raleway:400,500|Varela+Round' rel='stylesheet' type='text/css'>
 
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
+
 </head>
 <body>
 <div id="wrapper">
-<nav>
-<%= render partial: 'layouts/nav' %>
-</nav>
+
+<%= render partial: 'layouts/nav2' %>
+
 
 <% if current_user %> 
 	<%= current_user.username %>
-	<%= link_to 'logout', logout_path, method: :delete %>
+	<%= link_to 'logout', logout_path %>
 <% end %>
 
 

@@ -1,0 +1,54 @@
+<nav class="upper">
+<!-- public -->
+
+			<ul class="left">
+				<li><%= link_to 'Find a Sale!', sales_path %> </li>
+			</ul>
+
+			<ul class="right">
+				<li><%= link_to 'Log In', sessions_new_path %> </li>
+				<li><%= link_to 'Sign Up', new_user_path %> </li>
+			</ul>
+
+</nav>
+
+<nav class="upper">
+
+<!-- logged in, here's YOUR view-->
+
+			<ul class="left">
+
+			<!-- if logged out -->
+		
+			</ul>
+
+
+			<ul class="right">
+
+			<!-- if logged in, see admin options -->		
+
+				<li><%= link_to 'My Sales', new_sale_path %> </li>
+				<li><%= link_to 'New Stoop Sale', new_sale_path %> </li>
+				<li><%= link_to 'My Items', items_path %> </li>
+				<li><%= link_to 'New Item', new_item_path %> </li>
+
+				<!--my acct -->
+				<li><%= link_to 'Edit'  %> </li>
+				<li><%= link_to 'Logout', logout_path %> </li>
+
+			
+			</ul>
+
+
+</nav>
+
+
+
+
+
+
+<!--unique to home -->
+
+<nav class="public">
+<%= link_to 'Find a Sale', sales_path %>
+</nav >
