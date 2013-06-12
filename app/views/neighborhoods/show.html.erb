@@ -1,6 +1,58 @@
-<header>single</header>
+<script src="http://maps.google.com/maps/api/js?key=AIzaSyAWySaUYYlEwvq3KquSOJmFpPwrnLItW4Y&sensor=false" 
+          type="text/javascript"></script>
+  <div id="map" style="width: 500px; height: 400px;"></div>
 
-<%= @neighborhood.name %>
+  <script type="text/javascript">
+    var locations = [];
 
-<%= link_to 'Edit', edit_neighborhood_path %>
-<%= link_to "Delete", neighborhood_path(@neighborhood), method: 'delete' %>
+    <% @locations.each do |location| %>
+    locations.push(["<%= location[0] %>",<%= location[1] %>,<%= location[2] %>]);
+    <% end %>
+
+    var map = new google.maps.Map(document.getElementById('map'), {
+      zoom: 13,
+      center: new google.maps.LatLng(<%= @map_lat %>, <%= @map_lng %>),
+      mapTypeId: google.maps.MapTypeId.ROADMAP
+    });
+
+    var infowindow = new google.maps.InfoWindow();
+
+    var marker, i;
+
+    for (i = 0; i < locations.length; i++) {  
+      marker = new google.maps.Marker({
+        position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+        map: map
+      });
+
+      google.maps.event.addListener(marker, 'click', (function(marker, i) {
+        return function() {
+          infowindow.setContent(locations[i][0]);
+          infowindow.open(map, marker);
+        }
+      })(marker, i));
+    }
+  </script>
+
+
+<% @neighborhood.sales.each do |sale| %>
+<div>
+		<p> Name: <%= link_to sale.title, sale_path(sale) %> </p>
+		<br>
+		<p> Address: <%= sale.address %> </p>
+		<br>
+		<p> City: <%= sale.city %></p>
+		<br>
+		<p> Date: <%= sale.date %></p>
+		<br>
+		<p> Time: <%= sale.time %></p>
+		<br>
+
+		<br>
+		<br>
+
+		<%= button_to 'EDIT', edit_sale_path(sale), method: 'get', :class => 'btn btn-success'%> 
+		<%= button_to 'DELETE', sale_path(sale), method: 'delete', :class => 'btn btn-danger' %> 
+
+</div> 
+	<% end %>

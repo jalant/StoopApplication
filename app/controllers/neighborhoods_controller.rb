@@ -32,8 +32,28 @@ class NeighborhoodsController < ApplicationController
 
   def show
     @neighborhood = Neighborhood.find(params[:id])
-  end
+    @sales = Sale.all
+    @users = User.all
 
+    name = @neighborhood.name
+    maps = Geocoder.search("#{name},Brooklyn, New York")
+    lat_lng = maps.first.data["geometry"]['location']
+    @map_lat = lat_lng["lat"]
+    @map_lng = lat_lng["lng"]
+
+    @locations = []
+
+   
+    @sales.each do |sale|
+      if sale.user.neighborhood.name == name
+        address_tmp = "#{sale.address}, #{sale.city}"
+        @marker = Geocoder.search(address_tmp)
+        mark_lat = @marker.first.data["geometry"]['location']['lat']
+        mark_lng = @marker.first.data["geometry"]['location']['lng']
+        @locations << [sale.title, mark_lat, mark_lng]
+    end
+  end
+end
 
 
   def destroy
