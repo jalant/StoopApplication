@@ -1,6 +1,6 @@
 class SalesController < ApplicationController
 
-  def index
+def index
     @sales = Sale.all
     @neighborhoods = Neighborhood.all
     @users = User.all
@@ -13,13 +13,14 @@ class SalesController < ApplicationController
     @locations = []
 
     @sales.each do |sale|
-      address_tmp = "#{sale.address}, #{sale.city}"
-      @marker = Geocoder.search(address_tmp)
-      mark_lat = @marker.first.data["geometry"]['location']['lat']
-      mark_lng = @marker.first.data["geometry"]['location']['lng']
-      @locations << [sale.title, mark_lat, mark_lng]
+        address_tmp = "#{sale.address}, #{sale.city}"
+        @marker = Geocoder.search(address_tmp)
+        mark_lat = @marker.first.data["geometry"]['location']['lat']
+        mark_lng = @marker.first.data["geometry"]['location']['lng']
+        tmp_url = "sales/#{sale.id}"
+        @locations << [sale.title, sale.address, mark_lat, mark_lng, sale.date, tmp_url]
     end
-  end
+  end 
 
   def create
     sale = Sale.create(params[:sale])
