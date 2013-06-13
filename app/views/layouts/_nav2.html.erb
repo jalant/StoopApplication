@@ -1,51 +1,45 @@
 <nav class="upper public">
 <!-- public -->
 
-
-			<ul class="site-content">
+			<ul class="button-group site-content">
 				
-				<li><%= link_to 'Homes!', root_path %> </li>
-
-				<li><%= link_to 'Stoop Sales!', sales_path %> </li>
-
-				<li><%= link_to 'Search by Hood!', neighborhoods_path %> </li>
+				<li><%= link_to 'LOGO', root_path, :class => 'button' %> </li>
+				<li><%= link_to 'Stoop Sales!',sales_path,:class => 'button' %> </li>
+				<li><%= link_to 'Search by Hood!', neighborhoods_path, :class => 'button' %> </li>
 				
 			</ul>
 
-
-			<ul class="user-options">
-				<li><%= link_to 'Log In', sessions_new_path %> </li>
-				<li><%= link_to 'Sign Up!', new_user_path %> </li>
+			<ul class="button-group user-options">
+				<li><%= link_to 'Log In', sessions_new_path, :class => 'button' %> </li>
+				<li><%= link_to 'Sign Up!', new_user_path, :class => 'button' %> </li>
 			</ul>
 
 </nav>
 
-
 <!-- if logged in-->
 <nav class="upper private">
 
-			<ul class="site-content">
-				<li><%= link_to 'Stoop Sales!', sales_path %> </li>
+			<ul class="button-group site-content">
+				<li><%= link_to 'LOGO', root_path, :class => 'button'  %> </li>
+				<li><%= link_to 'All Sales!', sales_path, :class => 'button'  %> </li>
+				<li><%= link_to 'Neighborhoods', neighborhoods_path, :class => 'button'  %> </li>
+
 			</ul>
 
 
-			<ul class="user-options">
+			<ul class="button-group user-options">
 				<!-- manage sales-->
-				<li><%= link_to 'My Sales', new_sale_path %> </li>
-				<li><%= link_to 'New Stoop Sale', new_sale_path %> </li>
-				<li><%= link_to 'My Items', items_path %> </li>
-				<li><%= link_to 'New Item', new_item_path %> </li>
+				<li><%= link_to 'My Sales', new_sale_path,:class => 'button'  %> </li>
+				<li><%= link_to 'New Stoop Sale', new_sale_path,:class => 'button'  %> </li>
+				<li><%= link_to 'My Items', items_path, :class => 'button'  %> </li>
+				<li><%= link_to 'New Item', new_item_path,:class => 'button'  %> </li>
 
 				<!--manage acct -->
-				<li><%= link_to 'Edit'  %> </li>
-				<li><%= link_to 'Logout', logout_path %> </li>
+				<li><%= link_to 'Edit', logout_path, :class => 'button'  %> </li>
+				<li><%= link_to 'Logout', logout_path, :class => 'button'  %> </li>
 
 			
 			</ul>
 
 </nav>
 
-<!--this will be unique to home -->
-<!-- <nav class="all">
-<%= link_to 'Stoopendicular', root_path %>
-</nav > -->

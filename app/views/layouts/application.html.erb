@@ -3,12 +3,8 @@
 <head>
   <title>StoopApplication</title>
   <%= stylesheet_link_tag "application", :media => "all" %>
- 
-  <%= stylesheet_link_tag "main", :media => "all" %>
-
-	<link href='http://fonts.googleapis.com/css?family=Lato|Arimo|Raleway:400,500|Varela+Round' rel='stylesheet' type='text/css'>
-
   <%= javascript_include_tag "application" %>
+  <link href='http://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
   <%= csrf_meta_tags %>
 
 </head>
@@ -26,10 +22,6 @@
 
 
 <%= yield %>
-
-<footer>
-<nav>stuff</nav>
-</footer>
 
 </div>
 

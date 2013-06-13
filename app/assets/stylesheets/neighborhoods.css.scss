@@ -1,3 +1,20 @@
 // Place all the styles related to the Neighborhoods controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+/* pick your hood */
+
+#content {margin: 0 auto; height: 100%; width: 960px; overflow: scroll;background: black}
+
+ul.large-block-grid-4 li {background: 0; height: 250px; padding: 5%; width: 25%; float: left; display: inline-block; }
+
+
+ul.large-block-grid-4 li:nth-child(even)  {background:#f1f1f1}
+
+ul.large-block-grid-4 li:nth-child(odd)  {background:#f9f9f9}
+
+ul.large-block-grid-4 li.block a { height: 240px; background: rgba(31,159,255,.25); color: #FFF; display: block;}
+
+
+a.button { background: rgba(31,159,255,.25);}
+a.button:hover {background: rgba(31,159,255,.5);}
