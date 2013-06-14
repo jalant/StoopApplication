@@ -1,5 +1,5 @@
 class UsersController < ApplicationController 
-
+	before_filter :ensure_admin, only: [:index, :destroy]
 	def index
 		@users = User.all
 	end 
@@ -10,12 +10,12 @@ class UsersController < ApplicationController
 	end 
 
 	def create
-		user = User.new(params[:user])
-			if user.save!
+		@user = User.new(params[:user])
+			if @user.save
 				session['user_id'] = user.id
 				redirect_to sessions_path
 			else 
-				redirect_to new_user_path
+				render :new
 			end
 		#render :create
 

@@ -1,0 +1,6 @@
+- @users.each do |user|
+	%br
+	= user.username
+	= link_to('delete', user_path(user), method: :delete, confirm: 'Are you sure you want to delete this user?') unless user == current_user
+
+	
