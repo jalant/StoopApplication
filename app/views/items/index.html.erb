@@ -9,6 +9,10 @@
 	
 <% end %>
 
+<% if @tmp_arr == [] %>
+<h1> The searched item is not being sold </h1>
+<% end %>
+
  <% @items.each do |item| %>
 <div>
 		<p> Name: <%= link_to item.name, item_path(item) %> </p>

@@ -14,7 +14,7 @@ a {text-decoration: none; color: red}
 
 nav ul{height: auto;  width: auto; z-index:999; list-style:none; display: inline-block;}
 
-nav ul li { height: 100%; padding: 10px 0; background: #e1e1e1; display: inline-block;position: relative;}
+nav ul li { height: 100%; padding: 10px 0; background: #e1e1e1; display: inline-block; position: relative;}
 	
 	li.user-is {font-weight: bold; color: orange;}
 

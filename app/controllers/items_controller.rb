@@ -2,13 +2,14 @@ class ItemsController < ApplicationController
 
   def index
     @items = Item.all
+    @tmp_arr 
     #render :index
   end
 
   def create
-    item = Item.create(params[:item])
-    if item.save!
-      render :back
+    item = Item.create(name: params[:item][:name].downcase, price: params[:item][:price], description: params[:item][:description])
+    if item.save
+      redirect_to items_path
     else
       redirect_to new_item_path
     end
@@ -50,15 +51,16 @@ class ItemsController < ApplicationController
 
   def search
 
-    @items = Item.where(name: params[:query])
+    @items = Item.where(name: params[:query].downcase)
     @sales = Sale.all
     @neighborhoods = Neighborhood.all
     @users = User.all
+
+    if @items != []
     maps = Geocoder.search("#{@items.first.sale.address}, Brooklyn, New York")
     lat_lng = maps.first.data["geometry"]['location']
     @map_lat = lat_lng["lat"]
     @map_lng = lat_lng["lng"]
-
 
     @locations = []
 
@@ -69,8 +71,12 @@ class ItemsController < ApplicationController
     tmp_url = "sales/#{@items.first.sale.id}"
     @locations << [@items.first.sale.title, @items.first.sale.address, mark_lat, mark_lng, @items.first.sale.date, tmp_url]
 
-
-    render :search_result
+     render :search_result
+ 		else
+ 		
+ 			redirect_to items_path
+  	end 
+   
 
   end
 
