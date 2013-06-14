@@ -1,6 +1,3 @@
-
-<h1>NEW USER </h1>
-
 <%= form_for @user do |f| %> 
 <div>
 	<%= f.label 'Username: ' %> 
@@ -11,6 +8,7 @@
 	<%= f.label 'Password' %> 
 	<%= f.password_field :password %>
 	<br>
+	<%= f.select :neighborhood_id, Neighborhood.all.map{ |neighborhood| [neighborhood.name,neighborhood.id] }%>
 	<%= f.submit %>
 </div> 
 <% end %>

@@ -1,0 +1,20 @@
+%ul
+  %li
+    = link_to 'Stoop Sales', sales_path
+  - if current_user 
+    %li
+      = link_to 'Create a new Sale', new_sale_path
+  - if current_user && current_user.sales != [] 
+    %li
+      = link_to 'Show my Sale', sale_path(current_user.sales.first)
+    
+  - unless current_user   
+    %li
+      = link_to 'Login', sessions_new_path
+    %li
+      = link_to 'Signup', new_user_path
+    
+%ul
+  - @neighborhoods = Neighborhood.all
+  - @neighborhoods.each do |neighborhood|
+    %li= link_to neighborhood.name, neighborhood_path(neighborhood)

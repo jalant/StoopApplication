@@ -3,29 +3,25 @@
 <head>
   <title>StoopApplication</title>
   <%= stylesheet_link_tag "application", :media => "all" %>
- 
- <%= stylesheet_link_tag "main", :media => "all" %>
-
   <%= javascript_include_tag "application" %>
+  <link href='http://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
   <%= csrf_meta_tags %>
+
 </head>
 <body>
 <div id="wrapper">
-<nav>
-<%= render partial: 'layouts/nav' %>
-</nav>
+
+<%= render partial: 'layouts/nav2' %>
+
 
 <% if current_user %> 
 	<%= current_user.username %>
-	<%= link_to 'logout', logout_path, method: :delete %>
+	<%= link_to 'logout', logout_path %>
 <% end %>
-
-
 
 <%= yield %>
 
 <footer>
-<nav>stuff</nav>
 </footer>
 
 </div>

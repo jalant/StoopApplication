@@ -1,4 +1,42 @@
 <h1> Edit Stoop Sale </h1>
 
-<%= render partial: 'sales/partials/form' %>
+<h1> Please update your stoop sale. </h1>
 
+<%= form_for @sale do |f| %> 
+<div>
+	<%= f.label 'Title: ' %> 
+	<%= f.text_field :title %>
+	<br> 
+	<%= f.label :Address %> 
+	<%= f.text_field :address %>
+
+	<br>
+	<%= f.label :city %> 
+	<%= f.text_field :city %>
+
+	<br>
+
+	<%= f.label :date %> 
+	<%= f.text_field :date %>
+
+	<br>
+
+	<%= f.label :time %> 
+	<%= f.text_field :time %>
+
+	<br>
+
+<h2> Items </h2>
+	<% @sale.items.each do |item| %>
+
+	<div>
+		<%= item.name %>
+		<%= item.price %>
+		<%= button_to 'Edit',  edit_item_path(item), method: :get %>
+		<%= button_to 'Delete', item_path(item), method: :delete %>
+
+  <% end %>	
+	<%= f.submit %>
+
+</div> 
+<% end %>

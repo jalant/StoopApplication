@@ -1,5 +1,5 @@
 
-<h1 class='tanay'> Please fill in the respective details about the stoop sale. </h1>
+<h1 class='tanay'> Please fill in the respective details about your stoop sale. </h1>
 
 <%= form_for @sale do |f| %> 
 <div>
@@ -25,10 +25,22 @@
 
 	<br>
 
+<h2> Items </h2>
+
+  <%= f.fields_for :items do |builder| %>
+  
+    <%= builder.label "Item Name" %>
+    <%= builder.text_field :name %>
+ 
+  	<%= builder.label "Price" %>
+    <%= builder.number_field :price %>
+   
+  	<%= builder.label "Description" %>
+    <%= builder.text_field :description %>
+    <br>
+
+  <% end %>	
 	<%= f.submit %>
 
 </div> 
 <% end %>
-
-
-

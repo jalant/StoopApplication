@@ -1,6 +1,6 @@
 StoopApplication::Application.routes.draw do
 
-   root :to => 'home#index'
+   root :to => 'home#landing'
    
    resources :items
    resources :sales
