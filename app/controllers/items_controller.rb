@@ -8,7 +8,7 @@ class ItemsController < ApplicationController
 	def create
 		item = Item.create(params[:item])
 			if item.save!
-				redirect_to items_path
+				render :back
 			else 
 				redirect_to new_item_path
 			end
@@ -43,8 +43,8 @@ class ItemsController < ApplicationController
 	  
 	def destroy
 		Item.find(params[:id]).delete
-		redirect_to items_path
-		#render :destroy
+		
+		redirect_to sale_path(current_user.sales.first)
 	end 
 
 
