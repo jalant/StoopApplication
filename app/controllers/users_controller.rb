@@ -1,9 +1,8 @@
 class UsersController < ApplicationController 
-
-	# def index
-	# 	@users = User.all
-	# 	#render :index
-	# end 
+	before_filter :ensure_admin, only: [:index, :destroy]
+	def index
+		@users = User.all
+	end 
 
 	def new
 		@user = User.new()
@@ -11,12 +10,12 @@ class UsersController < ApplicationController
 	end 
 
 	def create
-		user = User.new(params[:user])
-			if user.save!
+		@user = User.new(params[:user])
+			if @user.save
 				session['user_id'] = user.id
 				redirect_to root_path
 			else 
-				redirect_to new_user_path
+				render :new
 			end
 		#render :create
 

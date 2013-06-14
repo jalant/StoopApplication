@@ -11,12 +11,12 @@
 <body>
 <div id="wrapper">
 
-<%= render partial: 'layouts/nav2' %>
+<%= render partial: 'layouts/nav' %>
 
 
 <% if current_user %> 
 	<%= current_user.username %>
-	<%= link_to 'logout', logout_path %>
+	<%= link_to 'logout', logout_path, method: :delete %>
 <% end %>
 
 <%= yield %>
