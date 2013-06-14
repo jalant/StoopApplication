@@ -7,6 +7,7 @@ if defined?(Bundler)
   Bundler.require(*Rails.groups(:assets => %w(development test)))
   # If you want your assets lazily compiled in production, use this line
   # Bundler.require(:default, :assets, Rails.env)
+  config.assets.intialize_on_precompile = false
 end
 
 module StoopApplication
@@ -14,7 +15,7 @@ module StoopApplication
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
-    config.assets.intialize_on_precompile = false
+
     # Custom directories with classes and modules you want to be autoloadable.
     # config.autoload_paths += %W(#{config.root}/extras)
 
@@ -55,6 +56,7 @@ module StoopApplication
 
     # Enable the asset pipeline
     config.assets.enabled = true
+
 
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
