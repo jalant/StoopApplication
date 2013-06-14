@@ -1,7 +1,6 @@
 <div id="root" class="neighborhoods">
 	<ul class="large-block-grid-4">
 	<% @neighborhoods.each do | hood| %>
-		
 		<li class="block"><%= link_to hood.name, hood %></li> 
 	<% end %>
 	</ul>
