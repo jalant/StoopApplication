@@ -12,7 +12,11 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require foundation
 //= require_tree .
+
+
+$(document).foundation();
 
 function add_fields(link, association, content) {
   var new_id = new Date().getTime();
@@ -21,3 +25,4 @@ function add_fields(link, association, content) {
         before: content.replace(regexp, new_id)
   });
 }
+
