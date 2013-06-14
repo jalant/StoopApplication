@@ -46,6 +46,5 @@ class ItemsController < ApplicationController
 		redirect_to items_path
 		#render :destroy
 	end 
-
-
+	
 end 
