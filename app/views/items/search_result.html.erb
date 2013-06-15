@@ -45,7 +45,7 @@
 <% @items.first.sale.items.each do |item| %>
 
     <p>Item:<%= item.name %></p>
-    <p>Price: <%= item.price %></p>
+    <p> Price: <%= number_to_currency(item.price) %> </p>
     <p>Description: <%= item.description %></p>
 <% end %>
 </div>
