@@ -2,7 +2,7 @@
 
 <div>
 	<p> Name: <%= @item.name %> </p>
-	<p> Price: <%= @item.price %> </p>
+	<p> Price: <%= number_to_currency(@item.price) %> </p>
 	<br>
 	<p>  Description: <%= @item.description %></p>
 	<br>
