@@ -11,7 +11,6 @@
 
   -# Uncomment to make IE8 render like IE7
   -# meta http-equiv="X-UA-Compatible" content="IE=7"
-
   -# Set the viewport width to device width for mobile
   %meta{ :name => "viewport", :content => "width=device-width, initial-scale=1.0" }
 
@@ -22,10 +21,16 @@
 
   = javascript_include_tag 'http://fonts.googleapis.com/css?family=Lato|Arimo|Raleway:400,500|Varela+Round' rel='stylesheet' type='text/css'
 
-
   = csrf_meta_tag
 
 %body
+
+  - if current_user 
+    = current_user.username
+    = link_to 'logout', logout_path
+  - end 
+
+  = render :partial => "layouts/nav2"
 
   = yield
 

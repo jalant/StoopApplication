@@ -1,40 +1,34 @@
-<nav class="upper public">
-<!-- public -->
-
-			<ul class="button-group site-content">
-				
-				<li><%= link_to 'TDJ', root_path, :class => 'button' %> </li>
-				<li><%= link_to 'Stoop Sales!',sales_path,:class => 'button' %> </li>
-				<li><%= link_to 'Search by Hood!', neighborhoods_path, :class => 'button' %> </li>
-				
-			</ul>
-
-			<ul class="button-group user-options">
-				<li><%= link_to 'Log In', sessions_new_path, :class => 'button' %> </li>
-				<li><%= link_to 'Sign Up!', new_user_path, :class => 'button' %> </li>
-			</ul>
-
-</nav>
-
-
 
 <!-- if logged in-->
-<nav class="upper private">
+
+<% if current_user %>
+
+	<nav class="upper private">
 
 			<ul class="button-group site-content">
-				<li><%= link_to 'TDJ', root_path, :class => 'button'  %> </li>
-				<li><%= link_to 'Sales', sales_path, :class => 'button'  %> </li>
+				<li><%= link_to 'Home', root_path, :class => 'button'  %> </li>
+				<li><%= link_to 'See Sales', sales_path, :class => 'button'  %> </li>
 				<li><%= link_to 'Search by Hood', neighborhoods_path, :class => 'button'  %> </li>
 			</ul>
 
 			<ul class="button-group user-options">
+
+
 				<!-- manage sales-->
 				<li><%= link_to 'Sales', new_sale_path,:class => 'button', :'data-dropdown' => "drop1"  %>
 						<ul id="drop1" class="f-dropdown" data-dropdown-content>
- 								 <li><%= link_to 'Organize a Sale', new_sale_path,:class => 'button'  %> </li>
+ 								
+ 							
+							<% if current_user && current_user.sales != [] %>
+ 							<li><%= link_to 'Show My Sale', sale_path(current_user.sales.first), :class => 'button'  %><% end %> </li>
+ 							<%else%>
+ 							<li><%= link_to 'Create a New Sale', new_sale_path,:class => 'button'  %> </li>
+ 							<%end%>
 						</ul>
 				</li>
 			
+
+				<!-- manage items.... -->
 				<li><%= link_to 'My Items', items_path, :class => 'button'  %> </li>
 				<li><%= link_to 'New Item', new_item_path,:class => 'button'  %> </li>
 
@@ -52,5 +46,31 @@
 	
 			</ul>
 
-</nav>
+	</nav>
+
+
+
+<% unless current_user %>
+
+	<nav class="upper public">
+	<!-- public -->
+
+		<ul class="button-group site-content">
+			
+			<li><%= link_to 'Home', root_path, :class => 'button' %> </li>
+			<li><%= link_to 'See sales',sales_path,:class => 'button' %> </li>
+			<li><%= link_to 'Search by Hood!', neighborhoods_path, :class => 'button' %> </li>
+			
+		</ul>
+
+		<ul class="button-group user-options">
+			<li><%= link_to 'Log In', sessions_new_path, :class => 'button' %> </li>
+			<li><%= link_to 'Sign Up!', new_user_path, :class => 'button' %> </li>
+		</ul>
+
+	</nav>
+
+<% end %>
+
+
 

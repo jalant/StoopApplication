@@ -2,16 +2,31 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-/* pick your hood */
 
 #content {margin: 0 auto; height: 100%; min-width: 960px; overflow: scroll;background: black}
+	
+
+#root.neighborhood {background: red; padding: 10px; text-align:center;}
+
+
 
 ul.large-block-grid-4 li {background: 0; max-height: 250px; height: auto;  width: 25%; float: left; display: inline-block;}
+
+ul.large-block-grid-4 li a img {height: 100%; float: left;  position: relative}
+
 
 ul.large-block-grid-4 li:nth-child(even) {background:#f1f1f1}
 ul.large-block-grid-4 li:nth-child(odd)  {background:#f9f9f9}
 
-ul.large-block-grid-4 li.block a { height: auto; min-height: 200px; width: 100%; background: rgba(31,159,255,.25); color: #FFF; display: block; margin: auto}
+ul.large-block-grid-4 li.block a {height: 100%; float: left; width: 100%; background: rgba(31,159,255,.25); color: #FFF; display: block; margin: auto}
+
+ul.large-block-grid-4 li.block a:hover {opacity:.9}
 
 
 li.block {padding:0}
+
+
+
+.neighborhood-sales {float: left; width: 50%}
+
+span.neighborhood-name {width: 100px; display: inline-block; background: rgba(31,159,255,.25); }

@@ -1,7 +1,9 @@
-<div id="root" class="neighborhoods">
+<div id="root" class="neighborhood">
 	<ul class="large-block-grid-4">
 	<% @neighborhoods.each do | hood| %>
-		<li class="block"><%= link_to hood.name, hood %></li> 
+		<li class="block">
+			<%= link_to (image_tag(hood.img_url)), hood %>
+		</li> 
 	<% end %>
 	</ul>
 </div>

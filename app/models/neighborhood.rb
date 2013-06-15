@@ -10,7 +10,7 @@
 
 class Neighborhood < ActiveRecord::Base
 	
-  attr_accessible :name
+  attr_accessible :name, :img_url
 
   has_many :users
   has_many :sales, through: :users
