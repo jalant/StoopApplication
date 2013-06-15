@@ -17,7 +17,7 @@
 <div>
 		<p> Name: <%= link_to item.name, item_path(item) %> </p>
 		<br>
-		<p> Price: <%= item.price %> </p>
+		<p> Price: <%= number_to_currency(item.price) %> </p>
 		<br>
 		<p> Description: <%= item.description %></p>
 		<br>
