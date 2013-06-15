@@ -66,7 +66,6 @@ class SalesController < ApplicationController
 
   def show
     @sale = Sale.find(params[:id])
-    #render :show
   end
 
   def destroy

@@ -10,8 +10,8 @@
  *
  *= require_self
  *= require_main
- *= require foundation_and_overrides
  *= require custom
  */
 
- 
+@import 'foundation';
+@import 'foundation-icons';

@@ -59,7 +59,6 @@ class ItemsController < ApplicationController
     @map_lat = lat_lng["lat"]
     @map_lng = lat_lng["lng"]
 
-
     @locations = []
 
     address_tmp = "#{@items.first.sale.address}, Brooklyn, New York"
@@ -73,6 +72,4 @@ class ItemsController < ApplicationController
     render :search_result
 
   end
-
-
 end

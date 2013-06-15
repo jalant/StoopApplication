@@ -8,11 +8,11 @@ n1, n2, n3, n4, n5, n6 = ['Brooklyn Heights', 'Red Hook', 'Williamsburg', 'Carro
 	Neighborhood.create(name: name)
 end
 
-u1 = User.create(username: 'Tanay', password: 'Tanay', email: 'tanay@stoopid.com', admin: true)
-u2 = User.create(username: 'David', password: 'David', email: 'david@stoopid.com')
-u3 = User.create(username: 'Jamie', password: 'Jamie', email: 'jamie@stoopid.com')
-u4 = User.create(username: 'Mike', password: 'Mike', email: 'mike@stoopid.com')
-u5 = User.create(username: 'Ryan', password: 'Ryan', email: 'ryan@stoopid.com')
+u1 = User.create(username: 'Tanay', password: 'pass123', email: 'tanay@stoopid.com', admin: true)
+u2 = User.create(username: 'David', password: 'pass123', email: 'david@stoopid.com')
+u3 = User.create(username: 'Jamie', password: 'pass123', email: 'jamie@stoopid.com')
+u4 = User.create(username: 'Mike', password: 'pass123', email: 'mike@stoopid.com')
+u5 = User.create(username: 'Ryan', password: 'pass123', email: 'ryan@stoopid.com')
 
 
 

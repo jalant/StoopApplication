@@ -58,6 +58,9 @@ GEM
     erubis (2.7.0)
     execjs (1.4.0)
       multi_json (~> 1.0)
+    foundation-icons-sass-rails (2.0.0)
+      railties (>= 3.1.1)
+      sass-rails (>= 3.1.1)
     geocoder (1.1.8)
     haml (4.0.3)
       tilt
@@ -157,6 +160,7 @@ DEPENDENCIES
   better_errors
   binding_of_caller
   coffee-rails (~> 3.2.1)
+  foundation-icons-sass-rails
   geocoder
   haml
   httparty

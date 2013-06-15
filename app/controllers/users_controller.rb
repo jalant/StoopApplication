@@ -5,7 +5,7 @@ class UsersController < ApplicationController
 	end 
 
 	def new
-		@user = User.new()
+		@user = User.new
 		#render :new
 	end 
 
@@ -18,7 +18,6 @@ class UsersController < ApplicationController
 				render :new
 			end
 		#render :create
-
 	end
 
 	def edit

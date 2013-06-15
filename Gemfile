@@ -21,7 +21,7 @@ group :assets do
   gem 'zurb-foundation', '~> 4.0.0'
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   # gem 'therubyracer', :platforms => :ruby
-
+  gem 'foundation-icons-sass-rails'
   gem 'uglifier', '>= 1.0.3'
 end
 
