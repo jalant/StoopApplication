@@ -1,9 +1,9 @@
+<% if @items.any? %>
 <%= @items.first.sale.title %>
 <%= @items.first.sale.date %>
 <%= @items.first.sale.address %>
 <%= @items.first.sale.city %>
 <%= @items.first.sale.user.neighborhood.name %>
-
 
 <script src="http://maps.google.com/maps/api/js?key=AIzaSyAWySaUYYlEwvq3KquSOJmFpPwrnLItW4Y&sensor=false" 
           type="text/javascript"></script>
@@ -15,6 +15,7 @@
     <% @locations.each do |location| %>
       locations.push(["<%= location[0] %>", "<%= location[1] %>",<%= location[2] %>, <%= location[3] %>, "<%= location[4] %>"]);
     <% end %>
+   
 
     var map = new google.maps.Map(document.getElementById('map'), {
       zoom: 18,
@@ -41,4 +42,10 @@
     }
   </script>
 
+
+
+
+<% else %>
+No result!
+<% end %>
 

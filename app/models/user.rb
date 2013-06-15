@@ -7,7 +7,9 @@ class User < ActiveRecord::Base
 
 	validates :email, presence: true, uniqueness: true
   validates :username, presence: true
-  validates :password, presence: true, :length => { :in => 6..20 }
+  validates :password, presence: true, :length => { :in => 4..20 }
+
+ 
 end
 
 

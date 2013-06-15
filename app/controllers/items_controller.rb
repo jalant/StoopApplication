@@ -2,7 +2,7 @@ class ItemsController < ApplicationController
 
   def index
     @items = Item.all
-    @tmp_arr 
+
     #render :index
   end
 
@@ -56,27 +56,23 @@ class ItemsController < ApplicationController
     @neighborhoods = Neighborhood.all
     @users = User.all
 
-    if @items != []
-    maps = Geocoder.search("#{@items.first.sale.address}, Brooklyn, New York")
-    lat_lng = maps.first.data["geometry"]['location']
-    @map_lat = lat_lng["lat"]
-    @map_lng = lat_lng["lng"]
 
-    @locations = []
+    if @items.any?
+      maps = Geocoder.search("#{@items.first.sale.address}, Brooklyn, New York")
+      lat_lng = maps.first.data["geometry"]['location']
+      @map_lat = lat_lng["lat"]
+      @map_lng = lat_lng["lng"]
 
-    address_tmp = "#{@items.first.sale.address}, Brooklyn, New York"
-    @marker = Geocoder.search(address_tmp)
-    mark_lat = @marker.first.data["geometry"]['location']['lat']
-    mark_lng = @marker.first.data["geometry"]['location']['lng']
-    tmp_url = "sales/#{@items.first.sale.id}"
-    @locations << [@items.first.sale.title, @items.first.sale.address, mark_lat, mark_lng, @items.first.sale.date, tmp_url]
+      @locations = []
 
-     render :search_result
- 		else
- 		
- 			redirect_to items_path
-  	end 
-   
+      address_tmp = "#{@items.first.sale.address}, Brooklyn, New York"
+      @marker = Geocoder.search(address_tmp)
+      mark_lat = @marker.first.data["geometry"]['location']['lat']
+      mark_lng = @marker.first.data["geometry"]['location']['lng']
+      tmp_url = "sales/#{@items.first.sale.id}"
+      @locations << [@items.first.sale.title, @items.first.sale.address, mark_lat, mark_lng, @items.first.sale.date, tmp_url]
+    end
+    render :search_result
 
   end
 
