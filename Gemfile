@@ -22,7 +22,7 @@ group :assets do
   gem 'foundation-icons-sass-rails'
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   # gem 'therubyracer', :platforms => :ruby
-
+  gem 'foundation-icons-sass-rails'
   gem 'uglifier', '>= 1.0.3'
 end
 

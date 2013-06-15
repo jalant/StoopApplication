@@ -75,6 +75,4 @@ class ItemsController < ApplicationController
     render :search_result
 
   end
-
-
 end

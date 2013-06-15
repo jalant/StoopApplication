@@ -4,6 +4,9 @@
   - if current_user 
     %li
       = link_to 'Create a new Sale', new_sale_path
+    -if current_user.admin?
+      %li
+        = link_to 'All Users', users_path
   - if current_user && current_user.sales != [] 
     %li
       = link_to 'Show my Sale', sale_path(current_user.sales.first)
