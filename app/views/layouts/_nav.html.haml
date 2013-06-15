@@ -1,6 +1,13 @@
 %ul
   %li
     = link_to 'Stoop Sales', sales_path
+  %li  
+    = form_tag search_items_path, method: :get do
+
+      = label_tag 'Find an item' 
+      = text_field_tag :query 
+      = submit_tag 'search' 
+    
   - if current_user 
     %li
       = link_to 'Create a new Sale', new_sale_path
@@ -19,6 +26,7 @@
   - if current_user && current_user.admin?
     %li 
       = link_to 'Users', users_path  
+
 %ul
   - @neighborhoods = Neighborhood.all
   - @neighborhoods.each do |neighborhood|

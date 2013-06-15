@@ -18,12 +18,12 @@ u5 = User.create(username: 'Ryan', password: 'pass123', email: 'ryan@stoopid.com
 
 
 
-s1 = Sale.create(title: 'Brooklyn Heights Sale', address: '28 Old Fulton Street', city: 'Brooklyn', date:'June 6', time: '4pm')
-s2 = Sale.create(title: 'Red Hook Sale', address: '391 Van Brunt Street', city: 'Brooklyn', date:'June 7', time: '3pm')
-s3 = Sale.create(title: 'Williamsburg Sale', address: '170 Bedford Avenue', city: 'Brooklyn', date:'June 8', time: '2pm')
-s4 = Sale.create(title: 'Carroll Gardens Sale', address: '400 Degraw Street', city: 'Brooklyn', date:'June 9', time: '1pm')
-s5 = Sale.create(title: 'Greenpoint Sale', address: '700 Manhattan Avenue', city: 'Brooklyn', date:'June 4', time: '12pm')
-s6 = Sale.create(title: 'Fort Greene Sale', address: '642 address street', city: 'Brooklyn', date:'June 5', time: '1:30pm')
+s1 = Sale.create(title: 'Brooklyn Heights Sale', address: '28 Old Fulton Street', city: 'Brooklyn', date:'2013-1-10', time: '4pm')
+s2 = Sale.create(title: 'Red Hook Sale', address: '391 Van Brunt Street', city: 'Brooklyn', date:'2013-2-12', time: '3pm')
+s3 = Sale.create(title: 'Williamsburg Sale', address: '170 Bedford Avenue', city: 'Brooklyn', date:'2013-9-1', time: '2pm')
+s4 = Sale.create(title: 'Carroll Gardens Sale', address: '400 Degraw Street', city: 'Brooklyn', date:'2013-10-5', time: '1pm')
+s5 = Sale.create(title: 'Greenpoint Sale', address: '700 Manhattan Avenue', city: 'Brooklyn', date:'2013-11-11', time: '12pm')
+s6 = Sale.create(title: 'Fort Greene Sale', address: '642 address street', city: 'Brooklyn', date:'2013-12-15', time: '1:30pm')
 
 
 i1 = Item.create(name: 'television', price: 200, description: '54 inch flat screen')

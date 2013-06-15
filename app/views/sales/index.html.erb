@@ -38,6 +38,7 @@
 <div class="teaser">
 all sales 
 <% @sales.each do |sale| %>
+<% if sale.date.to_date > Date.today %>
 <div>
     <p> Name: <%= link_to sale.title, sale_path(sale) %> </p>
     <br>
@@ -49,10 +50,11 @@ all sales
     <br>
     <p> Time: <%= sale.time %></p>
     <br>
-    <% if current_user.sales.include?(sale) %>
+    <% if current_user && current_user.sales.include?(sale) %>
     <%= button_to 'EDIT', edit_sale_path(sale), method: 'get', :class => 'btn btn-success'%> 
     <%= button_to 'DELETE', sale_path(sale), method: 'delete', :class => 'btn btn-danger' %> 
     <% end %>
+   <% end %>
 </div> 
   <% end %>
 </div>
