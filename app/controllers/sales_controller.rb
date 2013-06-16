@@ -29,7 +29,7 @@ class SalesController < ApplicationController
     @sale = Sale.new(params[:sale])
     params[:sale]["items_attributes"].each do |item|
       unless item[1]['name'].empty?
-      tmp_item = Item.create(name: item[1]['name'], price: item[1]['price'], description: item[1]['description'])
+      tmp_item = Item.create(name: item[1]['name'], price: item[1]['price'], description: item[1]['description'], image: item[1]['image'])
       @sale.items << tmp_item
     end
     end
@@ -38,7 +38,7 @@ class SalesController < ApplicationController
     if @sale.save
       redirect_to sales_path
     else
-      10.times{@sale.items.build}
+      12.times{@sale.items.build}
       render :new
 
     end
@@ -47,7 +47,7 @@ class SalesController < ApplicationController
 
   def new
     @sale = Sale.new
-    10.times{@sale.items.build}
+    12.times{@sale.items.build}
     #render :new
   end
 

@@ -32,12 +32,12 @@ s5 = Sale.create(title: 'Greenpoint Sale', address: '700 Manhattan Avenue', city
 s6 = Sale.create(title: 'Fort Greene Sale', address: '121 Dekalb Avenue', city: 'Brooklyn', date:'2013-12-15', time: '1:30pm')
 
 
-i1 = Item.create(name: 'television', price: 200, description: '54 inch flat screen')
-i2 = Item.create(name: 'carpet', price: 30, description: 'Arabian and perfectly clean')
-i3 = Item.create(name: 'dvds', price: 100, description: 'The entire James Bond Collection in Blue Ray')
-i4 = Item.create(name: 'shoes', price: 20, description: 'Size 8 Adidas Sneakers')
-i5 = Item.create(name: 'baseball cards', price: 10, description: 'Best in the business')
-i6 = Item.create(name: 'sunglasses', price: 50, description: '2 year old Oakleys')
+i1 = Item.create(name: 'television', price: 200, description: '54 inch flat screen', image: 'http://www.televisions.com/Images/Reviews/Televisions/2010/R1139/1240/sam_tv_ue46c7700_front.jpg')
+i2 = Item.create(name: 'carpet', price: 30, description: 'Arabian and perfectly clean', image: 'http://persia.org/Images/Persian_Carpet/link/pic81.jpg' )
+i3 = Item.create(name: 'dvds', price: 100, description: 'The entire James Bond Collection in Blue Ray', image: 'http://images.buydvdau.com/upload/relatedImgs/relatedImgs_2013-02-19-12-13-55_2.jpg')
+i4 = Item.create(name: 'shoes', price: 20, description: 'Size 8 Adidas Sneakers', image: 'http://www.sneakerfiles.com/wp-content/uploads/2008/04/whiteblacksuperstarii.jpg' )
+i5 = Item.create(name: 'baseball cards', price: 10, description: 'Best in the business', image: 'http://1.bp.blogspot.com/_nvDWp8u1GAM/TKYAaqniquI/AAAAAAAAAkY/BCS3AatwAWw/s1600/87_moyer.jpg' )
+i6 = Item.create(name: 'sunglasses', price: 50, description: '2 year old Oakleys', image: 'http://calgolfnews.com/wp-content/uploads/2012/06/Oakley-Sunglasses1.png' )
 
 n1.users << u1
 n2.users << u2
