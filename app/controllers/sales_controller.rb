@@ -69,7 +69,7 @@ class SalesController < ApplicationController
 
     @users = User.all
 
-    maps = Geocoder.search("#{@sale.address},Brooklyn, New York", :timeout => 10)
+    maps = Geocoder.search("#{@sale.address},Brooklyn, New York")
     lat_lng = maps.first.data["geometry"]['location']
     @map_lat = lat_lng["lat"]
     @map_lng = lat_lng["lng"]
