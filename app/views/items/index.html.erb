@@ -13,8 +13,9 @@
 <h1> The searched item is not being sold </h1>
 <% end %>
 
- <% @items.each do |item| %>
+
 <div>
+	 <% @items.each do |item| %>
 		<p> Name: <%= link_to item.name, item_path(item) %> </p>
 		<br>
 		<p> Price: <%= number_to_currency(item.price) %> </p>
@@ -24,10 +25,9 @@
 
 		<br>
 		<br>
-
+		<% if current_user && current_user.sales.include?(sale) %>
 		<%= button_to 'EDIT', edit_item_path(item), method: 'get', :class => 'btn btn-success'%> 
 		<%= button_to 'DELETE', item_path(item), method: 'delete', :class => 'btn btn-danger' %> 
-
+<% end %>
 </div> 
-	<% end %>
 

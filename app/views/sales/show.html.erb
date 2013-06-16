@@ -21,10 +21,12 @@
 		<p> Price: <%= number_to_currency(item.price) %> </p>
 		<p>Description: <%= item.description %></p>
 </div>
-	<% end %>
+	
+    <% if current_user && current_user.sales.include?(sale) %>
 		<%= button_to 'EDIT', edit_sale_path(@sale), method: 'get', :class => 'btn btn-success'%> 
 		<%= button_to 'DELETE', sale_path(@sale), method: 'delete', :class => 'btn btn-danger' %> 
-
+    <% end %>
+    <% end %>
 </div> 
 
 <script src="http://maps.google.com/maps/api/js?key=AIzaSyAWySaUYYlEwvq3KquSOJmFpPwrnLItW4Y&sensor=false" 

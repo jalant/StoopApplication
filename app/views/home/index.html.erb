@@ -35,8 +35,9 @@
   </script>
 
 
-<% @sales.each do |sale| %>
+
 <div>
+  <% @sales.each do |sale| %>
     <h2>Name: <%= link_to sale.title, sale_path(sale) %> </h2>
     <br>
     <p> Address: <%= sale.address %> </p>
@@ -49,13 +50,15 @@
     <br>
 
     <br>
-    <br>
+    <br>  
 
+    <% if current_user && current_user.sales.include?(sale) %>
     <%= button_to 'EDIT', edit_sale_path(sale), method: 'get', :class => 'btn btn-success'%> 
     <%= button_to 'DELETE', sale_path(sale), method: 'delete', :class => 'btn btn-danger' %> 
-
+<% end %>
+ <% end %>
 </div> 
-  <% end %>
+ 
 
 
 

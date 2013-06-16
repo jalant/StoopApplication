@@ -34,8 +34,10 @@
     }
   </script>
 
-<% @neighborhood.sales.each do |sale| %>
+
 <div class="single-sale">
+  <% unless @neighborhood.sales.empty? %>
+  <% @neighborhood.sales.each do |sale| %>
 		<h1>Name: <%= link_to sale.title, sale_path(sale) %> </h1>
 		<br>
 		<p> Address: <%= sale.address %> </p>
@@ -49,9 +51,12 @@
 
 		<br>
 		<br>
-
+    <% if current_user && current_user.sales.include?(sale) %>
 		<%= button_to 'EDIT', edit_sale_path(sale), method: 'get', :class => 'btn btn-success'%> 
 		<%= button_to 'DELETE', sale_path(sale), method: 'delete', :class => 'btn btn-danger' %> 
-
-</div> 
+    <% end %>
 	<% end %>
+  <% else %>
+    <h1> No sales in this neighborhood, check back later! </h1>
+  <% end %>
+  </div> 
