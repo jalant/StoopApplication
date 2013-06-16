@@ -58,7 +58,7 @@ class ItemsController < ApplicationController
 
 
     if @items.any?
-      maps = Geocoder.search("#{@items.first.sale.address}, Brooklyn, New York", :timeout => 10)
+      maps = Geocoder.search("#{@items.first.sale.address}, Brooklyn, New York")
       lat_lng = maps.first.data["geometry"]['location']
       @map_lat = lat_lng["lat"]
       @map_lng = lat_lng["lng"]
@@ -66,7 +66,7 @@ class ItemsController < ApplicationController
       @locations = []
 
       address_tmp = "#{@items.first.sale.address}, Brooklyn, New York"
-      @marker = Geocoder.search(address_tmp, :timeout => 10)
+      @marker = Geocoder.search(address_tmp)
       mark_lat = @marker.first.data["geometry"]['location']['lat']
       mark_lng = @marker.first.data["geometry"]['location']['lng']
       tmp_url = "sales/#{@items.first.sale.id}"
