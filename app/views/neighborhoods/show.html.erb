@@ -51,7 +51,7 @@
 
 		<br>
 		<br>
-    <% if current_user && current_user.sales.include?(sale) %>
+    <% if current_user && current_user.sales.include?(sale) && current_user.sales != [] %>
 		<%= button_to 'EDIT', edit_sale_path(sale), method: 'get', :class => 'btn btn-success'%> 
 		<%= button_to 'DELETE', sale_path(sale), method: 'delete', :class => 'btn btn-danger' %> 
     <% end %>
