@@ -87,7 +87,11 @@ class SalesController < ApplicationController
   end
 
   def destroy
-    Sale.find(params[:id]).delete
+  sale = Sale.find(params[:id])  
+  sale.items.each do |item|
+    item.delete
+  end
+    sale.delete
     redirect_to sales_path
     #render :destroy
   end
