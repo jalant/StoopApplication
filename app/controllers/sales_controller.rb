@@ -26,19 +26,21 @@ class SalesController < ApplicationController
   end
 
   def create
-    sale = Sale.create(params[:sale])
+    @sale = Sale.new(params[:sale])
     params[:sale]["items_attributes"].each do |item|
       unless item[1]['name'].empty?
       tmp_item = Item.create(name: item[1]['name'], price: item[1]['price'], description: item[1]['description'])
-      sale.items << tmp_item
+      @sale.items << tmp_item
     end
     end
-    sale.date = "#{params[:date][:year]}-#{params[:date][:month]}-#{params[:date][:day]}"
-    current_user.sales << sale
-    if sale.save!
+    @sale.date = "#{params[:date][:year]}-#{params[:date][:month]}-#{params[:date][:day]}"
+    current_user.sales << @sale
+    if @sale.save
       redirect_to sales_path
     else
-      redirect_to new_sale_path
+      10.times{@sale.items.build}
+      render :new
+
     end
     #render :create
   end
