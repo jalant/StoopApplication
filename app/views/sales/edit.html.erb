@@ -1,42 +1,79 @@
-<h1> Edit Stoop Sale </h1>
+<div class="row">
+    <div class="large-12 columns">
 
-<h1> Please update your stoop sale. </h1>
+      <div class="row">
 
-<%= form_for @sale do |f| %> 
-<div>
-	<%= f.label 'Title: ' %> 
-	<%= f.text_field :title %>
-	<br> 
-	<%= f.label :Address %> 
-	<%= f.text_field :address %>
+  <!-- Side Bar -->
+    <%= form_for @sale do |f| %> 
+        <div class="large-4 small-12 columns">
 
-	<br>
-	<%= f.label :city %> 
-	<%= f.text_field :city %>
+          <img src="http://placehold.it/500x500&text=Logo">
 
-	<br>
+          <%= f.label 'Title: ' %> 
+          <%= f.text_field :title %>
+          <br> 
+          <%= f.label :Address %> 
+          <%= f.text_field :address %>
 
-	<%= f.label :date %> 
-	<%= f.text_field :date %>
+          <br>
+          <%= f.label :city %> 
+          <%= f.text_field :city %>
 
-	<br>
+          <br>
 
-	<%= f.label :time %> 
-	<%= f.text_field :time %>
+          <%= f.label :date %> 
+          <%= select_date Date.today, { :order => [:month, :day, :year], :start_year => Date.today.year, :end_year => Date.today.year + 3 } %>
+          <br>
+          <%= f.label :time %> 
+          <%= f.text_field :time %>
 
-	<br>
+          <br>
 
-<h2> Items </h2>
-	<% @sale.items.each do |item| %>
+        </div>
 
-	<div>
-		<%= item.name %>
-		<%= item.price %>
-		<%= button_to 'Edit',  edit_item_path(item), method: :get %>
-		<%= button_to 'Delete', item_path(item), method: :delete %>
+    <!-- End Side Bar -->
 
-  <% end %>	
-	<%= f.submit %>
 
-</div> 
-<% end %>
+    <!-- Thumbnails -->
+
+        <div class="large-8 columns">
+          <div class="row">
+
+          	<h2> Items </h2>
+ 						<%= f.fields_for :items do |builder| %>
+
+             <div class="large-4 small-6 columns">
+              <img src="http://placehold.it/500x500&text=Thumbnail">
+
+              <div class="panel">
+                <h5>Item Name</h5>
+                <%= builder.text_field :name %>
+
+                <h5>Price</h5>
+                <%= builder.number_field :price%>
+
+                <h5>Description</h5>
+                <%= builder.text_area :description%>
+
+                 <h5>Image URL</h5>
+                <%= builder.text_field :image %>
+              </div>
+            </div>
+
+         	 <% end %> 
+          
+    <!-- End Thumbnails -->
+
+
+          </div>
+        </div>
+      </div>
+
+
+ 
+  <%= f.submit %>
+   <% end %> 
+    
+
+    </div>
+  </div>

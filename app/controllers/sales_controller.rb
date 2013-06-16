@@ -14,7 +14,7 @@ class SalesController < ApplicationController
 
     @sales.each do |sale|
       if sale.date.to_date > Date.today
-        
+
         address_tmp = "#{sale.address}, Brooklyn, New York"
         @marker = Geocoder.search(address_tmp)
         mark_lat = @marker.first.data["geometry"]['location']['lat']
@@ -29,9 +29,9 @@ class SalesController < ApplicationController
     @sale = Sale.new(params[:sale])
     params[:sale]["items_attributes"].each do |item|
       unless item[1]['name'].empty?
-      tmp_item = Item.create(name: item[1]['name'], price: item[1]['price'], description: item[1]['description'], image: item[1]['image'])
-      @sale.items << tmp_item
-    end
+        tmp_item = Item.create(name: item[1]['name'], price: item[1]['price'], description: item[1]['description'], image: item[1]['image'])
+        @sale.items << tmp_item
+      end
     end
     @sale.date = "#{params[:date][:year]}-#{params[:date][:month]}-#{params[:date][:day]}"
     current_user.sales << @sale
@@ -53,12 +53,23 @@ class SalesController < ApplicationController
 
   def edit
     @sale = Sale.find(params[:id])
+    3.times{@sale.items.build}
     #render :edit
   end
 
   def update
-    sale = Sale.find(params[:id])
-    if sale.update_attributes(params['sale'])
+    @sale = Sale.find(params[:id])
+    @sale.items.each do |item|
+      item.delete
+    end
+    params[:sale]["items_attributes"].each do |item|
+      unless item[1]['name'].empty?
+        tmp_item = Item.create(name: item[1]['name'], price: item[1]['price'], description: item[1]['description'], image: item[1]['image'])
+        @sale.items << tmp_item
+      end
+    end
+    @sale.date = "#{params[:date][:year]}-#{params[:date][:month]}-#{params[:date][:day]}"
+    if @sale.update_attributes(params['sale'])
       redirect_to sales_path
     else
       redirect_to new_sale_path
@@ -87,10 +98,10 @@ class SalesController < ApplicationController
   end
 
   def destroy
-  sale = Sale.find(params[:id])  
-  sale.items.each do |item|
-    item.delete
-  end
+    sale = Sale.find(params[:id])
+    sale.items.each do |item|
+      item.delete
+    end
     sale.delete
     redirect_to sales_path
     #render :destroy
