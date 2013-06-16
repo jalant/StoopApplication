@@ -14,15 +14,15 @@
 		<br>
 		<p> Neighborood: <%= @sale.user.neighborhood.name %> </p>
 		<br>
-		
-		<% @sale.items.each do |item| %>
+  </div>
 <div>
+		<% @sale.items.each do |item| %>
 		<p>Item:<%= item.name %></p>
 		<p> Price: <%= number_to_currency(item.price) %> </p>
 		<p>Description: <%= item.description %></p>
 </div>
-	
-    <% if current_user && current_user.sales.include?(sale) %>
+<div>
+    <% if current_user && current_user.sales != [] && current_user.sales.include?(@sale) %>
 		<%= button_to 'EDIT', edit_sale_path(@sale), method: 'get', :class => 'btn btn-success'%> 
 		<%= button_to 'DELETE', sale_path(@sale), method: 'delete', :class => 'btn btn-danger' %> 
     <% end %>

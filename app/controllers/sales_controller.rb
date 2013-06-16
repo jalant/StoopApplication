@@ -28,8 +28,10 @@ class SalesController < ApplicationController
   def create
     sale = Sale.create(params[:sale])
     params[:sale]["items_attributes"].each do |item|
-      tmp_item = Item.create(name: item[1]['name'], price: item[1]['price'].to_i, description: item[1]['description'])
+      unless item[1]['name'].empty?
+      tmp_item = Item.create(name: item[1]['name'], price: item[1]['price'], description: item[1]['description'])
       sale.items << tmp_item
+    end
     end
     sale.date = "#{params[:date][:year]}-#{params[:date][:month]}-#{params[:date][:day]}"
     current_user.sales << sale
