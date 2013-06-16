@@ -6,7 +6,7 @@
 	<br>
 	<p>  Description: <%= @item.description %></p>
 	<br>
-
+  <% if current_user && current_user.sales.include?(sale) %>
 	<%= button_to 'EDIT', edit_item_path(@item), method: 'get', :class => 'btn btn-success'%> 
 	<%= button_to 'DELETE', item_path(@item), method: 'delete', :class => 'btn btn-danger' %> 
 
