@@ -6,7 +6,7 @@ def index
     @neighborhoods = Neighborhood.all
     @users = User.all
 
-    maps = Geocoder.search("Brooklyn, New York", :timeout => 10)
+    maps = Geocoder.search("Brooklyn, New York")
     lat_lng = maps.first.data["geometry"]['location']
     @map_lat = lat_lng["lat"]
     @map_lng = lat_lng["lng"]
@@ -15,7 +15,7 @@ def index
 
     @sales.each do |sale|
         address_tmp = "#{sale.address}, #{sale.city}"
-        @marker = Geocoder.search(address_tmp, :timeout => 10)
+        @marker = Geocoder.search(address_tmp)
         mark_lat = @marker.first.data["geometry"]['location']['lat']
         mark_lng = @marker.first.data["geometry"]['location']['lng']
         @locations << [sale.title, sale.address, mark_lat, mark_lng, sale.date]

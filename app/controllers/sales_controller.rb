@@ -5,7 +5,7 @@ class SalesController < ApplicationController
     @neighborhoods = Neighborhood.all
     @users = User.all
 
-    maps = Geocoder.search("Brooklyn, New York", :timeout => 7)
+    maps = Geocoder.search("Brooklyn, New York")
     lat_lng = maps.first.data["geometry"]['location']
     @map_lat = lat_lng["lat"]
     @map_lng = lat_lng["lng"]
@@ -16,7 +16,7 @@ class SalesController < ApplicationController
       if sale.date.to_date > Date.today
         
         address_tmp = "#{sale.address}, Brooklyn, New York"
-        @marker = Geocoder.search(address_tmp, :timeout => 7)
+        @marker = Geocoder.search(address_tmp)
         mark_lat = @marker.first.data["geometry"]['location']['lat']
         mark_lng = @marker.first.data["geometry"]['location']['lng']
         tmp_url = "sales/#{sale.id}"
@@ -69,7 +69,7 @@ class SalesController < ApplicationController
 
     @users = User.all
 
-    maps = Geocoder.search("#{@sale.address},Brooklyn, New York", :timeout => 10)
+    maps = Geocoder.search("#{@sale.address},Brooklyn, New York")
     lat_lng = maps.first.data["geometry"]['location']
     @map_lat = lat_lng["lat"]
     @map_lng = lat_lng["lng"]
@@ -77,7 +77,7 @@ class SalesController < ApplicationController
     @locations = []
 
     address_tmp = "#{@sale.address}, #{@sale.city}"
-    @marker = Geocoder.search(address_tmp, :timeout => 10)
+    @marker = Geocoder.search(address_tmp)
     mark_lat = @marker.first.data["geometry"]['location']['lat']
     mark_lng = @marker.first.data["geometry"]['location']['lng']
     @locations << [@sale.title, mark_lat, mark_lng]
