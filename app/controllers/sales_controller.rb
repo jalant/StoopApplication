@@ -82,14 +82,14 @@ class SalesController < ApplicationController
 
     @users = User.all
 
-    maps = Geocoder.search("#{@sale.address},Brooklyn, New York")
+    maps = Geocoder.search("#{@sale.address}, Brooklyn, New York")
     lat_lng = maps.first.data["geometry"]['location']
     @map_lat = lat_lng["lat"]
     @map_lng = lat_lng["lng"]
 
     @locations = []
 
-    address_tmp = "#{@sale.address}, #{@sale.city}"
+    address_tmp = "#{@sale.address}, Brooklyn, New York"
     @marker = Geocoder.search(address_tmp)
     mark_lat = @marker.first.data["geometry"]['location']['lat']
     mark_lng = @marker.first.data["geometry"]['location']['lng']
