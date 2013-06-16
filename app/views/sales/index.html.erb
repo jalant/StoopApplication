@@ -38,7 +38,7 @@
 <div class="teaser">
 all sales 
 <% @sales.each do |sale| %>
-<% if sale.date.to_date > Date.today %>
+<% if sale.date.to_date >= Date.today %>
 <div>
     <p> Name: <%= link_to sale.title, sale_path(sale) %> </p>
     <br>

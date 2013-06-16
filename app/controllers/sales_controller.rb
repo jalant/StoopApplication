@@ -77,7 +77,7 @@ class SalesController < ApplicationController
     @locations = []
 
     address_tmp = "#{@sale.address}, #{@sale.city}"
-    @marker = Geocoder.search(address_tmp, :timeout => 10)
+    @marker = Geocoder.search(address_tmp)
     mark_lat = @marker.first.data["geometry"]['location']['lat']
     mark_lng = @marker.first.data["geometry"]['location']['lng']
     @locations << [@sale.title, mark_lat, mark_lng]
