@@ -1,5 +1,4 @@
-
-<h1 class='tanay'> Please fill in the respective details about your stoop sale. </h1>
+<h1 class='tanay'>Enter your sale info!</h1>
 
 <%= form_for @sale do |f| %> 
 <div>
@@ -16,7 +15,7 @@
 	<br>
 
 	<%= f.label :date %> 
-	<%= f.text_field :date %>
+	<%= select_date Date.today, { :order => [:month, :day, :year], :start_year => Date.today.year, :end_year => Date.today.year + 3 } %>
 
 	<br>
 

@@ -1,8 +1,16 @@
 <script src="http://maps.google.com/maps/api/js?key=AIzaSyAWySaUYYlEwvq3KquSOJmFpPwrnLItW4Y&sensor=false" type="text/javascript"></script>
  
+<section class="page-intro">
+ <header class="main"><h1>Broolyn Stoop Sales! You probably haven't heard of them </h1><strong>letterpress ad Godard art party, consectetur incididunt </h4>Austin Schlitz Vice fashion axe mumblecore hella. Nostrud officia authentic, DIY whatever qui laborum.</strong>
+  <figure> Skateboard mustache Wes Anderson you probably haven't heard of them, forage cliche 90's. </figure>
+  <p>Tousled Cosby sweater fingerstache, food truck culpa craft beer gluten-free aliqua. Forage laboris laborum fap ea, twee ethical mumblecore shabby chic chillwave readymade. Fugiat YOLO duis, beard quinoa sunt sriracha try-hard VHS mixtape salvia trust fund nostrud..</p>
+</header>
+
+</section>
+
 <div id="map" style="width: 500px; height: 400px;"></div>
 
-  <script type="text/javascript"> 
+<script type="text/javascript"> 
     var locations = [];
 
     <% @locations.each do |location| %>
@@ -32,7 +40,9 @@
         }
       })(marker, i));
     }
-  </script>
+</script>
+
+<div class="clear"></div>
 
 <div id="root" class="sales">
 
@@ -42,20 +52,24 @@
 
     <li class="block">
 
-      <%= link_to sale.title, sale_path(sale), :class => 'sale-title'%>
+        <%= link_to sale.title, sale_path(sale), :class => 'sale-title'%>
 
-    <ul class="meta">
-      <li><%= sale.address %></li>
-      <li><%= sale.city %><br/></li>
-      <li><%= sale.date %><br/></li>
-      <li><%= sale.time %><br/><li>
-    </ul>
+        <ul class="meta">
+          <li><%= sale.address %></li>
+          <li><%= sale.city %><br/></li>
+          <li><%= sale.date %><br/></li>
+          <li><%= sale.time %><br/><li>
+        </ul>
 
-      <%= link_to (image_tag('/assets/edit.png')), edit_sale_path(sale), method: 'get', :class => 'btn button' %> 
-      <%= link_to (image_tag('/assets/delete.png')), sale_path(sale), method: 'delete', :class => 'btn button' %>
+        <div class="edit-sale">
+          <%= link_to (image_tag('/assets/edit.png')), edit_sale_path(sale), method: 'get', :class => 'btn button' %> 
+          <%= link_to (image_tag('/assets/delete.png')), sale_path(sale), method: 'delete', :class => 'btn button' %>
+        </div>
     </li>
-  <% end %>
+
+    <% end %>
   </ul>
+
 
 </div>
 

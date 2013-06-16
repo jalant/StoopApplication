@@ -8,7 +8,7 @@
 <script type="text/javascript">
     var locations = [];
 
-    <% @locations.each do |location| %>
+    <% @locations.each onudo |location| %>
     locations.push(["<%= location[0] %>",<%= location[1] %>,<%= location[2] %>]);
     <% end %>
 
@@ -38,7 +38,6 @@
 
 <div class="neighborhood-sales">
 <ul class="small-block-grid-4">
-
 
 <% @neighborhood.sales.each do |sale| %>
   

@@ -15,3 +15,12 @@
 /tmp
 
 config/database.yml
+
+app/controllers/sales_controller.rb.BACKUP.18243.rb
+app/controllers/sales_controller.rb.BACKUP.18336.rb
+app/controllers/sales_controller.rb.BASE.18243.rb
+app/controllers/sales_controller.rb.BASE.18336.rb
+app/controllers/sales_controller.rb.LOCAL.18243.rb
+app/controllers/sales_controller.rb.LOCAL.18336.rb
+app/controllers/sales_controller.rb.REMOTE.18243.rb
+app/controllers/sales_controller.rb.REMOTE.18336.rb

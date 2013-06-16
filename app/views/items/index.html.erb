@@ -1,11 +1,23 @@
 
 <h1> Items </h1>
 
+<%= form_tag search_items_path, method: :get do %>
+
+	<%= label_tag :query %> 
+	<%= text_field_tag :query %> 
+	<%= submit_tag 'search' %> 
+	
+<% end %>
+
+<% if @tmp_arr == [] %>
+<h1> The searched item is not being sold </h1>
+<% end %>
+
  <% @items.each do |item| %>
 <div>
 		<p> Name: <%= link_to item.name, item_path(item) %> </p>
 		<br>
-		<p> Price: <%= item.price %> </p>
+		<p> Price: <%= number_to_currency(item.price) %> </p>
 		<br>
 		<p> Description: <%= item.description %></p>
 		<br>

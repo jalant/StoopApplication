@@ -1,19 +1,30 @@
 /* globals */
 
-h1,h2,h3,h4,h5,li, a {font-family: 'Lato', 'Arimo', 'Varela', 'Lato', Helvetica; font-weight: normal;}
-
+h1,h2,h3,h4,h5,li, a {font-family: 'Pathway Gothic One', 'Lato', 'Arimo', 'Varela', 'Lato', Helvetica; font-weight: normal;}
 
 ul {padding: 0; list-style:none;}
 
-a {text-decoration: none; color: red}
+a {text-decoration: none; color: #FFF; text-transform: uppercase;}
 /*containers*/
 
+.clear {clear:both; margin: 5px 0;}
 
-#wrapper {min-height: 600px; height: auto; max-width: 1240px; width: auto; min-width: 960px; margin: 0 auto; background: #e1e1e1; padding: 20px;}
+body {background: #fcfff4;  /* Old browsers */
+background: -moz-linear-gradient(45deg, #fcfff4 0%, #dfe5d7 40%, #b3bead 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left bottom, right top, color-stop(0%,#fcfff4), color-stop(40%,#dfe5d7), color-stop(100%,#b3bead)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(45deg, #fcfff4 0%,#dfe5d7 40%,#b3bead 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(45deg, #fcfff4 0%,#dfe5d7 40%,#b3bead 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(45deg, #fcfff4 0%,#dfe5d7 40%,#b3bead 100%); /* IE10+ */
+background: linear-gradient(45deg, #fcfff4 0%,#dfe5d7 40%,#b3bead 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fcfff4', endColorstr='#b3bead',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */}
+
+body {background: url('tree.jpg')no-repeat top left; background-size:cover;}
+
+#wrapper {min-height: 600px; height: auto; max-width: 1240px; width: auto; min-width: 960px; margin: 0 auto; background: rgba(255,255,255,.65); padding: 20px;}
 
 nav ul{height: auto;  width: auto; z-index:999; list-style:none; display: inline-block;}
 
-nav ul li { height: 100%; padding: 10px 0; background: #e1e1e1; display: inline-block;position: relative;}
+nav ul li { height: 100%; padding: 10px 0; display: inline-block; position: relative;}
 	
 	li.user-is {font-weight: bold; color: orange;}
 
@@ -21,43 +32,99 @@ footer {position: absolute; bottom:0; min-height: 10%; width: auto; background: 
 
 form.login {height: 400px; width: 360px; padding: 20px; margin: 0 auto; z-index: 9999; background: rgba(0,0,0,.5);}
 
-
 label {display: inline;}
 input {display: inline;}
 
-.button-group {background: #c2c2c2;}
-.button-group li {display: inline; width: auto;}
+.button-group {}
+.button-group li {display: inline; width: auto;margin:0; padding: 0;}
 .button-group li a {width: 100%;}
 
+.button-group.site-content {width: 100%; float: left;}
 
-a.button { background: rgba(31,159,255,.25);}
+a.button {height: 40px; width: 40px; background: rgba(31,159,255,.25);}
 a.button:hover {background: rgba(31,159,255,.5);}
 
-	.upper.public {background: 0;}
-	.upper.private {margin-top: 5px;}
+/*NAV*/
+nav {height: 100px;}
+	nav .upper-left {width: 70%; display: inline-block;}
+	nav .upper-right  {width: 25%; text-align: right;float: right; display: inline-block;}
 
-	.upper.public ul.site-content {max-width: 40%;}
-	.upper.public ul.user-options {max-width: 25%; float: right; text-align: right;position: relative;}
+nav form.search label {color: #FFF;}
 
-	.upper.public ul.site-content {}
-
-
-	.upper.private ul.site-content {max-width: 40%;}
-	.upper.private ul.user-options {max-width: 55%; text-align: right; float: right; text-align: right;}
-
-
-
+li form.search {background: orange; width: 300px; padding: 0 10px; display:inline;  position: relative; margin:0; padding: 0 20px; float: left}
 /* content */ 
 
+li form.search input#query {width: 150px; display:inline-block;}
+li form.search input.button {width: 50px; margin: 0; padding: 0;display: inline-block}
 
-#map {float: left; margin-right: 20px;  border: 1px solid lime; display: inline-block;}
+section.page-intro {}
+section.page-intro header.main {width: 50%; max-width: 600px; float: left;}
+section.page-intro header.main h1 {color: orange;}
+section.page-intro header figure {width: 150px; float: right; padding: 10px;color: #99ccff; background: rgba(255,255,255,.9);}
 
+/*MAP */
+#map {float: right; margin-right: 20px;  border: 1px solid lime; display: inline-block;}
 
 .login-status {float: right;}
 
+a {font-size: 1.75em; color: #2ba6cb;}
 
 
+/* SALES */
 
+#content {margin: 0 auto; height: 100%; min-width: 960px; overflow: scroll;background: black}
+
+#root.sales {padding: 10px;}
+
+#root.sales * .button {display: inline-block; float: left; width: auto; padding: 5px;}
+
+.small-block-grid-4 {height: auto}
+
+ul.small-block-grid-4 li ul {margin:0; padding:0}
+
+ul.small-block-grid-4 li.block {background: 0; min-height: 180px;  width: 180px; float: left; display: inline-block; text-align: left; margin:0; padding: 10px;}
+
+
+/* for both neighborhood single / and sales root views.*/
+ul.small-block-grid-4 li.block:nth-child(odd)  {background: #f7f7f7}
+ul.small-block-grid-4 li.block:nth-child(even) {background: #FFFF7E}
+
+ul.small-block-grid-4 li.block a.sale-title { height: 35%; width: 100%; color: #363636; background: yellow; color: #1f9fff; font-size: 1.35em; display: block; margin: auto; line-height: normal}
+
+ul.small-block-grid-4 li.block:nth-child(even) a.sale-title {background: #FFF;}
+ul.small-block-grid-4 li.block a:hover {opacity:.9}
+ul.small-block-grid-4 li.block form.button_to {display: inline; position: relative; margin: 0}
+
+ul.small-block-grid-4 li.block .edit-sale {display: block; float: right;height: auto; width: 100%;}
+ul.small-block-grid-4 li.block .edit-sale a {width: 30px; height: 30px;}
+ul.small-block-grid-4 * img {height: 20px; width: 20px; margin: auto;}
+
+
+/* NEIGHBORHOODS */
+#content {margin: 0 auto; height: 100%; min-width: 960px; overflow: scroll;background: black}
 	
+#root.neighborhood { padding: 10px; text-align:center;}
 
+ul.large-block-grid-4 li {background: #f7fbfc; /* Old browsers */
+background: -moz-linear-gradient(-45deg, #f7fbfc 0%, #d9edf2 40%, #add9e4 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, right bottom, color-stop(0%,#f7fbfc), color-stop(40%,#d9edf2), color-stop(100%,#add9e4)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(-45deg, #f7fbfc 0%,#d9edf2 40%,#add9e4 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(-45deg, #f7fbfc 0%,#d9edf2 40%,#add9e4 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(-45deg, #f7fbfc 0%,#d9edf2 40%,#add9e4 100%); /* IE10+ */
+background: linear-gradient(135deg, #f7fbfc 0%,#d9edf2 40%,#add9e4 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f7fbfc', endColorstr='#add9e4',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */; max-height: 250px; height: auto;  width: 25%; float: left; display: inline-block; padding: 10px;}
+
+
+
+ul.large-block-grid-4 li a img {height: 100%; float: left;  position: relative}
+ul.large-block-grid-4 li:nth-child(even) {background:#f1f1f1}
+ul.large-block-grid-4 li:nth-child(odd)  {background:#f9f9f9}
+ul.large-block-grid-4 li.block a {height: 100%; float: left; width: 100%; background: rgba(31,159,255,.25); color: #FFF; display: block; margin: auto}
+ul.large-block-grid-4 li.block a:hover {opacity:.9}
+li.block {padding:0}
+
+
+
+.neighborhood-sales {float: left; width: 50%}
+span.neighborhood-name {width: 100px; display: inline-block; background: rgba(31,159,255,.25); }
 

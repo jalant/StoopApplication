@@ -19,8 +19,6 @@
   = stylesheet_link_tag "application"
   = javascript_include_tag "vendor/custom.modernizr"
 
-  = javascript_include_tag 'http://fonts.googleapis.com/css?family=Lato|Arimo|Raleway:400,500|Varela+Round' rel='stylesheet' type='text/css'
-
   = csrf_meta_tag
 
 %body
@@ -28,9 +26,8 @@
   - if current_user 
     = current_user.username
     = link_to 'logout', logout_path
-  - end 
 
-  = render :partial => "layouts/nav2"
+  = render :partial => "layouts/nav"
 
   = yield
 

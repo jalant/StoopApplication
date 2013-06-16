@@ -1,6 +1,5 @@
 class HomeController < ApplicationController
 
-
 def index
     @sales = Sale.all
     @neighborhoods = Neighborhood.all
@@ -19,6 +18,7 @@ def index
         mark_lat = @marker.first.data["geometry"]['location']['lat']
         mark_lng = @marker.first.data["geometry"]['location']['lng']
         @locations << [sale.title, sale.address, mark_lat, mark_lng, sale.date]
+
     end
   end 
 end

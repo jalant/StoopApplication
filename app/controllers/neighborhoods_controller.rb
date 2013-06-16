@@ -61,7 +61,4 @@ end
     redirect_to neighborhoods_path
   end
 
-
-
-
 end

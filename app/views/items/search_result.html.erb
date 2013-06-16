@@ -1,0 +1,57 @@
+<% if @items.any? %>
+<%= @items.first.sale.title %>
+<%= @items.first.sale.date %>
+<%= @items.first.sale.address %>
+<%= @items.first.sale.city %>
+<%= @items.first.sale.user.neighborhood.name %>
+
+<script src="http://maps.google.com/maps/api/js?key=AIzaSyAWySaUYYlEwvq3KquSOJmFpPwrnLItW4Y&sensor=false" 
+          type="text/javascript"></script>
+  <div id="map" style="width: 500px; height: 400px;"></div>
+
+  <script type="text/javascript">
+    var locations = [];
+
+    <% @locations.each do |location| %>
+      locations.push(["<%= location[0] %>", "<%= location[1] %>",<%= location[2] %>, <%= location[3] %>, "<%= location[4] %>"]);
+    <% end %>
+   
+
+    var map = new google.maps.Map(document.getElementById('map'), {
+      zoom: 18,
+      center: new google.maps.LatLng(<%= @map_lat %>, <%= @map_lng %>),
+      mapTypeId: google.maps.MapTypeId.ROADMAP
+    });
+
+    var infowindow = new google.maps.InfoWindow();
+
+    var marker, i;
+
+    for (i = 0; i < locations.length; i++) {  
+      marker = new google.maps.Marker({
+        position: new google.maps.LatLng(locations[i][2], locations[i][3]),
+        map: map
+      });
+
+      google.maps.event.addListener(marker, 'click', (function(marker, i) {
+        return function() {
+          infowindow.setContent( locations[i][0] +  " <br/> Address: " + locations[i][1] + " <br/> Date: " + locations[i][4]);
+          infowindow.open(map, marker);
+        }
+      })(marker, i));
+    }
+  </script>
+<div>
+<% @items.first.sale.items.each do |item| %>
+
+    <p>Item:<%= item.name %></p>
+    <p> Price: <%= number_to_currency(item.price) %> </p>
+    <p>Description: <%= item.description %></p>
+<% end %>
+</div>
+
+
+<% else %>
+No result!
+<% end %>
+

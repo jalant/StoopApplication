@@ -1,76 +1,73 @@
-
-<!-- if logged in-->
-
-<% if current_user %>
-
-	<nav class="upper private">
-
-			<ul class="button-group site-content">
-				<li><%= link_to 'Home', root_path, :class => 'button'  %> </li>
-				<li><%= link_to 'See Sales', sales_path, :class => 'button'  %> </li>
-				<li><%= link_to 'Search by Hood', neighborhoods_path, :class => 'button'  %> </li>
-			</ul>
-
-			<ul class="button-group user-options">
-
-
-				<!-- manage sales-->
-				<li><%= link_to 'Sales', new_sale_path,:class => 'button', :'data-dropdown' => "drop1"  %>
-						<ul id="drop1" class="f-dropdown" data-dropdown-content>
- 								
- 							
-							<% if current_user && current_user.sales != [] %>
- 							<li><%= link_to 'Show My Sale', sale_path(current_user.sales.first), :class => 'button'  %><% end %> </li>
- 							<%else%>
- 							<li><%= link_to 'Create a New Sale', new_sale_path,:class => 'button'  %> </li>
- 							<%end%>
-						</ul>
-				</li>
-			
-
-				<!-- manage items.... -->
-				<li><%= link_to 'My Items', items_path, :class => 'button'  %> </li>
-				<li><%= link_to 'New Item', new_item_path,:class => 'button'  %> </li>
-
-				<!-- manage profile -->
-				<li><%= link_to 'My Profile', '/', :class => 'button', :'data-dropdown' => "drop2" %>
-
-						<ul id="drop2" class="f-dropdown" data-dropdown-content>
- 								
-								<li><%= link_to 'Edit', logout_path, :class => 'button'  %> </li>
-								<li><%= link_to 'Logout', logout_path, :class => 'button'  %> </li>
-
-						</ul>
-
-				</li>
+<!---ALL USERS -->
+<nav class="upper">
 	
-			</ul>
+	<div class="upper-left">
 
-	</nav>
+	<!--group 1-->
+	<ul class="button-group site-content">
+		<li><%= link_to 'Home', root_path, :class => 'button'  %> </li>
+		<li><%= link_to 'Stoop Sales', sales_path, :class => 'button'  %> </li>
+		<li><%= link_to 'Search by Hood', neighborhoods_path, :class => 'button'  %> </li>
+		<li><%= form_tag search_items_path, :class => 'search', method: :get do %>
+
+	      <%= label_tag 'Find an item' %>
+  	    <%= text_field_tag :query %>
+    	  <%= submit_tag 'search', :class => 'button' %>
+    	  <%end%>
+		</li>			
+	</ul>
 
 
+	<% if current_user %>
 
-<% unless current_user %>
+	<!-- group 2-->
+	<ul class="button-group user-options">
+		<!-- create a sale -->
+		<li><%= link_to 'Create a New Sale', new_sale_path, :class => 'button' %></li>
+		<!-- edit account or logout -->
+    <li><%= link_to 'My Profile', '/', :class => 'button', :'data-dropdown' => "drop1" %>
+        <ul id="drop1" class="f-dropdown" data-dropdown-content>
+          <li><%#= link_to 'Edit', edit user path%></li>
+          <li><%= link_to 'Logout', logout_path, :class => 'button' %></li>
+        </ul>
+    		</li>
 
-	<nav class="upper public">
-	<!-- public -->
+ 		<!-- IF CURRENT USER is ADMIN, SHOW ALL USERS -->  	
+   	<% if current_user.admin? %>
+    <li><%= link_to 'All Users', users_path, :class => 'button' %></li>
+  	<%end%>
+		<!-- IF CURRENT USER is having a SALE -->  	
+   	<% if current_user && current_user.sales != []  %>
+    <li><%= link_to 'Show my Sale', sale_path(current_user.sales.first), :class => 'button'%> </li>
+  	<%end %>
+  
+  <% end %>
 
-		<ul class="button-group site-content">
-			
-			<li><%= link_to 'Home', root_path, :class => 'button' %> </li>
-			<li><%= link_to 'See sales',sales_path,:class => 'button' %> </li>
-			<li><%= link_to 'Search by Hood!', neighborhoods_path, :class => 'button' %> </li>
-			
-		</ul>
+	</ul>
+				<!-- manage items.... -->
+				<!--<li><%#= link_to 'My Items', items_path, :class => 'button'  %> </li>
+				<li><%#= link_to 'New Item', new_item_path,:class => 'button'  %> </li>
+				-->
+</div>
+
+<!-- UNLESS CURRENT USER.... -->
+	<% unless current_user %>
+		
+	<div class="upper-right">
 
 		<ul class="button-group user-options">
 			<li><%= link_to 'Log In', sessions_new_path, :class => 'button' %> </li>
 			<li><%= link_to 'Sign Up!', new_user_path, :class => 'button' %> </li>
+
+<!-- IF CURRENT USER and ADMIN... -->
+			<% if current_user && current_user.admin? %>
+			<li><%= link_to 'Users', users_path, :class => 'button' %></li>
+			<%else%>
+			<%end%>
 		</ul>
 
-	</nav>
+	</div>
 
 <% end %>
 
-
-
+</nav>

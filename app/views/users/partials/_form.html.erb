@@ -8,6 +8,7 @@
 	<%= f.label 'Password' %> 
 	<%= f.password_field :password %>
 	<br>
+	<%= f.label 'Your Neighborhood: '%>
 	<%= f.select :neighborhood_id, Neighborhood.all.map{ |neighborhood| [neighborhood.name,neighborhood.id] }%>
 	<%= f.submit %>
 </div> 

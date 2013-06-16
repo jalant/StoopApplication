@@ -1,30 +1,26 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>StoopApplication</title>
+  <title>Stoopendous!</title>
   <%= stylesheet_link_tag "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
-  <link href='http://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
+
   <%= csrf_meta_tags %>
 
 
-		<script src="http://maps.google.com/maps/api/js?key=AIzaSyAWySaUYYlEwvq3KquSOJmFpPwrnLItW4Y&sensor=false" type="text/javascript"></script>
-
+<link href='http://fonts.googleapis.com/css?family=Pathway+Gothic+One' rel='stylesheet' type='text/css'>
 
 
 </head>
-<body>
+<body>	
 <div id="wrapper">
 
-
 <% if current_user %> 
-<%= current_user.username %>
-<%= link_to 'logout', logout_path, :class => 'login-status'  %>
+	<%= current_user.username %>
+	<%= link_to 'logout', logout_path, :class => 'login-status', method: :delete %>
 <% end %>
 
-
-<%= render partial: 'layouts/nav' %>
-
+<%= render partial: 'layouts/nav2' %>
 
 <%= yield %>
 

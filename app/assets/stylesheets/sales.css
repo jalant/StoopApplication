@@ -1,0 +1,31 @@
+
+	#content {margin: 0 auto; height: 100%; min-width: 960px; overflow: scroll;background: black}
+		
+
+	#root.sales {padding: 10px;}
+
+
+	#root.sales * .button {display: inline-block; float: left; width: auto; padding: 5px;}
+
+
+
+	.small-block-grid-4 {height: auto; background: red}
+
+
+	ul.small-block-grid-4 li ul {margin: 5px; padding:0}
+
+	ul.small-block-grid-4 li.block {background: 0;  height: 200px;  width: 200px; float: left; display: inline-block; text-align: left; margin:0}
+
+
+	/* for both neighborhood single / and sales root views.*/
+	ul.small-block-grid-4 li.block:nth-child(even) {background: #ff5f5}
+	ul.small-block-grid-4 li.block:nth-child(odd)  {background: #f7f7f7}
+
+	ul.small-block-grid-4 li.block a.sale-title { height: 25%; width: 100%; color: #363636; background: yellow; color: #1f9fff; font-size: 1.35em; display: block; margin: auto; line-height: normal}
+
+	ul.small-block-grid-4 li.block a:hover {opacity:.9}
+
+	ul.small-block-grid-4 li.block form.button_to {height: 20px; width: 50px; display: inline; position: relative; margin: 0}
+
+
+	.small-block-grid-4 * img {height: 20px; width: 20px; }
