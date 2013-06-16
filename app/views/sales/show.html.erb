@@ -1,67 +1,117 @@
-<h1> Stoop Sale:  </h1>
 
-<div>
-	
-		<p> Name: <%= @sale.title %> </p>
-		<br>
-		<p> Address: <%= @sale.address %> </p>
-		<br>
-		<p> City: <%= @sale.city %></p>
-		<br>
-		<p> Date: <%= @sale.date %></p>
-		<br>
-		<p> Time: <%= @sale.time %></p>
-		<br>
-		<p> Neighborood: <%= @sale.user.neighborhood.name %> </p>
-		<br>
+<div class="row">
+  <div class="large-12 columns">
+
+    <div class="row">
+
+      <!-- Side Bar -->
+
+      <div class="large-4 small-12 columns">
+
+        <img src= "http://placehold.it/500x500&text=Logo">
+
+        <h5>Sale Title</h5>
+        <%= @sale.title %> 
+        <br> 
+        <h5>Address</h5>
+        <%= @sale.address %>
+
+        <br>
+        <h5>City</h5>
+        <%= @sale.city %>
+
+        <br>
+
+        <h5>Date</h5>
+        <%= @sale.date %>
+
+        <br>
+        <h5>Time</h5> 
+        <%= @sale.time %>
+        <br> 
+
+
+
+      </div>
+
+      <!-- End Side Bar -->
+
+
+      <!-- Thumbnails -->
+
+      <div class="large-8 columns">
+        <div class="row">
+
+          <h2> Items </h2>
+
+          <% @sale.items.each do |item| %>
+
+          <div class="large-4 small-6 columns">
+            <img src= <%=item.image %> >
+           
+
+            <div class="panel">
+              <h5>Item Name</h5>
+              <%= item.name %>
+
+              <h5>Price</h5>
+              <%= number_to_currency(item.price) %> 
+
+              <h5>Description</h5>
+              <%= item.description %>
+            </div>
+          </div>
+
+          <% end %> 
+        </div>
+      </div>
+    </div>
+
+      <!-- End Thumbnails -->
+      <div>
+        <% if current_user && current_user.sales != [] && current_user.sales.include?(@sale) %>
+        <%= button_to 'EDIT', edit_sale_path(@sale), method: 'get', :class => 'btn btn-success'%> 
+        <%= button_to 'DELETE', sale_path(@sale), method: 'delete', :class => 'btn btn-danger' %> 
+        <% end %>
+      </div>
+
+
   </div>
-<div>
-		<% @sale.items.each do |item| %>
-		<p>Item:<%= item.name %></p>
-		<p> Price: <%= number_to_currency(item.price) %> </p>
-		<p>Description: <%= item.description %></p>
 </div>
-<div>
-    <% if current_user && current_user.sales != [] && current_user.sales.include?(@sale) %>
-		<%= button_to 'EDIT', edit_sale_path(@sale), method: 'get', :class => 'btn btn-success'%> 
-		<%= button_to 'DELETE', sale_path(@sale), method: 'delete', :class => 'btn btn-danger' %> 
-    <% end %>
-    <% end %>
-</div> 
 
-<script src="http://maps.google.com/maps/api/js?key=AIzaSyAWySaUYYlEwvq3KquSOJmFpPwrnLItW4Y&sensor=false" 
-          type="text/javascript"></script>
-  <div id="map" style="width: 500px; height: 400px;"></div>
+      <script src="http://maps.google.com/maps/api/js?key=AIzaSyAWySaUYYlEwvq3KquSOJmFpPwrnLItW4Y&sensor=false" 
+      type="text/javascript"></script>
+      <div id="map" style="width: 500px; height: 400px;"></div>
 
-  <script type="text/javascript">
-    var locations = [];
+      <script type="text/javascript">
+      var locations = [];
 
-    <% @locations.each do |location| %>
-    locations.push(["<%= location[0] %>",<%= location[1] %>,<%= location[2] %>]);
-    <% end %>
+      <% @locations.each do |location| %>
+      locations.push(["<%= location[0] %>",<%= location[1] %>,<%= location[2] %>]);
+      <% end %>
 
-    var map = new google.maps.Map(document.getElementById('map'), {
-      zoom: 16,
-      center: new google.maps.LatLng(<%= @map_lat %>, <%= @map_lng %>),
-      mapTypeId: google.maps.MapTypeId.ROADMAP
-    });
-
-    var infowindow = new google.maps.InfoWindow();
-
-    var marker, i;
-
-    for (i = 0; i < locations.length; i++) {  
-      marker = new google.maps.Marker({
-        position: new google.maps.LatLng(locations[i][1], locations[i][2]),
-        map: map
+      var map = new google.maps.Map(document.getElementById('map'), {
+        zoom: 16,
+        center: new google.maps.LatLng(<%= @map_lat %>, <%= @map_lng %>),
+        mapTypeId: google.maps.MapTypeId.ROADMAP
       });
 
-      google.maps.event.addListener(marker, 'click', (function(marker, i) {
-        return function() {
-          infowindow.setContent(locations[i][0]);
-          infowindow.open(map, marker);
-        }
-      })(marker, i));
-    }
-  </script>
+      var infowindow = new google.maps.InfoWindow();
 
+      var marker, i;
+
+      for (i = 0; i < locations.length; i++) {  
+        marker = new google.maps.Marker({
+          position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+          map: map
+        });
+
+        google.maps.event.addListener(marker, 'click', (function(marker, i) {
+          return function() {
+            infowindow.setContent(locations[i][0]);
+            infowindow.open(map, marker);
+          }
+        })(marker, i));
+      }
+      </script>
+    
