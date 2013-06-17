@@ -15,6 +15,8 @@
 //= require foundation
 //= require_tree .
 
+
+
 $(document).foundation();
 
   function add_fields(link, association, content) {

@@ -40,6 +40,7 @@
 <div class="single-sale">
   <% unless @neighborhood.sales.empty? %>
   <% @neighborhood.sales.each do |sale| %>
+    <% if sale.date.to_date >= Date.today %>
     <h1>Name: <%= link_to sale.title, sale_path(sale) %> </h1>
     <br>
     <p> Address: <%= sale.address %> </p>
@@ -57,6 +58,7 @@
     <%= button_to 'DELETE', sale_path(sale), method: 'delete', :class => 'btn btn-danger' %> 
     <% end %>
   <% end %>
+   <% end %>
   <% else %>
     <h1> No sales in this neighborhood, check back later! </h1>
   <% end %>

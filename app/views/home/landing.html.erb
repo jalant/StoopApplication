@@ -1,148 +1,199 @@
 <div id="landing" class="pages">
 
+
+
 <div class="row">
-    <div class="large-12 columns">
+<div class="large-12 columns">
 
 
-      <!-- Header Content -->
- 
-        <div class="row">
- 
-          <div class="large-6 columns">
- 
-            <img src="http://style.mtv.com//wp-content/uploads/style/2012/05/girls-stoop-sale1.jpg"><br>
- 
-          </div>
- 
- 
-          <div class="large-6 columns">
- 
-            <h3 class="show-for-small">Header<hr/></h3>
- 
-            <div class="panel">
-              <h1 class="hide-for-small">Feeling Stoopendus?<hr/></h1>
-
- <h5 class="subheader">Fusce ullamcorper mauris in eros dignissim molestie posuere felis blandit. Aliquam erat volutpat. </h5>
-
-                <%= render partial: '/sessions/partials/form' %>
-
-
-
-            </div>
- 
-         <!--  <div class="row">
-              <div class="large-6 small-6 columns">
-                <div class="panel">
-                  <h5>Header</h5>
-                <h6 class="subheader">Praesent placerat dui tincidunt elit suscipit sed.</h6>
-                <a href="#" class="small button">BUTTON TIME!</a>
-                </div>
-              </div>
- 
-              <div class="large-6 small-6 columns">
-                <div class="panel">
-                  <h5>Header</h5>
-                <h6 class="subheader">Praesent placerat dui tincidunt elit suscipit sed.</h6>
-                <a href="#" class="small button">BUTTON TIME!</a>
-                </div>
-              </div>
-          </div> -->
- 
-          </div>
- 
-        </div>
- 
-      <!-- End Header Content -->
- 
- 
- 
-      <!-- Thumbnails -->
- 
-      <!--   <div class="row">
- 
-          <div class="large-12 show-for-small columns">
-          <h3>Header</h3><hr>
-        </div>
- 
-          <div class="large-3 small-6 columns">
-            <img src="http://placehold.it/500x500&text=Thumbnail">
-            <div class="panel">
-              <p>Description</p>
-            </div>
-          </div>
- 
-          <div class="large-3 small-6 columns">
-            <img src="http://placehold.it/500x500&text=Thumbnail">
-            <div class="panel">
-              <p>Description</p>
-            </div>
-          </div>
- 
-          <div class="large-3 small-6 columns">
-            <img src="http://placehold.it/500x500&text=Thumbnail">
-            <div class="panel">
-              <p>Description</p>
-            </div>
-          </div>
- 
-          <div class="large-3 small-6 columns">
-            <img src="http://placehold.it/500x500&text=Thumbnail">
-            <div class="panel">
-              <p>Description</p>
-            </div>
-          </div>
- 
-        </div>
-  -->
-      <!-- End Thumbnails -->
- 
- 
-      <!-- Footer -->
- 
-<!--         <footer class="row">
-        <div class="large-12 columns"><hr />
-            <div class="row">
- 
-              <div class="large-6 columns">
-                  <p>&copy; Copyright no one at all. Go to town.</p>
-              </div>
- 
-              <div class="large-6 columns">
-                  <ul class="inline-list right">
-                    <li><a href="#">Link 1</a></li>
-                    <li><a href="#">Link 2</a></li>
-                    <li><a href="#">Link 3</a></li>
-                    <li><a href="#">Link 4</a></li>
-                  </ul>
-              </div>
- 
-            </div>
-        </div>
-      </footer> -->
- 
-      <!-- End Footer -->
- 
- 
+<!-- row 1-->
+<div class="row"> 
+     <div class="large-12 columns">
+   <h5> Looking for a used mattress? You've come to the right place.</h5>
     </div>
-  </div>
+</div>
+
+<div class="row"> 
+
+    <div class="small-8 columns">
+     
+      <div class="panel branding">
+      welcome to<h1> Stoopendus</h1>
+      <h5 class="subheader">stoop sales, yard sales, garage sales, corner sales, sidewalk sales, oh my</h5>
+      </div>
+    </div>
+
+
+    <div class="small-4 columns">
+
+     <% neighborhood = Neighborhood.all.sample %>
+      <%= link_to neighborhood.name, neighborhood_path(neighborhood)%>
+     
+    </div>
+
+</div>  
+
+
+ <% @neighborhoods = Neighborhood.all %>
+     <% @neighborhoods.each do |neighborhood| %>
+    <%= link_to neighborhood.name, neighborhood_path(neighborhood)%>
+    <% end %>
+
+<!-- row 2 -->
+<div class="row">
+<div class="large-4 columns">
+
+<div class="panel">
+  <%= form_tag search_items_path, :class => 'search', method: :get do %>
+  <h5><%= label_tag 'Find something cool!' %></h5>
+
+  <%= text_field_tag :query %>
+  <%= submit_tag 'search', :class => 'button' %>
+  <%end%>
+</div>
+
+ <img src="http://brooklyncream.files.wordpress.com/2011/06/wpid-2011-05-15_11-00-11_473-1.jpg?w=500">
 
 </div>
 
-  <script>
-  document.write('<script src=js/vendor/' +
-  ('__proto__' in {} ? 'zepto' : 'jquery') +
-  '.js><\/script>')
-  </script>
-  <script src="js/foundation.min.js"></script>
-  <script>
-    $(document).foundation();
-  </script>
-  <script type="text/javascript">
-    $(window).load(function() {
-      $('#featured').orbit({ fluid: '2x1' });
-    });
-  </script>
-  <!-- End Footer -->
+<div class="small-4 columns">
+  <img src="http://farm3.staticflickr.com/2618/3831546028_f6910d8cfc.jpg">
+
+   <img src="http://2guystalkingmetsbaseball.com/wp-content/uploads/2013/04/old-shoes.jpg">
+</div>
+
+
+
+
+<div class="large-4 columns">
+
+<h3 class="show-for-small">Header<hr/></h3>
+
+<div class="panel">
+  <h3 class="hide-for-small">Have some stuff to sell??</h3>
+   <h5 class="subheader">Yes, you do. Have a sale today!. </h5>
+
+    <%= render partial: '/sessions/partials/form' %>
+    
+     <h5>Already have an account? <%= link_to 'Sign In', sessions_new_path %></h5>
+
+</div>
+</div>
+
+ <div class="row">
+  <div class="large-6 small-6 columns">
+    <div class="panel">
+      <h5>Header</h5>
+    <h6 class="subheader">Praesent placerat dui tincidunt elit suscipit sed.</h6>
+    <a href="#" class="small button">BUTTON TIME!</a>
+    </div>
+  </div>
+
+  <div class="large-6 small-6 columns">
+    <div class="panel">
+      <h5>Header</h5>
+    <h6 class="subheader">Praesent placerat dui tincidunt elit suscipit sed.</h6>
+    <a href="#" class="small button">BUTTON TIME!</a>
+    </div>
+  </div>
+</div> 
+
+</div>
+
+
+</div>
+
+<!-- End Header Content -->
+
+
+
+<!-- Thumbnails -->
+
+<!--   <div class="row">
+
+<div class="large-12 show-for-small columns">
+<h3>Header</h3><hr>
+</div>
+
+<div class="large-3 small-6 columns">
+<img src="http://placehold.it/500x500&text=Thumbnail">
+<div class="panel">
+  <p>Description</p>
+</div>
+</div>
+
+<div class="large-3 small-6 columns">
+<img src="http://placehold.it/500x500&text=Thumbnail">
+<div class="panel">
+  <p>Description</p>
+</div>
+</div>
+
+<div class="large-3 small-6 columns">
+<img src="http://placehold.it/500x500&text=Thumbnail">
+<div class="panel">
+  <p>Description</p>
+</div>
+</div>
+
+<div class="large-3 small-6 columns">
+<img src="http://placehold.it/500x500&text=Thumbnail">
+<div class="panel">
+  <p>Description</p>
+</div>
+</div>
+
+</div>
+-->
+<!-- End Thumbnails -->
+
+
+<!-- Footer -->
+
+<!--         <footer class="row">
+<div class="large-12 columns"><hr />
+<div class="row">
+
+  <div class="large-6 columns">
+      <p>&copy; Copyright no one at all. Go to town.</p>
+  </div>
+
+  <div class="large-6 columns">
+      <ul class="inline-list right">
+        <li><a href="#">Link 1</a></li>
+        <li><a href="#">Link 2</a></li>
+        <li><a href="#">Link 3</a></li>
+        <li><a href="#">Link 4</a></li>
+      </ul>
+  </div>
+
+</div>
+</div>
+</footer> -->
+
+<!-- End Footer -->
+
+
+</div>
+</div>
+
+</div>
+
+<script>
+document.write('<script src=js/vendor/' +
+('__proto__' in {} ? 'zepto' : 'jquery') +
+'.js><\/script>')
+</script>
+<script src="js/foundation.min.js"></script>
+<script>
+$(document).foundation();
+</script>
+<script type="text/javascript">
+$(window).load(function() {
+$('#featured').orbit({ fluid: '2x1' });
+});
+</script>
+<!-- End Footer -->
 
 
 
