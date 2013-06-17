@@ -11,11 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(:version => 20130614114942) do
-=======
-ActiveRecord::Schema.define(:version => 20130614131317) do
->>>>>>> 828260850389897377ddbe5f2ff016541924bbbf
+ActiveRecord::Schema.define(:version => 20130616203423) do
 
   create_table "items", :force => true do |t|
     t.string   "name"
@@ -24,6 +20,7 @@ ActiveRecord::Schema.define(:version => 20130614131317) do
     t.integer  "sale_id"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
+    t.text     "image"
   end
 
   create_table "neighborhoods", :force => true do |t|

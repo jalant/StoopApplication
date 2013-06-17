@@ -15,4 +15,7 @@ class Neighborhood < ActiveRecord::Base
   has_many :users
   has_many :sales, through: :users
 
+  validates :name, presence: true
+
+
 end

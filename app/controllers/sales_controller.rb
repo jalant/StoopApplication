@@ -13,47 +13,64 @@ class SalesController < ApplicationController
     @locations = []
 
     @sales.each do |sale|
-      # if sale.date.to_date > Date.today
-        address_tmp = "#{sale.address}, #{sale.city}"
+
+     # if sale.date.to_date > Date.today
+
+        address_tmp = "#{sale.address}, Brooklyn, New York"
         @marker = Geocoder.search(address_tmp)
         # mark_lat = @marker.first.data["geometry"]['location']['lat']
         # mark_lng = @marker.first.data["geometry"]['location']['lng']
-        tmp_url = "sales/#{sale.id}"
+        #tmp_url = "sales/#{sale.id}"
         # @locations << [sale.title, sale.address, mark_lat, mark_lng, sale.date, tmp_url]
       # end
     end
   end
 
   def create
-    sale = Sale.create(params[:sale])
+    @sale = Sale.new(params[:sale])
     params[:sale]["items_attributes"].each do |item|
-      tmp_item = Item.create(name: item[1]['name'], price: item[1]['price'].to_i, description: item[1]['description'])
-      sale.items << tmp_item
+      unless item[1]['name'].empty?
+        tmp_item = Item.create(name: item[1]['name'], price: item[1]['price'], description: item[1]['description'], image: item[1]['image'])
+        @sale.items << tmp_item
+      end
     end
-    sale.date = "#{params[:date][:year]}-#{params[:date][:month]}-#{params[:date][:day]}"
-    current_user.sales << sale
-    if sale.save!
+    @sale.date = "#{params[:date][:year]}-#{params[:date][:month]}-#{params[:date][:day]}"
+    current_user.sales << @sale
+    if @sale.save
       redirect_to sales_path
     else
-      redirect_to new_sale_path
+      12.times{@sale.items.build}
+      render :new
+
     end
     #render :create
   end
 
   def new
     @sale = Sale.new
-    10.times{@sale.items.build}
+    12.times{@sale.items.build}
     #render :new
   end
 
   def edit
     @sale = Sale.find(params[:id])
+    3.times{@sale.items.build}
     #render :edit
   end
 
   def update
-    sale = Sale.find(params[:id])
-    if sale.update_attributes(params['sale'])
+    @sale = Sale.find(params[:id])
+    @sale.items.each do |item|
+      item.delete
+    end
+    params[:sale]["items_attributes"].each do |item|
+      unless item[1]['name'].empty?
+        tmp_item = Item.create(name: item[1]['name'], price: item[1]['price'], description: item[1]['description'], image: item[1]['image'])
+        @sale.items << tmp_item
+      end
+    end
+    @sale.date = "#{params[:date][:year]}-#{params[:date][:month]}-#{params[:date][:day]}"
+    if @sale.update_attributes(params['sale'])
       redirect_to sales_path
     else
       redirect_to new_sale_path
@@ -82,7 +99,11 @@ class SalesController < ApplicationController
   end
 
   def destroy
-    Sale.find(params[:id]).delete
+    sale = Sale.find(params[:id])
+    sale.items.each do |item|
+      item.delete
+    end
+    sale.delete
     redirect_to sales_path
     #render :destroy
   end

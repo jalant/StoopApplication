@@ -4,7 +4,6 @@
   <title>Stoopendous!</title>
   <%= stylesheet_link_tag "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
-
   <%= csrf_meta_tags %>
 
 
@@ -20,10 +19,19 @@
 	<%= link_to 'logout', logout_path, :class => 'login-status', method: :delete %>
 <% end %>
 
+
 <%= render partial: 'layouts/nav2' %>
 
-<%= yield %>
-
+<!-- 
+<div class='row'> -->
+     <!--  <div id='mainWrapper' class='small-16 small-centered columns'> -->
+        <% flash.each do |key, value| %>
+          <%= content_tag(:div, value, class: "alert alert-#{key}") %>
+        <% end %>
+        <%= yield %>
+    <!--   </div> -->
+<!-- </div>
+ -->
 <footer>
 </footer>
 

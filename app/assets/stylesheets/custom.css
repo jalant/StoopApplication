@@ -75,13 +75,10 @@ a {font-size: 1.75em; color: #2ba6cb;}
 #content {margin: 0 auto; height: 100%; min-width: 960px; overflow: scroll;background: black}
 
 #root.sales {padding: 10px;}
-
 #root.sales * .button {display: inline-block; float: left; width: auto; padding: 5px;}
 
 .small-block-grid-4 {height: auto}
-
 ul.small-block-grid-4 li ul {margin:0; padding:0}
-
 ul.small-block-grid-4 li.block {background: 0; min-height: 180px;  width: 180px; float: left; display: inline-block; text-align: left; margin:0; padding: 10px;}
 
 
@@ -123,8 +120,8 @@ ul.large-block-grid-4 li.block a {height: 100%; float: left; width: 100%; backgr
 ul.large-block-grid-4 li.block a:hover {opacity:.9}
 li.block {padding:0}
 
+.edit-sale, ul.meta {width: 50%;}
 
 
-.neighborhood-sales {float: left; width: 50%}
 span.neighborhood-name {width: 100px; display: inline-block; background: rgba(31,159,255,.25); }
 

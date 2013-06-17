@@ -8,14 +8,13 @@ class ApplicationController < ActionController::Base
       User.find(session[:user_id])
     end
   end
-  
-  private 
-  
-  def ensure_admin
-    unless current_user && current_user.admin?
-      render text: 'not authorized'
-    end
-  end
 
-  @neighborhoods = Neighborhood.all
+  private
+
+    def ensure_admin
+      unless current_user && current_user.admin?
+        render text: 'not authorized'
+      end
+    end
+
 end

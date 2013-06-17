@@ -3,4 +3,10 @@ class Sale < ActiveRecord::Base
   has_many :items
   belongs_to :user
   accepts_nested_attributes_for :items, :reject_if => lambda { |a| a[:content].blank? }
+
+  validates :address, presence: true
+  validates :city, presence: true
+  validates :time, presence: true
+  validates :title, presence: true
+
 end
