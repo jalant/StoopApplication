@@ -52,8 +52,8 @@
 
   <ul class="small-block-grid-4">
 
-  <% if sale.date.to_date >= Date.today %>
     <% @sales.each do |sale| %>
+    <% if sale.date.to_date >= Date.today %>
 
     <li class="block">
 
@@ -72,13 +72,11 @@
           <%= link_to (image_tag('/assets/delete.png')), sale_path(sale), method: 'delete', :class => 'btn button' %>
         </div>
         <% end %>
+        <% end %>
     </li>
-
     <% end %>
      <% end %>
   </ul>
-
-
 </div>
 
 
