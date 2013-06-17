@@ -1,9 +1,34 @@
-<% if @items.any? %>
-<%= @items.first.sale.title %>
-<%= @items.first.sale.date %>
-<%= @items.first.sale.address %>
-<%= @items.first.sale.city %>
-<%= @items.first.sale.user.neighborhood.name %>
+<section class="for-sale">
+
+
+      <h2>For Sale!</h2>
+
+
+      <% if @items.any? %>
+
+
+      <div class="large-4 small-6 columns">    
+    
+            <div class="panel">
+              <h5>Sale Title</h5>
+              <%= @items.first.sale.title %>
+
+              <h5>Date</h5>
+              <%= @items.first.sale.date %>
+
+              <h5> Address </h5>
+              <%= @items.first.sale.address %>
+                
+              <h5> City </h5>
+               <%= @items.first.sale.city %>
+                 
+              <h5>Neighborhood</h5>
+             <%= @items.first.sale.user.neighborhood.name %>
+            </div>
+          
+        
+
+   
 
 <script src="http://maps.google.com/maps/api/js?key=AIzaSyAWySaUYYlEwvq3KquSOJmFpPwrnLItW4Y&sensor=false" 
           type="text/javascript"></script>
@@ -41,15 +66,35 @@
       })(marker, i));
     }
   </script>
+   </section>  
 <div>
-<% @items.first.sale.items.each do |item| %>
+<section class="for-sale">
 
-    <p>Item:<%= item.name %></p>
-    <p> Price: <%= number_to_currency(item.price) %> </p>
-    <p>Description: <%= item.description %></p>
+      <div class="large-4 small-6 columns">    
+    
+            <div class="panel">
+
+<% @items.first.sale.items.each do |item| %>
+              <h5>Item Name</h5>
+             <%= item.name %>
+
+              <h5>Price</h5>
+             <%= number_to_currency(item.price) %>
+
+              <h5> Description </h5>
+              <%= item.description %>
+                
+              <h5> City </h5>
+               <%= @items.first.sale.city %>
+                 
+              <h5>Neighborhood</h5>
+             <%= @items.first.sale.user.neighborhood.name %>
+            </div>
+   
 <% end %>
 </div>
 
+</section> 
 
 <% else %>
 No result!
