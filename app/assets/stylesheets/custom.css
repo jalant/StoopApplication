@@ -124,9 +124,15 @@ li.block {padding:0}
 .edit-sale, ul.meta {width: 50%;}
 
 /*landing */
-.panel * {font-family: Arial;}
+
+.panel {border: 1px solid orange;}
+.panel * {font-family: 'Helvetica', Arial;}
+.panel.branding {height: 200px;}
 .panel.branding h1 {color: orange;}
-.panel.featured {background: rgba(255,165,0,.75); color: #FFF}
+.panel.featured {height: 200px; background: rgba(255,165,0,.75); color: #FFF}
+
+.panel.featured a {color: #FFF;}
+.panel.bio img {height: 100px;}
 
 /* login and sign up forms */
 #user-forms {width: 25%; margin: 0 auto; background: orange; padding: 20px;}
