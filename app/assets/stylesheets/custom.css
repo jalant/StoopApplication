@@ -156,8 +156,8 @@ img.rotated {transform:rotate(12deg);
 .panel.bio img {height: 80px;}
 
 /* login and sign up forms */
-#user-forms {width: 50%;  padding: 20px; border: 1px solid #FFF;}
-#user-forms h1 {font-family: Helvetica, Arial, sans-serif; background: rgba(0,0,0,.5); color: orange;}
+#user-forms {width: 50%; max-width: 480px; padding: 20px; border: 1px solid #FFF;}
+#user-forms h2 {font-family: Helvetica, Arial, sans-serif; background: rgba(0,0,0,.5); color: orange; padding: 5px;}
 #user-forms ul {background: orange; color: #FFF;padding: 10px;}
 
 /*misc */
@@ -165,6 +165,7 @@ img.rotated {transform:rotate(12deg);
 #logo-container * {color: white;}
 
 form.input {background: rgba(255,255,255,.5);}
+form label {color: #FFF; margin: 10px 0;}
 .alert {font-size: 2em; background: #FF0000; color: #FFF;}
 
 
