@@ -88,7 +88,7 @@ ul.small-block-grid-4 li.block {min-height: 180px;  width: 180px; float: left; d
 
 section.for-sale {background: rgba(0,0,0,.75);}
 
-s
+
 /* for both neighborhood single / and sales root views.*/
 ul.small-block-grid-4 li.block:nth-child(odd)  {background: #FFFFFF}
 ul.small-block-grid-4 li.block:nth-child(even) {background: #FFFF7E}
