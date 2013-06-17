@@ -68,8 +68,8 @@
 
         <% if current_user && current_user.sales != [] && current_user.sales.include?(sale) %>
         <div class="edit-sale">
-          <%= link_to (image_tag('/assets/edit.png')), edit_sale_path(sale), method: 'get', :class => 'btn button' %> 
-          <%= link_to (image_tag('/assets/delete.png')), sale_path(sale), method: 'delete', :class => 'btn button' %>
+          <%= link_to 'Edit', edit_sale_path(sale), method: 'get', :class => 'btn button' %> 
+          <%= link_to 'Delete', sale_path(sale), method: 'delete', :class => 'btn button' %>
         </div>
         <% end %>
         <% end %>
