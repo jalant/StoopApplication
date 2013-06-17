@@ -25,15 +25,15 @@
 			        </ul>
 			      
 			  			<div class="edit-sale">
-			          <%= link_to (image_tag('../assets/edit.png')), edit_sale_path(@sale), method: 'get', :class => 'btn button' %> 
-			          <%= link_to (image_tag('../assets/delete.png')), sale_path(@sale), method: 'delete', :class => 'btn button' %>
+			          <%= link_to edit_sale_path(@sale), method: 'get', :class => 'btn button' %>
+			          <%= link_to sale_path(@sale), method: 'delete', :class => 'btn button' %>
 			        </div>
 
       </div>
 
       <div>
         <% if current_user && current_user.sales != [] && current_user.sales.include?(@sale) %>
-        <%= link_to (image_tag('/assets/edit.png')), edit_sale_path(@sale), method: 'get', :class => 'btn button'%> 
+        <%= link_to edit_sale_path(@sale), method: 'get'%>
         <%= link_to (image_tag('/assets/edit.png')), sale_path(@sale), method: 'delete', :class => 'btn button' %> 
         <% end %>
 
