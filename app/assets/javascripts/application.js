@@ -18,7 +18,6 @@
 $(document).foundation();
 
 
-<script>
   function add_fields(link, association, content) {
   var new_id = new Date().getTime();
   var regexp = new RegExp("new_" + association, "g");
@@ -26,5 +25,4 @@ $(document).foundation();
         before: content.replace(regexp, new_id)
   });
 }
-</script>
 
