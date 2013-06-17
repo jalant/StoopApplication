@@ -26,14 +26,18 @@
 
     <div class="small-4 columns">
 
-     <% @neighborhoods = Neighborhood.all %>
-     <% @neighborhoods.each do |neighborhood| %>
-    <%= link_to neighborhood.name, neighborhood_path(neighborhood)%>
-    <% end %>
+     <% neighborhood = Neighborhood.all.sample %>
+      <%= link_to neighborhood.name, neighborhood_path(neighborhood)%>
      
     </div>
 
 </div>  
+
+
+ <% @neighborhoods = Neighborhood.all %>
+     <% @neighborhoods.each do |neighborhood| %>
+    <%= link_to neighborhood.name, neighborhood_path(neighborhood)%>
+    <% end %>
 
 <!-- row 2 -->
 <div class="row">
@@ -41,7 +45,7 @@
 
 <div class="panel">
   <%= form_tag search_items_path, :class => 'search', method: :get do %>
-  <h5><%= label_tag 'Look at these oh so sexy shoes! What a steal' %></h5>
+  <h5><%= label_tag 'Find something cool!' %></h5>
 
   <%= text_field_tag :query %>
   <%= submit_tag 'search', :class => 'button' %>
@@ -53,7 +57,7 @@
 </div>
 
 <div class="small-4 columns">
-  <img src="http://2guystalkingmetsbaseball.com/wp-content/uploads/2013/04/old-shoes.jpg">
+  <img src="http://farm3.staticflickr.com/2618/3831546028_f6910d8cfc.jpg">
 
    <img src="http://2guystalkingmetsbaseball.com/wp-content/uploads/2013/04/old-shoes.jpg">
 </div>
@@ -76,7 +80,7 @@
 </div>
 </div>
 
-<!--  <div class="row">
+ <div class="row">
   <div class="large-6 small-6 columns">
     <div class="panel">
       <h5>Header</h5>
@@ -92,7 +96,7 @@
     <a href="#" class="small button">BUTTON TIME!</a>
     </div>
   </div>
-</div> -->
+</div> 
 
 </div>
 
