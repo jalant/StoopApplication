@@ -26,6 +26,8 @@ body {background: url('/assets/bs3.jpg')no-repeat top left; background-size:cove
 nav ul{height: auto;  width: auto; z-index:999; list-style:none; display: inline-block;}
 
 nav ul li { height: 100%; padding: 10px 0; display: inline-block; position: relative;}
+
+
 	
 	li.user-is {font-weight: bold; color: orange;}
 
@@ -36,19 +38,18 @@ form.login {height: 400px; width: 360px; padding: 20px; margin: 0 auto; z-index:
 label {display: inline;}
 input {display: inline;}
 
-
 .button-group li {display: inline; width: auto;margin:0; padding: 0;}
 .button-group li a {width: 100%;}
 
 
-a.button {height: 40px; width: 40px; background: rgba(31,159,255,.25);}
+a.button {height: 40px; width: 40px; background: rgba(31,159,255,.4);}
 a.button:hover {background: rgba(31,159,255,.5);}
 
 /*NAV*/
 nav {max-height: 100px;}
 nav.upper {}
-	nav .upper-left {width: 50%; display: inline-block;}
-	nav .upper-right  {width: 45%; text-align: right;float: right; display: inline-block;}
+	nav .upper-left {width:  720px; display: inline-block;}
+	nav .upper-right  {width: 240px; text-align: right;float: right; display: inline-block;}
 
 nav form.search label {color: #FFF;}
 
@@ -58,7 +59,7 @@ li form.search {background: orange; height: 40px; width: 300px; padding: 0 10px;
 li form.search input#query {width: 150px; display:inline-block;}
 li form.search input.button {height: 30px; width: 50px; margin: 0; padding: 0; display: inline-block}
 
-section.page-intro {height: 100%;  display; block; float: left; clear: both; margin-top: 20px; padding: 20px; background: rgba(255,255,255,.75);}
+section.page-intro {height: 100%;  display; block; float: left; clear: both; margin-top: 20px; padding: 20px; background: rgba(0,0,0,.65);}
 section.page-intro header.main {width: 50%; max-width: 600px; float: left; color: #FFF;}
 section.page-intro header.main h1 {color: orange;}
 section.page-intro header figure {width: 150px; float: right; padding: 10px;color: #99ccff; background: rgba(255,255,255,.9);}
@@ -108,6 +109,8 @@ ul.small-block-grid-4 * img {height: 20px; width: 20px; margin: auto;}
 /*#content {margin: 0 auto; height: 100%; min-width: 960px;}
 */	
 #root.neighborhood { padding: 10px; text-align:center;}
+
+#root.neighborhood img {height: 200px;}
 
 ul.large-block-grid-4 li {background: #f7fbfc; /* Old browsers */
 background: -moz-linear-gradient(-45deg, #f7fbfc 0%, #d9edf2 40%, #add9e4 100%); /* FF3.6+ */
@@ -159,7 +162,7 @@ img.rotated {transform:rotate(12deg);
 .panel.bio img {height: 80px;}
 
 /* login and sign up forms */
-#user-forms {width: 50%; max-width: 480px; padding: 20px; border: 1px solid #FFF;}
+#user-forms {width: 360px; max-width: 480px; padding: 20px; background: rgba(0,0,0,.35);}
 #user-forms h2 {font-family: Helvetica, Arial, sans-serif; background: rgba(0,0,0,.5); color: orange; padding: 5px;}
 #user-forms ul {background: orange; color: #FFF;padding: 10px;}
 
@@ -167,8 +170,13 @@ img.rotated {transform:rotate(12deg);
 #logo-container {height: auto; color: orange; padding: 0 20px;}
 #logo-container * {color: white;}
 
+
 form.input {background: rgba(255,255,255,.5);}
 form label {color: #FFF; margin: 10px 0;}
+
+form select#user_neighborhood_id {font-size: 1em; }
+
+
 .alert {font-size: 2em; background: #FF0000; color: #FFF;}
 
 #map label { width: auto; display:inline; }

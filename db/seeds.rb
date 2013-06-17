@@ -5,14 +5,14 @@ Sale.delete_all
 User.delete_all
 
 
+n1 = Neighborhood.create(name: 'Brooklyn Heights', img_url: 'http://0.tqn.com/d/brooklyn/1/7/3/2/-/-/Promenade.jpg')
+n2 = Neighborhood.create(name: 'Red Hook', img_url: 'http://blogs.villagevoice.com/forkintheroad/PH2006042101257.jpg')
+n3 = Neighborhood.create(name: 'Williamsburg', img_url: 'http://www.brooklynian.com/bk/wp-content/uploads/2012/01/hipsterzzz1.jpg')
+n4 = Neighborhood.create(name: 'Carroll Gardens', img_url: 'http://graphics8.nytimes.com/images/2008/06/01/nyregion/stre600.jpg')
+n5 = Neighborhood.create(name: 'Greenpoint', img_url: 'http://www.urban75.org/photos/newyork/images/greenpoint-brooklyn-03.jpg')
+n6 = Neighborhood.create(name: 'Fort Greene', img_url: 'http://images.nymag.com/images/2/realestate/neighborhoods/2010/fortgreene100414_lede.jpg')
+n7 = Neighborhood.create(name: 'East Village', img_url: 'http://images.nymag.com/images/2/realestate/neighborhoods/2010/eastvillage100412_lede.jpg')
 
-
-n1 = Neighborhood.create(name: 'Brooklyn Heights')
-n2 = Neighborhood.create(name: 'Red Hook')
-n3 = Neighborhood.create(name: 'Williamsburg')
-n4 = Neighborhood.create(name: 'Carroll Gardens')
-n5 = Neighborhood.create(name: 'Greenpoint')
-n6 = Neighborhood.create(name: 'Fort Greene')
 
 u1 = User.create(username: 'Tanay', password: 'pass123', email: 'tanay@stoopid.com', admin: true)
 u2 = User.create(username: 'David', password: 'pass123', email: 'david@stoopid.com')
