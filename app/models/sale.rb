@@ -5,8 +5,8 @@ class Sale < ActiveRecord::Base
   accepts_nested_attributes_for :items, :reject_if => lambda { |a| a[:content].blank? }
 
   validates :address, presence: true
-  validates :city, presence: true
   validates :time, presence: true
   validates :title, presence: true
-
 end
+
+
