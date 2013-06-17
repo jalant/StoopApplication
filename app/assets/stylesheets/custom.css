@@ -40,7 +40,6 @@ input {display: inline;}
 .button-group li {display: inline; width: auto;margin:0; padding: 0;}
 .button-group li a {width: 100%;}
 
-.button-group.site-content {width: 100%; float: left;}
 
 a.button {height: 40px; width: 40px; background: rgba(31,159,255,.25);}
 a.button:hover {background: rgba(31,159,255,.5);}
@@ -48,19 +47,19 @@ a.button:hover {background: rgba(31,159,255,.5);}
 /*NAV*/
 nav {max-height: 100px;}
 nav.upper {}
-	nav .upper-left {width: 60%; display: inline-block;}
-	nav .upper-right  {width: 35%; text-align: right;float: right; display: inline-block;}
+	nav .upper-left {width: 50%; display: inline-block;}
+	nav .upper-right  {width: 45%; text-align: right;float: right; display: inline-block;}
 
 nav form.search label {color: #FFF;}
 
-li form.search {background: orange; height: 40px; width: 300px; padding: 0 10px; display:inline;  position:relative; margin:0; padding: 5px 20px; float: left}
+li form.search {background: orange; height: 40px; width: 300px; padding: 0 10px; display:inline;  position:relative; margin:0; padding: 5px 10px; float: left}
 /* content */ 
 
 li form.search input#query {width: 150px; display:inline-block;}
 li form.search input.button {height: 30px; width: 50px; margin: 0; padding: 0; display: inline-block}
 
-section.page-intro {}
-section.page-intro header.main {width: 50%; max-width: 600px; float: left;}
+section.page-intro {height: 100%;  display; block; float: left; clear: both; margin-top: 20px; padding: 20px; background: rgba(255,255,255,.75);}
+section.page-intro header.main {width: 50%; max-width: 600px; float: left; color: #FFF;}
 section.page-intro header.main h1 {color: orange;}
 section.page-intro header figure {width: 150px; float: right; padding: 10px;color: #99ccff; background: rgba(255,255,255,.9);}
 
@@ -69,7 +68,7 @@ section.page-intro header figure {width: 150px; float: right; padding: 10px;colo
 
 .login-status {float: right; font-size: 1.75em; color: #2ba6cb;margin-left: 20px;}
 
-.login-status2 {float: right; font-size: 1.4em; color: #2ba6cb;margin-left: 20px;}
+.login-status2 {float: right; font-size: 1.4em; color: #2ba6cb;margin-left: 20px; background: rgba(255,255,255,.75);}
 
 
 
@@ -86,7 +85,7 @@ ul.small-block-grid-4 {height: auto}
 ul.small-block-grid-4 li ul {margin:0; padding:0}
 ul.small-block-grid-4 li.block {min-height: 180px;  width: 180px; float: left; display: inline-block; text-align: left; margin:0; padding: 10px; background: #fff;}
 
-section.for-sale {background: lime;}
+section.for-sale {background: rgba(0,0,0,.75);}
 
 s
 /* for both neighborhood single / and sales root views.*/
