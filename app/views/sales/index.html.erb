@@ -52,7 +52,7 @@
 
   <ul class="small-block-grid-4">
 
-  <%# if sale.date.to_date >= Date.today %>
+  <% if sale.date.to_date >= Date.today %>
     <% @sales.each do |sale| %>
 
     <li class="block">
@@ -66,13 +66,12 @@
           <li><%= sale.time %><br/><li>
         </ul>
 
-        <%# if current_user && current_user.sales != [] && current_user.sales.include?(sale) %>
-
+        <% if current_user && current_user.sales != [] && current_user.sales.include?(sale) %>
         <div class="edit-sale">
           <%= link_to (image_tag('/assets/edit.png')), edit_sale_path(sale), method: 'get', :class => 'btn button' %> 
           <%= link_to (image_tag('/assets/delete.png')), sale_path(sale), method: 'delete', :class => 'btn button' %>
         </div>
-        <%# end %>
+        <% end %>
     </li>
 
     <% end %>

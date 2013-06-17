@@ -14,15 +14,15 @@ class SalesController < ApplicationController
 
     @sales.each do |sale|
 
-     # if sale.date.to_date > Date.today
+     if sale.date.to_date > Date.today
 
         address_tmp = "#{sale.address}, Brooklyn, New York"
         @marker = Geocoder.search(address_tmp)
-        # mark_lat = @marker.first.data["geometry"]['location']['lat']
-        # mark_lng = @marker.first.data["geometry"]['location']['lng']
-        #tmp_url = "sales/#{sale.id}"
-        # @locations << [sale.title, sale.address, mark_lat, mark_lng, sale.date, tmp_url]
-      # end
+        mark_lat = @marker.first.data["geometry"]['location']['lat']
+        mark_lng = @marker.first.data["geometry"]['location']['lng']
+        tmp_url = "sales/#{sale.id}"
+        @locations << [sale.title, sale.address, mark_lat, mark_lng, sale.date, tmp_url]
+      end
     end
   end
 
