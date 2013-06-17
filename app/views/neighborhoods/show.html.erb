@@ -41,7 +41,7 @@
   <% unless @neighborhood.sales.empty? %>
   <% @neighborhood.sales.each do |sale| %>
     <% if sale.date.to_date >= Date.today %>
-<<<<<<< HEAD
+
     <%= link_to sale.title, sale_path(sale) %>   
     <p> <%= sale.address %> </p>
     <p> <%= sale.city %></p>
@@ -52,21 +52,6 @@
     <% if current_user && current_user.sales != [] && current_user.sales.include?(sale) %>
     <%= button_to 'EDIT', edit_sale_path(sale), method: 'get', :class => 'btn button'%> 
     <%= button_to 'DELETE', sale_path(sale), method: 'delete', :class => 'btn button' %> 
-=======
-    <h1>Name: <%= link_to sale.title, sale_path(sale) %> </h1>
-    <br>
-    <p> Address: <%= sale.address %> </p>
-    <br>
-    <p> City: <%= sale.city %></p>
-    <br>
-    <p> Date: <%= sale.date %></p>
-    <br>
-    <p> Time: <%= sale.time %></p>
-    
-    <% if current_user && current_user.sales != [] && current_user.sales.include?(sale) %>
-    <%= button_to 'EDIT', edit_sale_path(sale), method: 'get', :class => 'button radius'%> 
-    <%= button_to 'DELETE', sale_path(sale), method: 'delete', :class => 'button radius' %> 
->>>>>>> 73efa3272125196261662f80614e936f0dcfb138
     <% end %>
   <% end %>
    <% end %>
