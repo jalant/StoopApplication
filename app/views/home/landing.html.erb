@@ -1,148 +1,194 @@
 <div id="landing" class="pages">
 
+
+
 <div class="row">
-    <div class="large-12 columns">
+<div class="large-12 columns">
 
 
-      <!-- Header Content -->
- 
-        <div class="row">
- 
-          <div class="large-6 columns">
- 
-            <img src="http://style.mtv.com//wp-content/uploads/style/2012/05/girls-stoop-sale1.jpg"><br>
- 
-          </div>
- 
- 
-          <div class="large-6 columns">
- 
-            <h3 class="show-for-small">Header<hr/></h3>
- 
-            <div class="panel">
-              <h1 class="hide-for-small">Feeling Stoopendus?<hr/></h1>
+<!-- row 1-->
+<div class="row"> 
+   <p> Looking for a used mattress? You've come to the right place.</p>
+</div>
+<div class="row"> 
 
- <h5 class="subheader">Fusce ullamcorper mauris in eros dignissim molestie posuere felis blandit. Aliquam erat volutpat. </h5>
-
-                <%= render partial: '/sessions/partials/form' %>
-
-
-
-            </div>
- 
-         <!--  <div class="row">
-              <div class="large-6 small-6 columns">
-                <div class="panel">
-                  <h5>Header</h5>
-                <h6 class="subheader">Praesent placerat dui tincidunt elit suscipit sed.</h6>
-                <a href="#" class="small button">BUTTON TIME!</a>
-                </div>
-              </div>
- 
-              <div class="large-6 small-6 columns">
-                <div class="panel">
-                  <h5>Header</h5>
-                <h6 class="subheader">Praesent placerat dui tincidunt elit suscipit sed.</h6>
-                <a href="#" class="small button">BUTTON TIME!</a>
-                </div>
-              </div>
-          </div> -->
- 
-          </div>
- 
-        </div>
- 
-      <!-- End Header Content -->
- 
- 
- 
-      <!-- Thumbnails -->
- 
-      <!--   <div class="row">
- 
-          <div class="large-12 show-for-small columns">
-          <h3>Header</h3><hr>
-        </div>
- 
-          <div class="large-3 small-6 columns">
-            <img src="http://placehold.it/500x500&text=Thumbnail">
-            <div class="panel">
-              <p>Description</p>
-            </div>
-          </div>
- 
-          <div class="large-3 small-6 columns">
-            <img src="http://placehold.it/500x500&text=Thumbnail">
-            <div class="panel">
-              <p>Description</p>
-            </div>
-          </div>
- 
-          <div class="large-3 small-6 columns">
-            <img src="http://placehold.it/500x500&text=Thumbnail">
-            <div class="panel">
-              <p>Description</p>
-            </div>
-          </div>
- 
-          <div class="large-3 small-6 columns">
-            <img src="http://placehold.it/500x500&text=Thumbnail">
-            <div class="panel">
-              <p>Description</p>
-            </div>
-          </div>
- 
-        </div>
-  -->
-      <!-- End Thumbnails -->
- 
- 
-      <!-- Footer -->
- 
-<!--         <footer class="row">
-        <div class="large-12 columns"><hr />
-            <div class="row">
- 
-              <div class="large-6 columns">
-                  <p>&copy; Copyright no one at all. Go to town.</p>
-              </div>
- 
-              <div class="large-6 columns">
-                  <ul class="inline-list right">
-                    <li><a href="#">Link 1</a></li>
-                    <li><a href="#">Link 2</a></li>
-                    <li><a href="#">Link 3</a></li>
-                    <li><a href="#">Link 4</a></li>
-                  </ul>
-              </div>
- 
-            </div>
-        </div>
-      </footer> -->
- 
-      <!-- End Footer -->
- 
- 
+    <div class="small-8 columns">
+     
+      <div class="panel branding">
+      Welcome to<h1> Stoopendus</h1>
+      - stoop sales, yard sales, garage sales, corner sales, sidewalk sales, oh my
+      </div>
     </div>
-  </div>
+
+
+    <div class="small-4 columns">
+      - stoop sales, yard sales, garage sales, corner sales, sidewalk sales, oh my
+      - stoop sales, yard sales, garage sales, corner sales, sidewalk sales, oh my
+      - stoop sales, yard sales, garage sales, corner sales, sidewalk sales, oh my
+      - stoop sales, yard sales, garage sales, corner sales, sidewalk sales, oh my
+
+      <!-- <img src="http://style.mtv.com//wp-content/uploads/style/2012/05/girls-stoop-sale1.jpg" height="100"/> -->
+    </div>
+
+</div>  
+
+<!-- row 2 -->
+<div class="large-4 columns">
+
+<%= form_tag search_items_path, :class => 'search', method: :get do %>
+
+<%= label_tag 'Find an item' %>
+<%= text_field_tag :query %>
+<%= submit_tag 'search', :class => 'button' %>
+<%end%>
+
+
 
 </div>
 
-  <script>
-  document.write('<script src=js/vendor/' +
-  ('__proto__' in {} ? 'zepto' : 'jquery') +
-  '.js><\/script>')
-  </script>
-  <script src="js/foundation.min.js"></script>
-  <script>
-    $(document).foundation();
-  </script>
-  <script type="text/javascript">
-    $(window).load(function() {
-      $('#featured').orbit({ fluid: '2x1' });
-    });
-  </script>
-  <!-- End Footer -->
+<div class="small-4 columns">
+
+<img src="http://style.mtv.com//wp-content/uploads/style/2012/05/girls-stoop-sale1.jpg">
+
+<div class="panel">
+Buy from these GIRLS
+</div>
+
+</div>
+
+
+
+
+<div class="large-4 columns">
+
+<h3 class="show-for-small">Header<hr/></h3>
+
+<div class="panel">
+  <h3 class="hide-for-small">Have some stuff to sell??</h3>
+   <h5 class="subheader">Yes, you do. Have a sale today!. </h5>
+
+    <%= render partial: '/sessions/partials/form' %>
+    
+     <h5>Already have an account? <%= link_to 'Sign In', sessions_new_path %></h5>
+
+</div>
+
+
+
+<!--  <div class="row">
+  <div class="large-6 small-6 columns">
+    <div class="panel">
+      <h5>Header</h5>
+    <h6 class="subheader">Praesent placerat dui tincidunt elit suscipit sed.</h6>
+    <a href="#" class="small button">BUTTON TIME!</a>
+    </div>
+  </div>
+
+  <div class="large-6 small-6 columns">
+    <div class="panel">
+      <h5>Header</h5>
+    <h6 class="subheader">Praesent placerat dui tincidunt elit suscipit sed.</h6>
+    <a href="#" class="small button">BUTTON TIME!</a>
+    </div>
+  </div>
+</div> -->
+
+</div>
+
+
+</div>
+
+<!-- End Header Content -->
+
+
+
+<!-- Thumbnails -->
+
+<!--   <div class="row">
+
+<div class="large-12 show-for-small columns">
+<h3>Header</h3><hr>
+</div>
+
+<div class="large-3 small-6 columns">
+<img src="http://placehold.it/500x500&text=Thumbnail">
+<div class="panel">
+  <p>Description</p>
+</div>
+</div>
+
+<div class="large-3 small-6 columns">
+<img src="http://placehold.it/500x500&text=Thumbnail">
+<div class="panel">
+  <p>Description</p>
+</div>
+</div>
+
+<div class="large-3 small-6 columns">
+<img src="http://placehold.it/500x500&text=Thumbnail">
+<div class="panel">
+  <p>Description</p>
+</div>
+</div>
+
+<div class="large-3 small-6 columns">
+<img src="http://placehold.it/500x500&text=Thumbnail">
+<div class="panel">
+  <p>Description</p>
+</div>
+</div>
+
+</div>
+-->
+<!-- End Thumbnails -->
+
+
+<!-- Footer -->
+
+<!--         <footer class="row">
+<div class="large-12 columns"><hr />
+<div class="row">
+
+  <div class="large-6 columns">
+      <p>&copy; Copyright no one at all. Go to town.</p>
+  </div>
+
+  <div class="large-6 columns">
+      <ul class="inline-list right">
+        <li><a href="#">Link 1</a></li>
+        <li><a href="#">Link 2</a></li>
+        <li><a href="#">Link 3</a></li>
+        <li><a href="#">Link 4</a></li>
+      </ul>
+  </div>
+
+</div>
+</div>
+</footer> -->
+
+<!-- End Footer -->
+
+
+</div>
+</div>
+
+</div>
+
+<script>
+document.write('<script src=js/vendor/' +
+('__proto__' in {} ? 'zepto' : 'jquery') +
+'.js><\/script>')
+</script>
+<script src="js/foundation.min.js"></script>
+<script>
+$(document).foundation();
+</script>
+<script type="text/javascript">
+$(window).load(function() {
+$('#featured').orbit({ fluid: '2x1' });
+});
+</script>
+<!-- End Footer -->
 
 
 

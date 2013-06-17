@@ -20,7 +20,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fcfff4', end
 
 body {background: url('/assets/bs3.jpg')no-repeat top left; background-size:cover;}
 
-#wrapper {min-height: 600px; height: auto; max-width: 1240px; width: auto; min-width: 960px; margin: 0 auto; background: rgba(255,255,255,.65); padding: 20px;}
+#wrapper {height: 100%; max-width: 1240px; width: auto; min-width: 960px; margin: 0 auto; margin-top: 100px;background: rgba(255,255,255,.75); padding: 20px;}
 
 nav ul{height: auto;  width: auto; z-index:999; list-style:none; display: inline-block;}
 
@@ -123,8 +123,12 @@ li.block {padding:0}
 
 .edit-sale, ul.meta {width: 50%;}
 
+/*landing */
+.panel * {font-family: Arial;}
+
+.panel.branding h1 {color: orange;}
+
 
 /* login and sign up forms */
-
-#user-forms {width: 320px; margin: 0 auto;}
+#user-forms {width: 25%; margin: 0 auto; background: orange; padding: 20px;}
 #user-forms h1 {font-family: Helvetica, Arial, sans-serif;}
