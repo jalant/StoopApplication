@@ -48,8 +48,8 @@ a.button:hover {background: rgba(31,159,255,.5);}
 /*NAV*/
 nav {max-height: 100px;}
 nav.upper {}
-	nav .upper-left {width: 70%; display: inline-block;}
-	nav .upper-right  {width: 25%; text-align: right;float: right; display: inline-block;}
+	nav .upper-left {width: 60%; display: inline-block;}
+	nav .upper-right  {width: 35%; text-align: right;float: right; display: inline-block;}
 
 nav form.search label {color: #FFF;}
 
