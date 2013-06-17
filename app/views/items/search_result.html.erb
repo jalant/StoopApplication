@@ -68,11 +68,12 @@
   </script>
    </section>  
 <div>
-<section class="for-sale">
+
 
       <div class="large-4 small-6 columns">    
     
-            <div class="panel">
+            <div class="for-sale">
+              <div class="panel">
 
 <% @items.first.sale.items.each do |item| %>
               <h5>Item Name</h5>
@@ -90,11 +91,11 @@
               <h5>Neighborhood</h5>
              <%= @items.first.sale.user.neighborhood.name %>
             </div>
+          </div>
    
 <% end %>
 </div>
 
-</section> 
 
 <% else %>
 No result!
