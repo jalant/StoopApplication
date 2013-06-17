@@ -24,6 +24,7 @@
 			          <li><%= @sale.time %><br/><li>
 			        </ul>
 			      
+
                 <% if current_user && current_user.sales != [] && current_user.sales.include?(@sale) %>
 			          <%= link_to edit_sale_path(@sale), method: 'get' do %> 
                 <i class="general foundicon-edit"></i>
