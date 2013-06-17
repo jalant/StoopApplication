@@ -81,7 +81,9 @@ a {font-size: 1.75em; color: #2ba6cb;}
 ul.small-block-grid-4 li ul {margin:0; padding:0}
 ul.small-block-grid-4 li.block {background: 0; min-height: 180px;  width: 180px; float: left; display: inline-block; text-align: left; margin:0; padding: 10px;}
 
+section.for-sale {background: lime;}
 
+s
 /* for both neighborhood single / and sales root views.*/
 ul.small-block-grid-4 li.block:nth-child(odd)  {background: #f7f7f7}
 ul.small-block-grid-4 li.block:nth-child(even) {background: #FFFF7E}

@@ -1,75 +1,57 @@
 <script src="http://maps.google.com/maps/api/js?key=AIzaSyAWySaUYYlEwvq3KquSOJmFpPwrnLItW4Y&sensor=false" type="text/javascript"></script>
 
-<div id="second" class="sales">
-
-<%= @sale.user.neighborhood.name %><br/>
+<h5>Stoop Sales in <%= @sale.user.neighborhood.name %></h5>
 
 <%= link_to @sale.title, sale_path(@sale), :class => 'sale-title'%>
 
-        <ul class="meta">
-        	<li><%= @sale.user.neighborhood.name %><br/><li>
-          <li><%= @sale.address %></li>
-          <li><%= @sale.city %><br/></li>
-          <li><%= @sale.date %><br/></li>
-          <li><%= @sale.time %><br/><li>
-        </ul>
-		
 
-  			<div class="edit-sale">
-          <%= link_to (image_tag('../assets/edit.png')), edit_sale_path(@sale), method: 'get', :class => 'btn button' %> 
-          <%= link_to (image_tag('../assets/delete.png')), sale_path(@sale), method: 'delete', :class => 'btn button' %>
-        </div>
-
-		<section class="for-sale">
-				<% @sale.items.each do |item| %>
-
-				<p>Item:<%= item.name %></p>
-				<p> Price: <%= number_to_currency(item.price) %> </p>
-				<p>Description: <%= item.description %></p>
-				
-				<% end %>
-
-		</section>	
-
-
- 
 <div id="map" style="width: 500px; height: 400px;"></div>
 
 
-<div id = "root" class="single">
   <div class="large-12 columns">
     <div class="row">
       <!-- Side Bar -->
 
       <div class="large-4 small-12 columns">
 
-        <img src= "http://placehold.it/500x500&text=Logo">
+			        <img src= "http://placehold.it/500x500&text=Logo">
 
-        <%= @sale.title %> 
-        <br> 
-        <%= @sale.address %>
-
-        <br>
-        <%= @sale.city %>
-        <br>
-        <%= @sale.date %>
-        <br>
-        <%= @sale.time %>
-        <br> 
+			        <ul class="meta">
+			        	<li><%= @sale.user.neighborhood.name %><br/><li>
+			          <li><%= @sale.address %></li>
+			          <li><%= @sale.city %><br/></li>
+			          <li><%= @sale.date %><br/></li>
+			          <li><%= @sale.time %><br/><li>
+			        </ul>
+			      
+			  			<div class="edit-sale">
+			          <%= link_to (image_tag('../assets/edit.png')), edit_sale_path(@sale), method: 'get', :class => 'btn button' %> 
+			          <%= link_to (image_tag('../assets/delete.png')), sale_path(@sale), method: 'delete', :class => 'btn button' %>
+			        </div>
 
       </div>
 
-      <!-- End Side Bar -->
-      <!-- Thumbnails -->
+      <div>
+        <% if current_user && current_user.sales != [] && current_user.sales.include?(@sale) %>
+        <%= link_to (image_tag('/assets/edit.png')), edit_sale_path(@sale), method: 'get', :class => 'btn button'%> 
+        <%= link_to (image_tag('/assets/edit.png')), sale_path(@sale), method: 'delete', :class => 'btn button' %> 
+        <% end %>
 
-      <div class="large-8 columns">
-        <div class="row">
+      </div>
 
-          <h2>For Sale</h2>
 
-          <% @sale.items.each do |item| %>
+  </div>
 
-          <div class="large-4 small-6 columns">
+  <div class="large-12 columns">
+   
+   <div class="row">
+
+	<section class="for-sale">
+
+			<h2>For Sale!</h2>
+				<% @sale.items.each do |item| %>
+
+				<div class="large-4 small-6 columns">
             <img src= <%=item.image %> >
            
 
@@ -83,28 +65,20 @@
               <h5>Description</h5>
               <%= item.description %>
             </div>
+          
           </div>
 
-          <% end %> 
-        </div>
-      </div>
-    </div>
+				
+				<% end %>
 
-      <!-- End Thumbnails -->
-      <div>
-        <% if current_user && current_user.sales != [] && current_user.sales.include?(@sale) %>
-        <%= link_to (image_tag('/assets/edit.png')), edit_sale_path(@sale), method: 'get', :class => 'btn button'%> 
-        <%= link_to (image_tag('/assets/edit.png')), sale_path(@sale), method: 'delete', :class => 'btn button' %> 
-        <% end %>
+		</section>	
 
-      </div>
+</div>
+</div>
 
-
-  </div>
 </div>
 
 
-</div>
 
       <script type="text/javascript">
       var locations = [];
