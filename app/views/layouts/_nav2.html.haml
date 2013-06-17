@@ -19,7 +19,7 @@
       = link_to 'Show my Sale', sale_path(current_user.sales.first)
 
 
-      
+
     %li
       = link_to 'My Profile', '/', :class => 'button', :'data-dropdown' => "drop2"
         %ul#drop2.f-dropdown{"data-dropdown-content" => ""}
@@ -28,15 +28,6 @@
           %li
             = link_to 'Logout', logout_path, :class => 'button'
   
-
-
-
-
-
-
-
-
-
 
 
   - unless current_user   

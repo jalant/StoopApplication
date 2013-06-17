@@ -17,7 +17,6 @@
 
 $(document).foundation();
 
-
 <script>
   function add_fields(link, association, content) {
   var new_id = new Date().getTime();
