@@ -51,11 +51,11 @@ nav {height: 100px;}
 
 nav form.search label {color: #FFF;}
 
-li form.search {background: orange; width: 300px; padding: 0 10px; display:inline;  position: relative; margin:0; padding: 0 20px; float: left}
+li form.search {background: orange; height: 40px; width: 300px; padding: 0 10px; display:inline;  position: relative; margin:0; padding: 5px 20px; float: left}
 /* content */ 
 
 li form.search input#query {width: 150px; display:inline-block;}
-li form.search input.button {width: 50px; margin: 0; padding: 0;display: inline-block}
+li form.search input.button {width: 50px; margin: 0; padding: 0; display: inline-block}
 
 section.page-intro {}
 section.page-intro header.main {width: 50%; max-width: 600px; float: left;}
@@ -125,7 +125,6 @@ li.block {padding:0}
 
 /*landing */
 .panel * {font-family: Arial;}
-
 .panel.branding h1 {color: orange;}
 
 

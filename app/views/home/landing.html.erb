@@ -36,24 +36,26 @@
 </div>  
 
 <!-- row 2 -->
+<div class="row">
 <div class="large-4 columns">
 
 <div class="panel">
   <%= form_tag search_items_path, :class => 'search', method: :get do %>
-  <h5><%= label_tag 'Find something. Like these oh so sexy shoes' %></h5>
+  <h5><%= label_tag 'Look at these oh so sexy shoes! What a steal' %></h5>
 
   <%= text_field_tag :query %>
   <%= submit_tag 'search', :class => 'button' %>
   <%end%>
 </div>
 
+ <img src="http://brooklyncream.files.wordpress.com/2011/06/wpid-2011-05-15_11-00-11_473-1.jpg?w=500">
+
 </div>
 
 <div class="small-4 columns">
- 
-  <img src="/assets/shoes.jpg">
- 
+  <img src="http://2guystalkingmetsbaseball.com/wp-content/uploads/2013/04/old-shoes.jpg">
 
+   <img src="http://2guystalkingmetsbaseball.com/wp-content/uploads/2013/04/old-shoes.jpg">
 </div>
 
 
@@ -72,8 +74,7 @@
      <h5>Already have an account? <%= link_to 'Sign In', sessions_new_path %></h5>
 
 </div>
-
-
+</div>
 
 <!--  <div class="row">
   <div class="large-6 small-6 columns">
