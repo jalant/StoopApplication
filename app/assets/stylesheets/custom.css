@@ -126,7 +126,7 @@ li.block {padding:0}
 /*landing */
 .panel * {font-family: Arial;}
 .panel.branding h1 {color: orange;}
-
+.panel.featured {background: rgba(255,165,0,.75); color: #FFF}
 
 /* login and sign up forms */
 #user-forms {width: 25%; margin: 0 auto; background: orange; padding: 20px;}

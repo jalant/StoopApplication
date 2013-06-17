@@ -25,19 +25,22 @@
 
 
     <div class="small-4 columns">
+      
+<div class="panel featured">
 
-     <% neighborhood = Neighborhood.all.sample %>
+
+
+      <h6>Featured Neighborhood</h6>
+      <% neighborhood = Neighborhood.all.sample %>
       <%= link_to neighborhood.name, neighborhood_path(neighborhood)%>
-     
+
+ </div>    
     </div>
 
 </div>  
 
 
- <% @neighborhoods = Neighborhood.all %>
-     <% @neighborhoods.each do |neighborhood| %>
-    <%= link_to neighborhood.name, neighborhood_path(neighborhood)%>
-    <% end %>
+ 
 
 <!-- row 2 -->
 <div class="row">
@@ -46,7 +49,6 @@
 <div class="panel">
   <%= form_tag search_items_path, :class => 'search', method: :get do %>
   <h5><%= label_tag 'Find something cool!' %></h5>
-
   <%= text_field_tag :query %>
   <%= submit_tag 'search', :class => 'button' %>
   <%end%>
@@ -58,20 +60,16 @@
 
 <div class="small-4 columns">
   <img src="http://farm3.staticflickr.com/2618/3831546028_f6910d8cfc.jpg">
-
-   <img src="http://2guystalkingmetsbaseball.com/wp-content/uploads/2013/04/old-shoes.jpg">
+  <img src="http://2guystalkingmetsbaseball.com/wp-content/uploads/2013/04/old-shoes.jpg">
 </div>
-
-
-
 
 <div class="large-4 columns">
 
-<h3 class="show-for-small">Header<hr/></h3>
+<h3 class="show-for-small">Sign In<hr/></h3>
 
 <div class="panel">
   <h3 class="hide-for-small">Have some stuff to sell??</h3>
-   <h5 class="subheader">Yes, you do. Have a sale today!. </h5>
+   <h5 class="hide-for-small">Yes, you do. Have a sale today!. </h5>
 
     <%= render partial: '/sessions/partials/form' %>
     
@@ -83,17 +81,21 @@
  <div class="row">
   <div class="large-6 small-6 columns">
     <div class="panel">
-      <h5>Header</h5>
-    <h6 class="subheader">Praesent placerat dui tincidunt elit suscipit sed.</h6>
-    <a href="#" class="small button">BUTTON TIME!</a>
+    
+    <h5>More Neighborhoods</h5>
+   
+    <% @neighborhoods = Neighborhood.all %>
+    <% @neighborhoods.each do |neighborhood| %>
+    <%= link_to neighborhood.name, neighborhood_path(neighborhood)%>
+    <% end %>
     </div>
+
   </div>
 
   <div class="large-6 small-6 columns">
     <div class="panel">
-      <h5>Header</h5>
-    <h6 class="subheader">Praesent placerat dui tincidunt elit suscipit sed.</h6>
-    <a href="#" class="small button">BUTTON TIME!</a>
+      <h5>Who is Stoopendous?</h5>
+    <h6 class="subheader">Brought to you by Tanay, David, &amp; Jamie</h6>
     </div>
   </div>
 </div> 
@@ -102,8 +104,6 @@
 
 
 </div>
-
-<!-- End Header Content -->
 
 
 
