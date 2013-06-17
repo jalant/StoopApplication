@@ -21,21 +21,18 @@
       welcome to<h1> Stoopendus</h1>
       <h5 class="subheader">stoop sales, yard sales, garage sales, corner sales, sidewalk sales, oh my</h5>
       </div>
+    
     </div>
 
+      <div class="small-4 columns">   
+          <div class="panel featured">  
 
-    <div class="small-4 columns">
-      
-<div class="panel featured">
+          <h6>Featured Neighborhood</h6>
+          <% neighborhood = Neighborhood.all.sample %>
+          <%= link_to neighborhood.name, neighborhood_path(neighborhood)%>
+         </div>    
 
-
-
-      <h6>Featured Neighborhood</h6>
-      <% neighborhood = Neighborhood.all.sample %>
-      <%= link_to neighborhood.name, neighborhood_path(neighborhood)%>
-
- </div>    
-    </div>
+      </div>
 
 </div>  
 
@@ -44,46 +41,50 @@
 
 <!-- row 2 -->
 <div class="row">
-<div class="large-4 columns">
 
-<div class="panel">
-  <%= form_tag search_items_path, :class => 'search', method: :get do %>
-  <h5><%= label_tag 'Find something cool!' %></h5>
-  <%= text_field_tag :query %>
-  <%= submit_tag 'search', :class => 'button' %>
-  <%end%>
+    <div class="large-4 columns">
+
+    <div class="panel">
+      <%= form_tag search_items_path, :class => 'search', method: :get do %>
+      <h4><%= label_tag 'Find cool shit!' %></h4>
+      <%= text_field_tag :query %>
+      <%= submit_tag 'search', :class => 'button' %>
+      <%end%>
+    </div>
+
+     <img src="http://brooklyncream.files.wordpress.com/2011/06/wpid-2011-05-15_11-00-11_473-1.jpg?w=500">
+
+    </div>
+
+    <div class="large-4 columns">
+      <img src="http://farm3.staticflickr.com/2618/3831546028_f6910d8cfc.jpg">
+      <img src="http://2guystalkingmetsbaseball.com/wp-content/uploads/2013/04/old-shoes.jpg">
+    </div>
+
+    <div class="large-4 columns">
+
+    <h3 class="show-for-small">Sign In<hr/></h3>
+
+    <div class="panel">
+       <h4 class="hide-for-small">Have some stuff to sell??</h4>
+       <h5 class="hide-for-small">Yes, you do. Have a sale today!. </h5>
+
+        <%= render partial: '/sessions/partials/form' %>
+        
+        
+
+    </div>
+   
+    </div>
+
+
 </div>
 
- <img src="http://brooklyncream.files.wordpress.com/2011/06/wpid-2011-05-15_11-00-11_473-1.jpg?w=500">
-
-</div>
-
-<div class="small-4 columns">
-  <img src="http://farm3.staticflickr.com/2618/3831546028_f6910d8cfc.jpg">
-  <img src="http://2guystalkingmetsbaseball.com/wp-content/uploads/2013/04/old-shoes.jpg">
-</div>
-
-<div class="large-4 columns">
-
-<h3 class="show-for-small">Sign In<hr/></h3>
-
-<div class="panel">
-  <h3 class="hide-for-small">Have some stuff to sell??</h3>
-   <h5 class="hide-for-small">Yes, you do. Have a sale today!. </h5>
-
-    <%= render partial: '/sessions/partials/form' %>
-    
-     <h5>Already have an account? <%= link_to 'Sign In', sessions_new_path %></h5>
-
-</div>
-</div>
-
- <div class="row">
+<div class="row">
+  
   <div class="large-6 small-6 columns">
     <div class="panel">
-    
-    <h5>More Neighborhoods</h5>
-   
+    <h5>Neighborhoods</h5>
     <% @neighborhoods = Neighborhood.all %>
     <% @neighborhoods.each do |neighborhood| %>
     <%= link_to neighborhood.name, neighborhood_path(neighborhood)%>
@@ -93,9 +94,15 @@
   </div>
 
   <div class="large-6 small-6 columns">
-    <div class="panel">
-      <h5>Who is Stoopendous?</h5>
+    <div class="panel bio">
+    <h5 class="subheader">Who is Stoopendous?</h5>
     <h6 class="subheader">Brought to you by Tanay, David, &amp; Jamie</h6>
+
+    <img src="http://www.whartonsupplychain.org/wp-content/uploads/2013/05/tanay.jpg">
+    <img src="http://s3.amazonaws.com/foodspotting-ec2/people/313837/large.?1323227809">  
+    <img src="http://m3.licdn.com/mpr/pub/image-02QoHpj54tUxpRLEuNCurvxEEpLO4k9y0mnR0RLxEklZuUrX02QRpU85EZzBuky5I1Io/tanay-jalan.jpg">
+
+
     </div>
   </div>
 </div> 
@@ -105,74 +112,30 @@
 
 </div>
 
-
-
-<!-- Thumbnails -->
-
-<!--   <div class="row">
-
-<div class="large-12 show-for-small columns">
-<h3>Header</h3><hr>
-</div>
-
-<div class="large-3 small-6 columns">
-<img src="http://placehold.it/500x500&text=Thumbnail">
-<div class="panel">
-  <p>Description</p>
-</div>
-</div>
-
-<div class="large-3 small-6 columns">
-<img src="http://placehold.it/500x500&text=Thumbnail">
-<div class="panel">
-  <p>Description</p>
-</div>
-</div>
-
-<div class="large-3 small-6 columns">
-<img src="http://placehold.it/500x500&text=Thumbnail">
-<div class="panel">
-  <p>Description</p>
-</div>
-</div>
-
-<div class="large-3 small-6 columns">
-<img src="http://placehold.it/500x500&text=Thumbnail">
-<div class="panel">
-  <p>Description</p>
-</div>
-</div>
-
-</div>
--->
-<!-- End Thumbnails -->
-
-
 <!-- Footer -->
 
-<!--         <footer class="row">
-<div class="large-12 columns"><hr />
-<div class="row">
+<!-- <footer class="row">
+  <div class="large-12 columns">
+    <div class="row">
 
-  <div class="large-6 columns">
-      <p>&copy; Copyright no one at all. Go to town.</p>
+      <div class="large-6 columns">
+        <p>&copy; Copyright no one at all. Go to town.</p>
+      </div>
+
+      <div class="large-6 columns">
+        <ul class="inline-list right">
+          <li><a href="#">Link 1</a></li>
+          <li><a href="#">Link 2</a></li>
+          <li><a href="#">Link 3</a></li>
+          <li><a href="#">Link 4</a></li>
+        </ul>
+      </div>
+
+    </div>
   </div>
-
-  <div class="large-6 columns">
-      <ul class="inline-list right">
-        <li><a href="#">Link 1</a></li>
-        <li><a href="#">Link 2</a></li>
-        <li><a href="#">Link 3</a></li>
-        <li><a href="#">Link 4</a></li>
-      </ul>
-  </div>
-
-</div>
-</div>
 </footer> -->
 
 <!-- End Footer -->
-
 
 </div>
 </div>
