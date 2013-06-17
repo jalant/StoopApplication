@@ -1,7 +1,7 @@
 <script src="http://maps.google.com/maps/api/js?key=AIzaSyAWySaUYYlEwvq3KquSOJmFpPwrnLItW4Y&sensor=false" type="text/javascript"></script>
-<h2>stoop sales in:</h2>
-  <h1><%= @neighborhood.name %></h1>
-
+<h6>stoop sales in:</h6>
+<h3><%= @neighborhood.name %></h3>
+<br/>
 <div id="map" style="width: 500px; height: 400px;"></div>
 
 <script type="text/javascript">
@@ -41,6 +41,18 @@
   <% unless @neighborhood.sales.empty? %>
   <% @neighborhood.sales.each do |sale| %>
     <% if sale.date.to_date >= Date.today %>
+<<<<<<< HEAD
+    <%= link_to sale.title, sale_path(sale) %>   
+    <p> <%= sale.address %> </p>
+    <p> <%= sale.city %></p>
+    <p> <%= sale.date %></p>
+    <p> <%= sale.time %></p>
+   
+    <br>
+    <% if current_user && current_user.sales != [] && current_user.sales.include?(sale) %>
+    <%= button_to 'EDIT', edit_sale_path(sale), method: 'get', :class => 'btn button'%> 
+    <%= button_to 'DELETE', sale_path(sale), method: 'delete', :class => 'btn button' %> 
+=======
     <h1>Name: <%= link_to sale.title, sale_path(sale) %> </h1>
     <br>
     <p> Address: <%= sale.address %> </p>
@@ -54,11 +66,12 @@
     <% if current_user && current_user.sales != [] && current_user.sales.include?(sale) %>
     <%= button_to 'EDIT', edit_sale_path(sale), method: 'get', :class => 'button radius'%> 
     <%= button_to 'DELETE', sale_path(sale), method: 'delete', :class => 'button radius' %> 
+>>>>>>> 73efa3272125196261662f80614e936f0dcfb138
     <% end %>
   <% end %>
    <% end %>
   <% else %>
-    <h1> No sales in this neighborhood, check back later! </h1>
+    <h3>Sorry, no scheduled sales for this neighborhood, check back later! </h3>
   <% end %>
   </div> 
 </div> 

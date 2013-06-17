@@ -13,15 +13,22 @@
 
 </head>
 <body>	
+
+<header id="logo-container">
+<h1>Stoopendus!</h1>
+stoop sales, yard sales, garage sales, corner sales, sidewalk sales, oh my
+</header>
+  
 <div id="wrapper">
+
+<%= render partial: 'layouts/nav2' %>
+
 
 <% if current_user %> 
 	<%= current_user.username %>
 	<%= link_to 'logout', logout_path, :class => 'login-status', method: :delete %>
 <% end %>
 
-
-<%= render partial: 'layouts/nav2' %>
 
 <!-- 
 <div class='row'> -->
@@ -33,12 +40,9 @@
     <!--   </div> -->
 <!-- </div>
  -->
-<footer>
-</footer>
+
 
 </div>
 
 </body>
-
-
 </html>

@@ -1,14 +1,13 @@
-<h1> Account Details:  </h1>
+<h1>My Account:</h1>
 
 <div>
 	<p> Name: <%= @user.username %> </p>
 	<br>
 	<p> email: <%= @user.email %> </p>
 	<br>
-
 	
-	<%= button_to 'Edit user details', edit_user_path(user), method: 'get' %> 
-	<%= button_to 'Delete account', user_path(user), method: 'delete' %> 
+	<%= button_to 'Edit user details', edit_user_path(user), method: 'get', :class => "btn button" %> 
+	<%= button_to 'Delete account', user_path(user), method: 'delete', :class => "btn button" %> 
 
 </div> 
 
