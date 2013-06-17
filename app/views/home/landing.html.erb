@@ -30,7 +30,8 @@
           <h4>FEATURED NEIGHBORHOOD</h4>
           <div>  
 
-          
+          <%= link_to image_tag(neighborhood.img_url), neighborhood_path(neighborhood),  :class => 'neighborhood-name' %>
+         
           <%= link_to neighborhood.name, neighborhood_path(neighborhood), :class => 'neighborhood-name' %>
            </div>    
 

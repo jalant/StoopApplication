@@ -1,6 +1,7 @@
 <%= form_for @neighborhood do |neighborhood| %>
-<label>Neighborhood:</label>
+<label>Area:</label>
 <%= neighborhood.text_field :name %>
-<label><%= neighborhood.text_field :img_url %></label>
-<%= neighborhood.submit %>
+<label>Image URL:</label>
+<%= neighborhood.text_field :img_url %>
+<%= neighborhood.submit :class => "btn button" %>
 <% end %>	
