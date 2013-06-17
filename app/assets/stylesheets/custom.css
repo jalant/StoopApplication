@@ -1,6 +1,7 @@
 /* globals */
 
-h1,h2,h3,h4,h5,li, a {font-family: 'Pathway Gothic One', 'Lato', 'Arimo', 'Varela', 'Lato', Helvetica; font-weight: normal;}
+
+h1,h2, h3, h4,h5,li, a {font-family: 'Pathway Gothic One', 'Lato', 'Arimo', 'Varela', 'Lato', Helvetica; font-weight: normal;}
 
 ul {padding: 0; list-style:none;}
 
@@ -20,7 +21,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fcfff4', end
 
 body {background: url('/assets/bs3.jpg')no-repeat top left; background-size:cover;}
 
-#wrapper {height: 100%; max-width: 1240px; width: auto; min-width: 960px; margin: 0 auto; margin-top: 100px;background: rgba(255,255,255,.75); padding: 20px;}
+#wrapper {height: 100%; max-width: 1240px; width: auto; min-width: 960px; margin: 0 auto; margin-top: 40px;background: rgba(255,255,255,.6); padding: 20px;}
 
 nav ul{height: auto;  width: auto; z-index:999; list-style:none; display: inline-block;}
 
@@ -35,7 +36,7 @@ form.login {height: 400px; width: 360px; padding: 20px; margin: 0 auto; z-index:
 label {display: inline;}
 input {display: inline;}
 
-.button-group {}
+
 .button-group li {display: inline; width: auto;margin:0; padding: 0;}
 .button-group li a {width: 100%;}
 
@@ -45,17 +46,18 @@ a.button {height: 40px; width: 40px; background: rgba(31,159,255,.25);}
 a.button:hover {background: rgba(31,159,255,.5);}
 
 /*NAV*/
-nav {height: 100px;}
+nav {max-height: 100px;}
+nav.upper {}
 	nav .upper-left {width: 70%; display: inline-block;}
 	nav .upper-right  {width: 25%; text-align: right;float: right; display: inline-block;}
 
 nav form.search label {color: #FFF;}
 
-li form.search {background: orange; height: 40px; width: 300px; padding: 0 10px; display:inline;  position: relative; margin:0; padding: 5px 20px; float: left}
+li form.search {background: orange; height: 40px; width: 300px; padding: 0 10px; display:inline;  position:relative; margin:0; padding: 5px 20px; float: left}
 /* content */ 
 
 li form.search input#query {width: 150px; display:inline-block;}
-li form.search input.button {width: 50px; margin: 0; padding: 0; display: inline-block}
+li form.search input.button {height: 30px; width: 50px; margin: 0; padding: 0; display: inline-block}
 
 section.page-intro {}
 section.page-intro header.main {width: 50%; max-width: 600px; float: left;}
@@ -124,16 +126,45 @@ li.block {padding:0}
 .edit-sale, ul.meta {width: 50%;}
 
 /*landing */
+#landing h4 {background: orange;padding: 10px; color: #FFF;}
+
+img.rotated {transform:rotate(12deg);
+-ms-transform:rotate(12deg); /* IE 9 */
+-webkit-transform:rotate(12deg); /* Safari and Chrome */
+}
 
 .panel {border: 1px solid orange;}
 .panel * {font-family: 'Helvetica', Arial;}
-.panel.branding {height: 200px;}
-.panel.branding h1 {color: orange;}
-.panel.featured {height: 200px; background: rgba(255,165,0,.75); color: #FFF}
+.panel.branding {height: 300px;}
+.panel.branding  {background: url('http://brooklyncream.files.wordpress.com/2011/06/wpid-2011-05-15_11-00-11_473-1.jpg?w=500')  right; background-size: cover; padding: 0; margin:0; }
+.panel.branding header {background: rgba(0,0,0,.35); padding: 10px;}
+.panel.branding h1 {color: orange; font-size: 3em;}
+.panel.branding  {color: white;}
 
-.panel.featured a {color: #FFF;}
+.featured {height: 300px;}
+.featured a {color: #FFF; position: absolute; margin:0; padding:0;}
+.featured a.neighborhood-name {padding: 10px;font-size: 3.5em;}
+.featured img {width: 300px;}
+
+.panel.search {background: rgba(255,255,255,.2);}
+.panel.search, .panel.login {height: 280px}
+
+.panel.login {background: rgba(255,165,0,.75); color: #FFF}
+.panel.search h2, .panel.login h2 {color: #FFF;text-transform: uppercase;}
+
+.panel.bio,.panel.neighborhood-list {height: 250px;}
 .panel.bio img {height: 100px;}
 
 /* login and sign up forms */
-#user-forms {width: 25%; margin: 0 auto; background: orange; padding: 20px;}
+#user-forms {width: 50%;  padding: 20px; border: 1px solid #FFF;}
 #user-forms h1 {font-family: Helvetica, Arial, sans-serif;}
+#user-forms ul {background: red; color: #FFF;padding: 10px;}
+
+/*misc */
+
+form.input {background: rgba(255,255,255,.5);}
+.alert {font-size: 2em; background: #FF0000; color: #FFF;}
+
+
+
+

@@ -1,90 +1,91 @@
-<div id="landing" class="pages">
-
-
-
-<div class="row">
-<div class="large-12 columns">
+<div id="landing">
 
 
 <!-- row 1-->
 <div class="row"> 
      <div class="large-12 columns">
-   <h5> Looking for a used mattress? You've come to the right place.</h5>
+     Looking for a used couch? You've come to the right place.
     </div>
 </div>
 
-<div class="row"> 
+<br/>
 
-    <div class="small-8 columns">
-     
-      <div class="panel branding">
-      welcome to<h1> Stoopendus</h1>
-      <h5 class="subheader">stoop sales, yard sales, garage sales, corner sales, sidewalk sales, oh my</h5>
-      </div>
+<div class="row"> 
     
+    <div class="small-8 columns">   
+        <div class="panel branding">
+          <header>
+          welcome to <h1>Stoopendus!</h1>
+          stoop sales, yard sales, garage sales, corner sales, sidewalk sales, oh my
+         </header>
+        </div>    
     </div>
 
-      <div class="small-4 columns">   
-          <div class="panel featured">  
+    <div class="small-4 columns featured"> 
 
-          <h6>Featured Neighborhood</h6>
-          <% neighborhood = Neighborhood.all.sample %>
-          <%= link_to neighborhood.name, neighborhood_path(neighborhood)%>
-         </div>    
+         <% neighborhood = Neighborhood.all.sample %>
+          
+          <h4>TODAY's NEIGHBORHOOD</h4>
+          <div>  
+          <%= link_to image_tag(neighborhood.img_url), neighborhood_path(neighborhood)%>
+          
+          <%= link_to neighborhood.name, neighborhood_path(neighborhood), :class => 'neighborhood-name' %>
+           </div>    
 
-      </div>
+    </div>
 
 </div>  
 
-
  
-
+<br/>
 <!-- row 2 -->
 <div class="row">
 
     <div class="large-4 columns">
+    <h4>FIND ANYTHING!</h4>
 
-    <div class="panel">
+    <div class="panel search">
       <%= form_tag search_items_path, :class => 'search', method: :get do %>
-      <h4><%= label_tag 'Find cool shit!' %></h4>
+      <h4>Forget your kid's birthday, again?!?</h4>
+
+      <p>You're the worst parent in the world. Find your kid something here.</p>
       <%= text_field_tag :query %>
       <%= submit_tag 'search', :class => 'button' %>
       <%end%>
     </div>
 
-     <img src="http://brooklyncream.files.wordpress.com/2011/06/wpid-2011-05-15_11-00-11_473-1.jpg?w=500">
 
     </div>
 
     <div class="large-4 columns">
-      <img src="http://farm3.staticflickr.com/2618/3831546028_f6910d8cfc.jpg">
-      <img src="http://2guystalkingmetsbaseball.com/wp-content/uploads/2013/04/old-shoes.jpg">
+    
+
+       <img class="rotated" src="http://img1.etsystatic.com/000/0/5770731/il_fullxfull.297232489.jpg"/>
+        <!-- <img src="http://farm3.staticflickr.com/2618/3831546028_f6910d8cfc.jpg"> -->
+
     </div>
 
-    <div class="large-4 columns">
 
-    <h3 class="show-for-small">Sign In<hr/></h3>
 
-    <div class="panel">
-       <h4 class="hide-for-small">Have some stuff to sell??</h4>
-       <h5 class="hide-for-small">Yes, you do. Have a sale today!. </h5>
-
+    <div class="large-4 columns login">
+    <h4>SIGN IN</h4>
+    <h6 class="show-for-small">Sign In<hr/></h6>
+    <div class="panel login">
+       <h6 class="hide-for-small">Come on. You don't really need that porcelain cat, do you?</h6>
+     
         <%= render partial: '/sessions/partials/form' %>
-        
-        
-
+             
     </div>
-   
     </div>
 
 
 </div>
-
+<!--row 3-->
 <div class="row">
   
   <div class="large-6 small-6 columns">
-    <div class="panel">
-    <h5>Neighborhoods</h5>
+    <div class="panel neighborhood-list">
+    <h6>Neighborhoods</h6>
     <% @neighborhoods = Neighborhood.all %>
     <% @neighborhoods.each do |neighborhood| %>
     <%= link_to neighborhood.name, neighborhood_path(neighborhood)%>
@@ -95,12 +96,15 @@
 
   <div class="large-6 small-6 columns">
     <div class="panel bio">
-    <h5 class="subheader">Who is Stoopendous?</h5>
-    <h6 class="subheader">Brought to you by Tanay, David, &amp; Jamie</h6>
+    <h6>About Stoopendous</h6>
+    <h6 class="subheader">Brought to you by Tanay, Jamie, &amp; David. And smoothie lovers everywhere.</h6>
 
     <img src="http://www.whartonsupplychain.org/wp-content/uploads/2013/05/tanay.jpg">
+
     <img src="http://s3.amazonaws.com/foodspotting-ec2/people/313837/large.?1323227809">  
-    <img src="http://m3.licdn.com/mpr/pub/image-02QoHpj54tUxpRLEuNCurvxEEpLO4k9y0mnR0RLxEklZuUrX02QRpU85EZzBuky5I1Io/tanay-jalan.jpg">
+    <img src="https://s3.amazonaws.com/uploads.hipchat.com/39979/332759/y6qw6hdfjiimij9/photo%20%282%29.jpg">
+    
+    <img src="http://cache.showmethecurry.com/vidimages/FruitSmoothie.jpg"/>
 
 
     </div>
@@ -112,33 +116,7 @@
 
 </div>
 
-<!-- Footer -->
 
-<!-- <footer class="row">
-  <div class="large-12 columns">
-    <div class="row">
-
-      <div class="large-6 columns">
-        <p>&copy; Copyright no one at all. Go to town.</p>
-      </div>
-
-      <div class="large-6 columns">
-        <ul class="inline-list right">
-          <li><a href="#">Link 1</a></li>
-          <li><a href="#">Link 2</a></li>
-          <li><a href="#">Link 3</a></li>
-          <li><a href="#">Link 4</a></li>
-        </ul>
-      </div>
-
-    </div>
-  </div>
-</footer> -->
-
-<!-- End Footer -->
-
-</div>
-</div>
 
 </div>
 

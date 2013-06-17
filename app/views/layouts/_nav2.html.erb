@@ -10,11 +10,14 @@
 		<li><%= link_to 'Search by Hood', neighborhoods_path, :class => 'button'  %> </li>
 		<li><%= form_tag search_items_path, :class => 'search', method: :get do %>
 
-	      <%= label_tag 'Find an item' %>
+	      <%= label_tag 'Find Stuff!' %>
   	    <%= text_field_tag :query %>
     	  <%= submit_tag 'search', :class => 'btn button' %>
     	  <%end%>
 		</li>			
+
+
+	
 	</ul>
 
 
