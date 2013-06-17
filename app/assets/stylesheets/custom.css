@@ -21,7 +21,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fcfff4', end
 
 body {background: url('/assets/bs3.jpg')no-repeat top left; background-size:cover;}
 
-#wrapper {height: 100%; max-width: 1240px; width: auto; min-width: 960px; margin: 0 auto; margin-top: 40px;background: rgba(255,255,255,.6); padding: 20px;}
+#wrapper {height: 100%; max-width: 1240px; width: auto; min-width: 960px; margin: 0 auto; margin-top: 40px;background: rgba(255,255,255,.35); padding: 20px;}
 
 nav ul{height: auto;  width: auto; z-index:999; list-style:none; display: inline-block;}
 
@@ -70,7 +70,6 @@ section.page-intro header figure {width: 150px; float: right; padding: 10px;colo
 .login-status {float: right;}
 
 a {font-size: 1.75em; color: #2ba6cb;}
-
 
 /* SALES */
 
@@ -131,36 +130,39 @@ li.block {padding:0}
 img.rotated {transform:rotate(12deg);
 -ms-transform:rotate(12deg); /* IE 9 */
 -webkit-transform:rotate(12deg); /* Safari and Chrome */
-}
+-webkit-box-shadow: 1px 1px 10px gray; position: relative;}
+
+
 
 .panel {border: 1px solid orange;}
-.panel * {font-family: 'Helvetica', Arial;}
 .panel.branding {height: 300px;}
-.panel.branding  {background: url('http://brooklyncream.files.wordpress.com/2011/06/wpid-2011-05-15_11-00-11_473-1.jpg?w=500')  right; background-size: cover; padding: 0; margin:0; }
-.panel.branding header {background: rgba(0,0,0,.35); padding: 10px;}
+.panel.branding  {background: url('http://farm3.staticflickr.com/2618/3831546028_f6910d8cfc.jpg') no-repeat top right; background-size: cover; padding: 0; margin:0; }
+.panel.branding header {background: rgba(0,0,0,.35); padding: 10px; width: 35%; height: 100%;}
 .panel.branding h1 {color: orange; font-size: 3em;}
 .panel.branding  {color: white;}
 
-.featured {height: 300px;}
+.featured {height: 300px;background: rgba(255,255,255,.25)}
 .featured a {color: #FFF; position: absolute; margin:0; padding:0;}
 .featured a.neighborhood-name {padding: 10px;font-size: 3.5em;}
 .featured img {width: 300px;}
 
-.panel.search {background: rgba(255,255,255,.2);}
+.panel.search {background: rgba(255,255,255,.25);}
 .panel.search, .panel.login {height: 280px}
 
 .panel.login {background: rgba(255,165,0,.75); color: #FFF}
 .panel.search h2, .panel.login h2 {color: #FFF;text-transform: uppercase;}
 
-.panel.bio,.panel.neighborhood-list {height: 250px;}
-.panel.bio img {height: 100px;}
+.panel.bio,.panel.neighborhood-list {height: 250px;background: rgba(255,255,255,.75);}
+.panel.bio img {height: 80px;}
 
 /* login and sign up forms */
 #user-forms {width: 50%;  padding: 20px; border: 1px solid #FFF;}
-#user-forms h1 {font-family: Helvetica, Arial, sans-serif;}
-#user-forms ul {background: red; color: #FFF;padding: 10px;}
+#user-forms h1 {font-family: Helvetica, Arial, sans-serif; background: rgba(0,0,0,.5); color: orange;}
+#user-forms ul {background: orange; color: #FFF;padding: 10px;}
 
 /*misc */
+#logo-container {height: auto; color: orange; padding: 0 20px;}
+#logo-container * {color: white;}
 
 form.input {background: rgba(255,255,255,.5);}
 .alert {font-size: 2em; background: #FF0000; color: #FFF;}
