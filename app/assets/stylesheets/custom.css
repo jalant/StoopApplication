@@ -67,7 +67,11 @@ section.page-intro header figure {width: 150px; float: right; padding: 10px;colo
 /*MAP */
 #map {float: right; margin-right: 20px;  border: 1px solid lime; display: inline-block;}
 
-.login-status {float: right;}
+.login-status {float: right; font-size: 1.75em; color: #2ba6cb;margin-left: 20px;}
+
+.login-status2 {float: right; font-size: 1.4em; color: #2ba6cb;margin-left: 20px;}
+
+
 
 a {font-size: 1.75em; color: #2ba6cb;}
 
@@ -167,6 +171,9 @@ img.rotated {transform:rotate(12deg);
 form.input {background: rgba(255,255,255,.5);}
 form label {color: #FFF; margin: 10px 0;}
 .alert {font-size: 2em; background: #FF0000; color: #FFF;}
+
+#map label { width: auto; display:inline; }
+#map img { max-width: none; }
 
 
 
