@@ -2,7 +2,11 @@
 
 <div>
 	<p> Name: <%= @item.name %> </p>
+	<% if @item.price == 0 %>
+	<p> Price: Negotiable </p>
+	<% else %>
 	<p> Price: <%= number_to_currency(@item.price) %> </p>
+	<% end %>
 	<br>
 	<p>  Description: <%= @item.description %></p>
 	<br>

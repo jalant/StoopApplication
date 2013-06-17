@@ -5,3 +5,4 @@ class Item < ActiveRecord::Base
   validates_numericality_of :price, :less_than => 4294967296
   validates_numericality_of :price, :greater_than_or_equal_to => 0 
 end
+

@@ -59,9 +59,12 @@
               <h5>Item Name</h5>
               <%= item.name %>
 
-              <h5>Price</h5>
-              <%= number_to_currency(item.price) %> 
-
+              <h5>Price:</h5>
+              <% if item.price == 0 %>
+              <p> Negotiable </p>
+                  <% else %>
+                  <p> Price: <%= number_to_currency(item.price) %> </p>
+                    <% end %>
               <h5>Description</h5>
               <%= item.description %>
             </div>
