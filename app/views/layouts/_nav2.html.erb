@@ -19,9 +19,8 @@
 		<ul class="button-group user-options">
 			<!-- create a sale -->
 			<li><%= link_to 'Create a New Sale', new_sale_path, :class => 'button' %></li>
-			<div class = 'login-status2'>
-				<%= current_user.username %>
-			</div>
+			
+			
 			<!-- edit account or logout -->
 			<li><%= link_to 'My Profile', '/', :class => 'button', :'data-dropdown' => "drop1" %>
 				<ul id="drop1" class="f-dropdown" data-dropdown-content>
