@@ -2,14 +2,14 @@
  
 <section class="page-intro">
 
-    <header class="main"><h1>Brooklyn Stoop Sales! You probably haven't heard of them </h1><h6> Keep midsize items like kitchen appliances and electronics spaced out and orderly. Smaller trinkets should be in a tray or bowl. </h6>
+    <header class="main"><h1>Brooklyn Stoop Sales! You probably haven't heard of them </h1><p> Keep midsize items like kitchen appliances and electronics spaced out and orderly. Smaller trinkets should be in a tray or bowl. </p>
       
       
-      <figure> Put Your Stoop to Work: A booming secondhand market!  </figure>
+     <figure> Put Your Stoop to Work: A booming secondhand market!  </figure>
 
     <p id ='tanay' >
-A few days before the sale, post an ad on Stoopendous. “It’s the gold standard,” says Brenda Becker, a Flatbush blogger who’s perused Brooklyn stoop sales most weeks for twenty years. Saturdays get the most foot traffic because people are doing errands. 
-</p>
+      A few days before the sale, post an ad on Stoopendous. “It’s the gold standard,” says Brenda Becker, a Flatbush blogger who’s perused Brooklyn stoop sales most weeks for twenty years. Saturdays get the most foot traffic because people are doing errands. 
+    </p>
 
     </header>
 
@@ -55,16 +55,12 @@ A few days before the sale, post an ad on Stoopendous. “It’s the gold standa
 <div class="clear"></div>
 
 <div id="root" class="sales">
-
   <ul class="small-block-grid-4">
-
     <% @sales.each do |sale| %>
-    <% if sale.date.to_date >= Date.today %>
+      <% if sale.date.to_date >= Date.today %>
 
     <li class="block">
-
         <%= link_to sale.title, sale_path(sale), :class => 'sale-title' %>
-
         <ul class="meta">
           <li><%= sale.address %></li>
           <li><%= sale.city %><br/></li>
@@ -76,8 +72,8 @@ A few days before the sale, post an ad on Stoopendous. “It’s the gold standa
         <div class="edit-sale">
           <%= link_to 'Edit', edit_sale_path(sale), method: 'get', :class => 'btn button' %> 
           <%= link_to 'Delete', sale_path(sale), method: 'delete', :class => 'btn button' %>
-        </div>
-        <% end %>
+            </div>
+          <% end %>
         <% end %>
     </li>
     <% end %>

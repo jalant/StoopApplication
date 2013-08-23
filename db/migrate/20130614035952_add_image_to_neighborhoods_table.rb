@@ -3,4 +3,4 @@ class AddImageToNeighborhoodsTable < ActiveRecord::Migration
   	add_column :neighborhoods, :img_url, :string
   end
 end
-	
+

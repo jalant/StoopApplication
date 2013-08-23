@@ -2,6 +2,7 @@
 
 
 h1,h2, h3, h4,h5,li, a {font-family: 'Pathway Gothic One', 'Lato', 'Arimo', 'Varela', 'Lato', Helvetica; font-weight: normal;}
+h6 {color: #FFF;}
 
 ul {padding: 0; list-style:none;}
 
@@ -66,7 +67,7 @@ section.page-intro header.main h1 {color: orange;}
 section.page-intro header figure {width: 150px; float: right; padding: 10px;color: #99ccff; background: rgba(255,255,255,.9);}
 
 /*MAP */
-#map {float: right; margin-right: 20px;  border: 1px solid lime; display: inline-block;}
+#map {float: right; margin: 20px 20px 0 0;  border: 1px solid lime;}
 
 .login-status {float: right; font-size: 1.75em; color: #2ba6cb;margin-left: 20px;}
 

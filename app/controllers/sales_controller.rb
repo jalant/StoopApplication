@@ -15,7 +15,6 @@ class SalesController < ApplicationController
     @sales.each do |sale|
 
      if sale.date.to_date > Date.today
-
         address_tmp = "#{sale.address}, Brooklyn, New York"
         @marker = Geocoder.search(address_tmp)
         mark_lat = @marker.first.data["geometry"]['location']['lat']
