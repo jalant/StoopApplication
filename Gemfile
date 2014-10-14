@@ -32,9 +32,9 @@ group :development do
 	gem 'annotate'
 end
 
-gem 'jquery-rails'
-gem 'pry-rails'
-	gem 'pry-debugger'
+    gem 'jquery-rails'
+    gem 'pry-rails'
+    gem 'rb-readline'
 	gem 'pry-stack_explorer'
 	gem 'better_errors'
 	gem 'quiet_assets'

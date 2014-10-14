@@ -4,7 +4,6 @@
 
   <script type="text/javascript">
     var locations = [];
-
     <% @locations.each do |location| %>
       locations.push(["<%= location[0] %>", "<%= location[1] %>",<%= location[2] %>, <%= location[3] %>, "<%= location[4] %>"]);
     <% end %>

@@ -7,7 +7,7 @@ User.delete_all
 
 n1 = Neighborhood.create(name: 'Brooklyn Heights', img_url: 'http://0.tqn.com/d/brooklyn/1/7/3/2/-/-/Promenade.jpg')
 n2 = Neighborhood.create(name: 'Red Hook', img_url: 'http://blogs.villagevoice.com/forkintheroad/PH2006042101257.jpg')
-n3 = Neighborhood.create(name: 'Williamsburg', img_url: 'http://www.brooklynian.com/bk/wp-content/uploads/2012/01/hipsterzzz1.jpg')
+n3 = Neighborhood.create(name: 'Williamsburg', img_url: 'http://upload.wikimedia.org/wikipedia/en/9/94/View_of_South_Williamsburg.jpg')
 n4 = Neighborhood.create(name: 'Carroll Gardens', img_url: 'http://graphics8.nytimes.com/images/2008/06/01/nyregion/stre600.jpg')
 n5 = Neighborhood.create(name: 'Greenpoint', img_url: 'http://www.urban75.org/photos/newyork/images/greenpoint-brooklyn-03.jpg')
 n6 = Neighborhood.create(name: 'Fort Greene', img_url: 'http://images.nymag.com/images/2/realestate/neighborhoods/2010/fortgreene100414_lede.jpg')
